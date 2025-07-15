@@ -1,0 +1,34 @@
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 15px;
+}
+
+.logo-text {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.main-nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+}

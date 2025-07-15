@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Orbit';
+    src: url('Assets-Collage/Orbit/Orbit-Regular.ttf') format('truetype');
+}
+
 .header {
     position: absolute;
     top: 0;

@@ -1,7 +1,7 @@
 const styleConfig = {
     'Assets-Collage/collage-edited.html': {
         luarColor: '#14ae5c',
-        aiColor: '#fdefd4',
+        aiColor: '#ffa723',
         navColor: '#009e75',
         font: 'Poppins'
     },

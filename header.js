@@ -28,6 +28,12 @@ const styleConfig = {
         aiColor: '#072959',
         navColor: '#072959',
         font: 'Libre Baskerville'
+    },
+    'about': {
+        luarColor: '#ffffff',
+        aiColor: '#EC4899',
+        navColor: '#ffffff',
+        font: 'Poppins'
     }
 };
 

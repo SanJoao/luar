@@ -1,0 +1,59 @@
+/* Responsive styles for about2.html */
+
+/* Desktop styles */
+@media (min-width: 768px) {
+    .container {
+        max-width: 1024px;
+    }
+
+    #services .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Header styles */
+.header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    z-index: 1000;
+    box-sizing: border-box;
+    color: white;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    margin-right: 15px;
+}
+
+.logo-text {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.logo-luar {
+    color: white;
+}
+
+.logo-ai {
+    color: #EC4899; /* brand-pink */
+}
+
+.main-nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+}
+
+.main-nav a:hover {
+    color: #EC4899; /* brand-pink */
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Luar AI - Contact</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link rel="stylesheet" href="/header.css">
+<style type="text/tailwindcss">
+        :root {
+            --brand-purple: #8B5CF6;
+            --brand-pink: #F472B6;
+            --brand-teal: #2DD4BF;
+            --brand-yellow: #FBBF24;
+            --brand-indigo: #6366F1;
+            --brand-coral: #FB7185;
+            --background-dark: #0F172A;
+            --background-light: #F8FAFC;
+            --card-dark: #1E293B;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-dark);
+            color: #F8FAFC;
+        }
+        .playfair-display {
+            font-family: 'Playfair Display', serif;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, var(--brand-purple), var(--brand-pink), var(--brand-teal));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .form-input {
+            @apply w-full bg-slate-700/60 border-slate-600 rounded-lg py-2.5 px-4 text-white placeholder-slate-400 focus:ring-2 focus:ring-[var(--brand-pink)] focus:border-[var(--brand-pink)] transition-all;
+        }
+        .card-gradient-border {
+            border: 2px solid;
+            border-image-slice: 1;
+            border-width: 2px;
+            border-image-source: linear-gradient(to right, var(--brand-purple), var(--brand-pink), var(--brand-teal));
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-white">
+<div id="header-container"></div>
+<script src="/header.js"></script>
+<script>
+    fetch('/header.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('header-container').innerHTML = data;
+            updateHeaderStyle('contact');
+        });
+</script>
+<div class="container mx-auto p-4 max-w-md">
+<main class="mt-8">
+<section id="contact">
+<h1 class="text-4xl font-bold playfair-display text-center">
+Let’s Talk<br><span class="gradient-text">Moon to Moon.</span>
+</h1>
+<div class="relative mt-6 text-center">
+<p class="text-slate-300">
+                        We love hearing from curious minds, bold dreamers, and anyone with a project that needs just the right dose of logic and lunar magic. Whether it's an MVP, a weird question, or just a digital high-five — our inbox is always open.
+                    </p>
+<span class="material-icons absolute -top-4 -right-2 text-5xl text-[var(--brand-teal)] opacity-20 -rotate-12">mail</span>
+</div>
+<div class="mt-10 p-6 sm:p-8 bg-[var(--card-dark)] rounded-2xl card-gradient-border">
+<form action="#" class="space-y-6" method="POST">
+<div>
+<label class="flex items-center text-sm font-medium text-slate-300 mb-2" for="name">🌕 Name</label>
+<input class="form-input" id="name" name="name" type="text"/>
+</div>
+<div>
+<label class="flex items-center text-sm font-medium text-slate-300 mb-2" for="email">🌟 Email</label>
+<input class="form-input" id="email" name="email" type="email"/>
+</div>
+<div>
+<label class="flex items-center text-sm font-medium text-slate-300 mb-2" for="help">🪐 How can we help?</label>
+<select class="form-input appearance-none bg-no-repeat bg-right-3" id="help" name="help" style="background-image: url('data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 20 20%27%3e%3cpath stroke=%27%2394a3b8%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%271.5%27 d=%27M6 8l4 4 4-4%27/%3e%3c/svg%3e'); background-size: 1.5em 1.5em;">
+<option>Build an MVP</option>
+<option>Improve UX</option>
+<option>Automation</option>
+<option>Just Chat</option>
+<option>Something Else</option>
+</select>
+</div>
+<div>
+<label class="flex items-center text-sm font-medium text-slate-300 mb-2" for="idea">🚀 What’s your big idea?</label>
+<textarea class="form-input" id="idea" name="idea" rows="4"></textarea>
+</div>
+<div>
+<button class="w-full flex items-center justify-center bg-[var(--brand-coral)] text-white font-semibold py-3 px-6 rounded-lg shadow-lg shadow-[var(--brand-coral)]/40 hover:bg-opacity-90 transform hover:-translate-y-1 transition-all duration-300" type="submit">
+<span class="mr-2">Send to Orbit</span>
+<span class="material-icons group-hover:animate-ping">rocket_launch</span>
+</button>
+</div>
+</form>
+</div>
+<div class="mt-12 space-y-6">
+<div class="flex items-start gap-4 p-4 bg-slate-800/70 rounded-lg card-gradient-border">
+<span class="material-icons text-2xl text-[var(--brand-teal)] mt-1">alternate_email</span>
+<div>
+<h3 class="font-semibold text-white">Email</h3>
+<a class="text-sm text-slate-300 hover:text-[var(--brand-teal)] transition" href="mailto:hello@luarai.com">hello@luarai.com</a>
+<p class="text-xs text-slate-500 mt-1 italic">we check it more than our code reviews</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 bg-slate-800/70 rounded-lg card-gradient-border">
+<span class="material-icons text-2xl text-[var(--brand-purple)] mt-1">public</span>
+<div>
+<h3 class="font-semibold text-white">Location</h3>
+<p class="text-sm text-slate-300">We work from Earth… for now. 🌍</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 bg-slate-800/70 rounded-lg card-gradient-border">
+<span class="material-icons text-2xl text-[var(--brand-yellow)] mt-1">schedule</span>
+<div>
+<h3 class="font-semibold text-white">Working Hours</h3>
+<p class="text-sm text-slate-300">Mon–Fri, 9am–6pm (Moon Time)</p>
+</div>
+</div>
+</div>
+<div class="mt-16 text-center">
+<p class="text-slate-400 italic">Not sure what to say? That’s okay — we’re great at decoding mystery messages. ✨</p>
+</div>
+</section>
+</main>
+<footer class="text-center text-slate-500 text-xs py-8 mt-8">
+<p>© 2025 Luar AI. All Rights Reserved.</p>
+<p class="mt-2">Made with ♥ and a sprinkle of stardust.</p>
+</footer>
+</div>
+</body></html>

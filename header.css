@@ -1,7 +1,4 @@
-@font-face {
-    font-family: 'Orbit';
-    src: url('Assets-Collage/Orbit/Orbit-Regular.ttf') format('truetype');
-}
+@import url('https://fonts.googleapis.com/css2?family=Orbit&display=swap');
 
 .header {
     position: absolute;
@@ -16,9 +13,13 @@
     box-sizing: border-box;
 }
 
-.logo-container {
+.logo-container .logo-link {
     display: flex;
     align-items: center;
+}
+
+.logo-link {
+    text-decoration: none;
 }
 
 .logo {
@@ -29,6 +30,10 @@
 .logo-text {
     font-size: 2em;
     font-weight: bold;
+}
+
+.logo-ai {
+    font-family: 'Orbit', sans-serif;
 }
 
 .main-nav a {

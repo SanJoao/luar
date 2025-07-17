@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luar AI - About</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="../header.css">
+    <style type="text/tailwindcss">
+        :root {
+            --brand-purple: #7C3AED;
+            --brand-pink: #EC4899;
+            --brand-teal: #14B8A6;
+            --brand-yellow: #FBBF24;
+            --background-dark: #111827;
+            --background-light: #F9FAFB;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-dark);
+        }
+        .playfair-display {
+            font-family: 'Playfair Display', serif;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, var(--brand-purple), var(--brand-pink), var(--brand-teal));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .card-gradient-border {
+            border: 2px solid;
+            border-image-slice: 1;
+            border-width: 2px;
+            border-image-source: linear-gradient(to right, var(--brand-purple), var(--brand-pink), var(--brand-teal));
+            background-color: #1f2937;
+        }
+    </style>
+</head>
+<body class="text-white">
+    <div class="container mx-auto p-4 max-w-6xl">
+        <div id="header-container"></div>
+        <main class="mt-8">
+            <section class="text-center mt-16">
+                <h1 class="text-4xl md:text-5xl font-bold playfair-display">Your Partner in <span class="gradient-text">Digital Innovation</span></h1>
+                <p class="mt-4 max-w-3xl mx-auto text-gray-300">At Luar AI, we don't just build; we craft experiences. Think of us as your quirky, tech-savvy sidekicks on a mission to make awesome stuff.</p>
+            </section>
+
+            <section class="mt-20 flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuClHR3Mekn7IN89-maxz59azvivU1bAGRr-1hP2JXMpIS_KN5yELU3HEBz48j_7FnDOEftQ8McEiZjHFD8yNwUEXutRubk3O101ju9UlXupxEuqyTDRL-_rrhMen-DQU3o0zJZ8-8L3dUGefJge5fYnoLIowlYMTfVtZqi9RxonAG_BSRWkvjQCiWw_TG6yQWBX3Sodb-_NDBkdpwIwWoHsP9fJa8m1sfDSe7VWq-MUkDEiGdBfryc2zx1IUXKZzY9yd-b_hb_XSh8" alt="Rocket launching amidst stars and planets" class="rounded-2xl shadow-lg">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold playfair-display">Our Mission: <span class="gradient-text">To Build with Purpose</span></h2>
+                    <p class="mt-4 text-gray-300">Guided by Lean Startup principles (and a lot of coffee), we focus on delivering value quickly and iteratively. We’re committed to solving real problems through technology, building with intention, curiosity, and care at every step. Your success is our success, after all!</p>
+                </div>
+            </section>
+
+            <section class="mt-20 flex flex-col md:flex-row-reverse items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhW42SeOrDWl4hOe0bLify8nCsgh2Amj7PLkQGI3ioBedfVZ8OOlhJMytci6J5fo3YRmGapSLX5W8lSDZOxRaR53Pamnuv8xGBCNp-aq58DDTY2eRxZSEpJ7PJINsquVE2bPHaJXEomA_C3bPxoMZnW8-9_4aUv1J8rxVnzibjz0WkHFB-HoTDHUxnooyKH0dJdJlHKsg8nQhsatU3uKg2pSN6c7lg3eQI2IFlvyPYYzkH6Bi9hk_tPnaU0FtvXiAPyqJjWsNZcGU" alt="Hand drawing stars and constellations" class="rounded-2xl shadow-lg">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl font-bold playfair-display">Our Vision: <span class="gradient-text">Bold Ideas, Powerful Solutions</span></h2>
+                    <p class="mt-4 text-gray-300">We aim to be the company known for turning audacious ideas into digital solutions that actually make a positive dent in the universe. Our vision is to lead with innovation and leave a lasting mark through technology that uplifts and empowers.</p>
+                </div>
+            </section>
+
+            <section class="mt-20">
+                <h2 class="text-4xl font-bold playfair-display text-center">The <span class="gradient-text">LuarAi Advantage</span></h2>
+                <p class="text-center text-gray-400 mt-2">Why are we the bee's knees? Glad you asked.</p>
+                <div class="mt-10 grid md:grid-cols-3 gap-8">
+                    <div class="p-6 text-center card-gradient-border rounded-2xl">
+                        <span class="material-icons text-5xl text-[var(--brand-purple)]">sentiment_very_satisfied</span>
+                        <h3 class="text-xl font-semibold mt-4">User-Obsessed Design</h3>
+                        <p class="mt-2 text-gray-400">We create intuitive and engaging digital experiences that your users will love so much, they might just write a song about it.</p>
+                    </div>
+                    <div class="p-6 text-center card-gradient-border rounded-2xl">
+                        <span class="material-icons text-5xl text-[var(--brand-pink)]">rocket_launch</span>
+                        <h3 class="text-xl font-semibold mt-4">Agile & Efficient Delivery</h3>
+                        <p class="mt-2 text-gray-400">Benefit from reduced time-to-market and minimized risk. We're faster than a cheetah on a skateboard.</p>
+                    </div>
+                    <div class="p-6 text-center card-gradient-border rounded-2xl">
+                        <span class="material-icons text-5xl text-[var(--brand-teal)]">auto_awesome_mosaic</span>
+                        <h3 class="text-xl font-semibold mt-4">Versatile Expertise</h3>
+                        <p class="mt-2 text-gray-400">Comprehensive digital solutions under one roof. We're like a Swiss Army knife for your digital needs, but with fewer pointy bits.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mt-20 text-center p-8 bg-gradient-to-br from-[var(--brand-purple)] via-[var(--brand-pink)] to-[var(--brand-teal)] rounded-3xl">
+                <h2 class="text-3xl font-bold playfair-display text-white">Let's Build Something Amazing!</h2>
+                <button class="mt-6 bg-white text-[var(--brand-purple)] font-semibold py-3 px-8 rounded-full shadow-2xl hover:bg-gray-100 transition-transform transform hover:scale-105">
+                    Get in Touch
+                </button>
+            </section>
+        </main>
+        <footer class="text-center text-gray-500 text-xs py-8 mt-8">
+<p>© 2025 Luar AI. All Rights Reserved.</p>
+<p class="mt-2">Made with ♥ and a sprinkle of stardust.</p>
+        </footer>
+    </div>
+    <script src="../header.js"></script>
+    <script>
+        fetch('/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+                updateHeaderStyle('about');
+            });
+    </script>
+</body>
+</html>

@@ -28,6 +28,9 @@
             .then(data => {
                 document.getElementById('header-container').innerHTML = data;
                 updateHeaderStyle(pages[currentIndex]);
+                if (typeof initializeHeader === 'function') {
+                    initializeHeader();
+                }
             });
     </script>
 </body>

@@ -151,6 +151,9 @@
             .then(data => {
                 document.getElementById('header-container').innerHTML = data;
                 updateHeaderStyle('about');
+                if (typeof initializeHeader === 'function') {
+                    initializeHeader();
+                }
             });
     </script>
 </body>

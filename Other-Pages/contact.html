@@ -98,24 +98,61 @@
 <script>
     fetch('/header.html')
         .then(response => response.text())
-        .then(data => {
-            document.getElementById('header-container').innerHTML = data;
-            updateHeaderStyle('contact');
-        });
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+                updateHeaderStyle('about');
+                if (typeof initializeHeader === 'function') {
+                    initializeHeader();
+                }
+            });
 </script>
-<div class="container mx-auto p-4 max-w-md">
+<div class="container mx-auto p-4 max-w-6xl">
 <main class="mt-8">
-<section id="contact">
-<h1 class="text-4xl font-bold playfair-display text-center">
+<section id="contact" class="mt-16">
+<h1 class="text-5xl font-bold playfair-display text-center">
 Let’s Talk<br><span class="gradient-text">Moon to Moon.</span>
 </h1>
 <div class="relative mt-6 text-center">
-<p class="text-slate-300">
+<p class="text-slate-300 max-w-2xl mx-auto">
                         We love hearing from curious minds, bold dreamers, and anyone with a project that needs just the right dose of logic and lunar magic. Whether it's an MVP, a weird question, or just a digital high-five — our inbox is always open.
                     </p>
 <span class="material-icons absolute -top-4 -right-2 text-5xl text-[var(--brand-teal)] opacity-20 -rotate-12">mail</span>
 </div>
-<div class="mt-10 card-gradient-border">
+<div class="mt-12 grid md:grid-cols-2 gap-16 items-start">
+<div class="space-y-6">
+<div class="card-gradient-border">
+<div class="card-inner flex items-start gap-4">
+<span class="material-icons text-2xl text-[var(--brand-teal)] mt-1">alternate_email</span>
+<div>
+<h3 class="font-semibold text-white">Email</h3>
+<a class="text-sm text-slate-300 hover:text-[var(--brand-teal)] transition" href="mailto:team@luarai.com">team@luarai.com</a>
+<p class="text-xs text-slate-500 mt-1 italic">we check it more than our code reviews</p>
+</div>
+</div>
+</div>
+<div class="card-gradient-border">
+<div class="card-inner flex items-start gap-4">
+<span class="material-icons text-2xl text-[var(--brand-purple)] mt-1">public</span>
+<div>
+<h3 class="font-semibold text-white">Location</h3>
+<p class="text-sm text-slate-300">We work from Earth… for now. 🌍</p>
+</div>
+</div>
+</div>
+<div class="card-gradient-border">
+<div class="card-inner flex items-start gap-4">
+<span class="material-icons text-2xl text-[var(--brand-yellow)] mt-1">schedule</span>
+<div>
+<h3 class="font-semibold text-white">Working Hours</h3>
+<p class="text-sm text-slate-300">Mon–Sun, 9am–11pm (Moon Time)</p>
+</div>
+</div>
+</div>
+<div class="mt-8 text-center md:text-left">
+<p class="text-slate-400 italic">Not sure what to say? That’s okay — we’re great at decoding mystery messages. ✨</p>
+</div>
+</div>
+<div class="mt-10 md:mt-0 card-gradient-border">
 <div class="card-inner-form">
 <form id="contactForm" class="space-y-6" method="POST">
 <div>
@@ -149,38 +186,6 @@ Let’s Talk<br><span class="gradient-text">Moon to Moon.</span>
 </form>
 </div>
 </div>
-<div class="mt-12 space-y-6">
-<div class="card-gradient-border">
-<div class="card-inner flex items-start gap-4">
-<span class="material-icons text-2xl text-[var(--brand-teal)] mt-1">alternate_email</span>
-<div>
-<h3 class="font-semibold text-white">Email</h3>
-<a class="text-sm text-slate-300 hover:text-[var(--brand-teal)] transition" href="mailto:team@luarai.com">team@luarai.com</a>
-<p class="text-xs text-slate-500 mt-1 italic">we check it more than our code reviews</p>
-</div>
-</div>
-</div>
-<div class="card-gradient-border">
-<div class="card-inner flex items-start gap-4">
-<span class="material-icons text-2xl text-[var(--brand-purple)] mt-1">public</span>
-<div>
-<h3 class="font-semibold text-white">Location</h3>
-<p class="text-sm text-slate-300">We work from Earth… for now. 🌍</p>
-</div>
-</div>
-</div>
-<div class="card-gradient-border">
-<div class="card-inner flex items-start gap-4">
-<span class="material-icons text-2xl text-[var(--brand-yellow)] mt-1">schedule</span>
-<div>
-<h3 class="font-semibold text-white">Working Hours</h3>
-<p class="text-sm text-slate-300">Mon–Fri, 9am–6pm (Moon Time)</p>
-</div>
-</div>
-</div>
-</div>
-<div class="mt-16 text-center">
-<p class="text-slate-400 italic">Not sure what to say? That’s okay — we’re great at decoding mystery messages. ✨</p>
 </div>
 </section>
 </main>

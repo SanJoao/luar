@@ -92,7 +92,7 @@
 <div id="header-container"></div>
 <main class="mt-8">
 <section class="mt-16" id="services">
-<h2 class="text-4xl font-bold playfair-display text-center">Our <span class="gradient-text">Services</span></h2>
+<h2 class="text-5xl font-bold playfair-display text-center">Our <span class="gradient-text">Services</span></h2>
 <p class="mt-4 max-w-3xl mx-auto text-gray-300 text-center">From MVPs that actually work to full-blown digital ecosystems, we turn your vision into code, pixels, and magic. Whether you need a turbocharged product launch or help untangling spaghetti systems — we’ve got the tools, the team, and the weird metaphors to make it happen.</p>
 <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 <div class="card-gradient-border group">
@@ -230,7 +230,10 @@
         .then(response => response.text())
         .then(data => {
             document.getElementById('header-container').innerHTML = data;
-            updateHeaderStyle('services');
+            updateHeaderStyle('about');
+            if (typeof initializeHeader === 'function') {
+                initializeHeader();
+            }
         });
 </script>
 </body></html>

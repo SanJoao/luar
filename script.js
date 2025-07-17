@@ -36,6 +36,16 @@ function moveSlide(direction) {
     currentIndex = (currentIndex + direction + pages.length) % pages.length;
     updateCarousel();
     updateHeaderStyle(pages[currentIndex]);
+    // Re-initialize header for the new content
+    if (typeof initializeHeader === 'function') {
+        initializeHeader();
+    }
 }
 
-document.addEventListener('DOMContentLoaded', loadPages);
+document.addEventListener('DOMContentLoaded', () => {
+    loadPages();
+    // Also initialize header on initial load
+    if (typeof initializeHeader === 'function') {
+        initializeHeader();
+    }
+});

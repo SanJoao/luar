@@ -56,3 +56,26 @@ function updateHeaderStyle(page) {
         nav.style.fontFamily = `${config.font}, sans-serif`;
     });
 }
+
+function initializeHeader() {
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const mainNav = document.querySelector('.main-nav');
+
+    if (hamburgerMenu && mainNav) {
+        const toggleMenu = (event) => {
+            event.preventDefault(); // Prevents both touch and click firing on some devices
+            mainNav.classList.toggle('active');
+        };
+
+        // Remove old listeners to prevent duplicates
+        hamburgerMenu.removeEventListener('click', toggleMenu);
+        hamburgerMenu.removeEventListener('touchstart', toggleMenu);
+
+        // Add new listeners
+        hamburgerMenu.addEventListener('click', toggleMenu);
+        hamburgerMenu.addEventListener('touchstart', toggleMenu);
+    }
+}
+
+// Initialize header on initial load
+document.addEventListener('DOMContentLoaded', initializeHeader);

@@ -4,7 +4,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Luar AI - Contact</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 <link rel="stylesheet" href="/header.css">
 <style type="text/tailwindcss">
@@ -78,7 +78,7 @@ Let’s Talk<br><span class="gradient-text">Moon to Moon.</span>
 <span class="material-icons absolute -top-4 -right-2 text-5xl text-[var(--brand-teal)] opacity-20 -rotate-12">mail</span>
 </div>
 <div class="mt-10 p-6 sm:p-8 bg-[var(--card-dark)] rounded-2xl card-gradient-border">
-<form action="#" class="space-y-6" method="POST">
+<form id="contactForm" class="space-y-6" method="POST">
 <div>
 <label class="flex items-center text-sm font-medium text-slate-300 mb-2" for="name">🌕 Name</label>
 <input class="form-input" id="name" name="name" type="text"/>
@@ -114,7 +114,7 @@ Let’s Talk<br><span class="gradient-text">Moon to Moon.</span>
 <span class="material-icons text-2xl text-[var(--brand-teal)] mt-1">alternate_email</span>
 <div>
 <h3 class="font-semibold text-white">Email</h3>
-<a class="text-sm text-slate-300 hover:text-[var(--brand-teal)] transition" href="mailto:hello@luarai.com">hello@luarai.com</a>
+<a class="text-sm text-slate-300 hover:text-[var(--brand-teal)] transition" href="mailto:team@luarai.com">team@luarai.com</a>
 <p class="text-xs text-slate-500 mt-1 italic">we check it more than our code reviews</p>
 </div>
 </div>
@@ -143,4 +143,29 @@ Let’s Talk<br><span class="gradient-text">Moon to Moon.</span>
 <p class="mt-2">Made with ♥ and a sprinkle of stardust.</p>
 </footer>
 </div>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const help = document.getElementById('help').value;
+    const idea = document.getElementById('idea').value;
+
+    // Construct the mailto link
+    const subject = encodeURIComponent('Contact Form Submission from Luar AI Website');
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nHow can we help?: ${help}\n\nMessage:\n${idea}`);
+    const mailtoLink = `mailto:team@luarai.com?subject=${subject}&body=${body}`;
+
+    // Create a temporary anchor element to trigger the mailto link
+    const a = document.createElement('a');
+    a.href = mailtoLink;
+    a.style.display = 'none'; // Hide the element
+    document.body.appendChild(a);
+    a.click(); // Programmatically click the link
+    document.body.removeChild(a); // Clean up the element
+});
+</script>
+
 </body></html>

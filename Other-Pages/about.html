@@ -26,17 +26,51 @@
             font-family: 'Playfair Display', serif;
         }
         .gradient-text {
-            background: linear-gradient(to right, var(--brand-purple), var(--brand-pink), var(--brand-teal));
+            background: linear-gradient(to right, var(--brand-purple), var(--brand-pink), var(--brand-teal), var(--brand-purple));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            background-size: 200% auto;
+            animation: animate-gradient 2s linear infinite;
         }
         .card-gradient-border {
-            border: 2px solid;
-            border-image-slice: 1;
-            border-width: 2px;
-            border-image-source: linear-gradient(to right, var(--brand-purple), var(--brand-pink), var(--brand-teal));
+            position: relative;
+            padding: 2px;
+            border-radius: 1rem; /* 16px */
+            background: transparent;
+            z-index: 1;
+        }
+
+        .card-gradient-border::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right, var(--brand-purple), var(--brand-pink), var(--brand-teal), var(--brand-purple));
+            background-size: 200% auto;
+            animation: animate-gradient 2s linear infinite;
+            border-radius: 1rem;
+            z-index: -1;
+        }
+
+        .card-inner {
             background-color: #1f2937;
+            padding: 1.5rem; /* p-6 */
+            border-radius: 0.875rem; /* slightly smaller than parent */
+            height: 100%;
+        }
+
+        @keyframes animate-gradient {
+            to {
+                background-position: 200% center;
+            }
+        }
+        .animated-gradient-background {
+            background: linear-gradient(to right, var(--brand-purple), var(--brand-pink), var(--brand-teal), var(--brand-purple));
+            background-size: 200% auto;
+            animation: animate-gradient 2s linear infinite;
         }
     </style>
 </head>
@@ -73,25 +107,31 @@
                 <h2 class="text-4xl font-bold playfair-display text-center">The <span class="gradient-text">LuarAi Advantage</span></h2>
                 <p class="text-center text-gray-400 mt-2">Why are we the bee's knees? Glad you asked.</p>
                 <div class="mt-10 grid md:grid-cols-3 gap-8">
-                    <div class="p-6 text-center card-gradient-border rounded-2xl">
-                        <span class="material-icons text-5xl text-[var(--brand-purple)]">sentiment_very_satisfied</span>
-                        <h3 class="text-xl font-semibold mt-4">User-Obsessed Design</h3>
-                        <p class="mt-2 text-gray-400">We create intuitive and engaging digital experiences that your users will love so much, they might just write a song about it.</p>
+                    <div class="card-gradient-border">
+                        <div class="card-inner text-center">
+                            <span class="material-icons text-5xl text-[var(--brand-purple)]">sentiment_very_satisfied</span>
+                            <h3 class="text-xl font-semibold mt-4">User-Obsessed Design</h3>
+                            <p class="mt-2 text-gray-400">We create intuitive and engaging digital experiences that your users will love so much, they might just write a song about it.</p>
+                        </div>
                     </div>
-                    <div class="p-6 text-center card-gradient-border rounded-2xl">
-                        <span class="material-icons text-5xl text-[var(--brand-pink)]">rocket_launch</span>
-                        <h3 class="text-xl font-semibold mt-4">Agile & Efficient Delivery</h3>
-                        <p class="mt-2 text-gray-400">Benefit from reduced time-to-market and minimized risk. We're faster than a cheetah on a skateboard.</p>
+                    <div class="card-gradient-border">
+                        <div class="card-inner text-center">
+                            <span class="material-icons text-5xl text-[var(--brand-pink)]">rocket_launch</span>
+                            <h3 class="text-xl font-semibold mt-4">Agile & Efficient Delivery</h3>
+                            <p class="mt-2 text-gray-400">Benefit from reduced time-to-market and minimized risk. We're faster than a cheetah on a skateboard.</p>
+                        </div>
                     </div>
-                    <div class="p-6 text-center card-gradient-border rounded-2xl">
-                        <span class="material-icons text-5xl text-[var(--brand-teal)]">auto_awesome_mosaic</span>
-                        <h3 class="text-xl font-semibold mt-4">Versatile Expertise</h3>
-                        <p class="mt-2 text-gray-400">Comprehensive digital solutions under one roof. We're like a Swiss Army knife for your digital needs, but with fewer pointy bits.</p>
+                    <div class="card-gradient-border">
+                        <div class="card-inner text-center">
+                            <span class="material-icons text-5xl text-[var(--brand-teal)]">auto_awesome_mosaic</span>
+                            <h3 class="text-xl font-semibold mt-4">Versatile Expertise</h3>
+                            <p class="mt-2 text-gray-400">Comprehensive digital solutions under one roof. We're like a Swiss Army knife for your digital needs, but with fewer pointy bits.</p>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <section class="mt-20 text-center p-8 bg-gradient-to-br from-[var(--brand-purple)] via-[var(--brand-pink)] to-[var(--brand-teal)] rounded-3xl">
+            <section class="mt-20 text-center p-8 rounded-3xl animated-gradient-background">
                 <h2 class="text-3xl font-bold playfair-display text-white">Let's Build Something Amazing!</h2>
                 <button class="mt-6 bg-white text-[var(--brand-purple)] font-semibold py-3 px-8 rounded-full shadow-2xl hover:bg-gray-100 transition-transform transform hover:scale-105">
                     Get in Touch

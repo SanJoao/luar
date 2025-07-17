@@ -28,19 +28,56 @@
             font-family: 'Playfair Display', serif;
         }
         .gradient-text {
-            background: linear-gradient(to right, var(--brand-purple), var(--brand-pink), var(--brand-teal));
+            background: linear-gradient(to right, var(--brand-purple), var(--brand-pink), var(--brand-teal), var(--brand-purple));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            background-size: 200% auto;
+            animation: animate-gradient 2s linear infinite;
         }
         .form-input {
             @apply w-full bg-slate-700/60 border-slate-600 rounded-lg py-2.5 px-4 text-white placeholder-slate-400 focus:ring-2 focus:ring-[var(--brand-pink)] focus:border-[var(--brand-pink)] transition-all;
         }
         .card-gradient-border {
-            border: 2px solid;
-            border-image-slice: 1;
-            border-width: 2px;
-            border-image-source: linear-gradient(to right, var(--brand-purple), var(--brand-pink), var(--brand-teal));
+            position: relative;
+            padding: 2px;
+            border-radius: 1rem; /* 16px */
+            background: transparent;
+            z-index: 1;
+        }
+
+        .card-gradient-border::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right, var(--brand-purple), var(--brand-pink), var(--brand-teal), var(--brand-purple));
+            background-size: 200% auto;
+            animation: animate-gradient 2s linear infinite;
+            border-radius: 1rem;
+            z-index: -1;
+        }
+
+        .card-inner {
+            background-color: var(--card-dark);
+            padding: 1.5rem; /* p-6 */
+            border-radius: 0.875rem; /* slightly smaller than parent */
+            height: 100%;
+        }
+        
+        .card-inner-form {
+            background-color: var(--card-dark);
+            padding: 2rem; /* p-8 */
+            border-radius: 0.875rem; /* slightly smaller than parent */
+            height: 100%;
+        }
+
+        @keyframes animate-gradient {
+            to {
+                background-position: 200% center;
+            }
         }
     </style>
 <style>
@@ -77,7 +114,8 @@ Let’s Talk<br><span class="gradient-text">Moon to Moon.</span>
                     </p>
 <span class="material-icons absolute -top-4 -right-2 text-5xl text-[var(--brand-teal)] opacity-20 -rotate-12">mail</span>
 </div>
-<div class="mt-10 p-6 sm:p-8 bg-[var(--card-dark)] rounded-2xl card-gradient-border">
+<div class="mt-10 card-gradient-border">
+<div class="card-inner-form">
 <form id="contactForm" class="space-y-6" method="POST">
 <div>
 <label class="flex items-center text-sm font-medium text-slate-300 mb-2" for="name">🌕 Name</label>
@@ -109,8 +147,10 @@ Let’s Talk<br><span class="gradient-text">Moon to Moon.</span>
 </div>
 </form>
 </div>
+</div>
 <div class="mt-12 space-y-6">
-<div class="flex items-start gap-4 p-4 bg-slate-800/70 rounded-lg card-gradient-border">
+<div class="card-gradient-border">
+<div class="card-inner flex items-start gap-4">
 <span class="material-icons text-2xl text-[var(--brand-teal)] mt-1">alternate_email</span>
 <div>
 <h3 class="font-semibold text-white">Email</h3>
@@ -118,18 +158,23 @@ Let’s Talk<br><span class="gradient-text">Moon to Moon.</span>
 <p class="text-xs text-slate-500 mt-1 italic">we check it more than our code reviews</p>
 </div>
 </div>
-<div class="flex items-start gap-4 p-4 bg-slate-800/70 rounded-lg card-gradient-border">
+</div>
+<div class="card-gradient-border">
+<div class="card-inner flex items-start gap-4">
 <span class="material-icons text-2xl text-[var(--brand-purple)] mt-1">public</span>
 <div>
 <h3 class="font-semibold text-white">Location</h3>
 <p class="text-sm text-slate-300">We work from Earth… for now. 🌍</p>
 </div>
 </div>
-<div class="flex items-start gap-4 p-4 bg-slate-800/70 rounded-lg card-gradient-border">
+</div>
+<div class="card-gradient-border">
+<div class="card-inner flex items-start gap-4">
 <span class="material-icons text-2xl text-[var(--brand-yellow)] mt-1">schedule</span>
 <div>
 <h3 class="font-semibold text-white">Working Hours</h3>
 <p class="text-sm text-slate-300">Mon–Fri, 9am–6pm (Moon Time)</p>
+</div>
 </div>
 </div>
 </div>

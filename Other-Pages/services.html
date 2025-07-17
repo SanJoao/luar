@@ -25,17 +25,55 @@
             font-family: 'Playfair Display', serif;
         }
         .gradient-text {
-            background: linear-gradient(to right, var(--brand-purple), var(--brand-pink), var(--brand-teal));
+            background: linear-gradient(to right, var(--brand-purple), var(--brand-pink), var(--brand-teal), var(--brand-purple));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            background-size: 200% auto;
+            animation: animate-gradient 2s linear infinite;
         }
         .card-gradient-border {
-            border: 2px solid;
-            border-image-slice: 1;
-            border-width: 2px;
-            border-image-source: linear-gradient(to right, var(--brand-purple), var(--brand-pink), var(--brand-teal));
-            background-color: #1f2937;}
+            position: relative;
+            padding: 2px;
+            border-radius: 1rem; /* 16px */
+            background: transparent;
+            z-index: 1;
+        }
+
+        .card-gradient-border::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right, var(--brand-purple), var(--brand-pink), var(--brand-teal), var(--brand-purple));
+            background-size: 200% auto;
+            animation: animate-gradient 2s linear infinite;
+            border-radius: 1rem;
+            z-index: -1;
+        }
+
+        .card-inner {
+            background-color: #1f2937;
+            padding: 1.5rem; /* p-6 */
+            border-radius: 0.875rem; /* slightly smaller than parent */
+            height: 100%;
+        }
+
+        @keyframes animate-gradient {
+            to {
+                background-position: 200% center;
+            }
+        }
+        .gradient-text {
+            animation-duration: 2s;
+        }
+        .animated-gradient-background {
+            background: linear-gradient(to right, var(--brand-purple), var(--brand-pink), var(--brand-teal), var(--brand-purple));
+            background-size: 200% auto;
+            animation: animate-gradient 2s linear infinite;
+        }
     </style>
 <style>
     body {
@@ -56,17 +94,20 @@
 <h2 class="text-4xl font-bold playfair-display text-center">Our <span class="gradient-text">Services</span></h2>
 <p class="mt-4 max-w-3xl mx-auto text-gray-300 text-center">From MVPs that actually work to full-blown digital ecosystems, we turn your vision into code, pixels, and magic. Whether you need a turbocharged product launch or help untangling spaghetti systems — we’ve got the tools, the team, and the weird metaphors to make it happen.</p>
 <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-<div class="p-6 rounded-2xl card-gradient-border group">
+<div class="card-gradient-border group">
+<div class="card-inner">
 <div class="flex items-center gap-4">
 <img alt="Website Creation" class="w-16 h-16 rounded-full object-cover border-2 border-[var(--brand-purple)] group-hover:scale-110 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhW42SeOrDWl4hOe0bLify8nCsgh2Amj7PLkQGI3ioBedfVZ8OOlhJMytci6J5fo3YRmGapSLX5W8lSDZOxRaR53Pamnuv8xGBCNp-aq58DDTY2eRxZSEpJ7PJINsquVE2bPHaJXEomA_C3bPxoMZnW8-9_4aUv1J8rxVnzibjz0WkHFB-HoTDHUxnooyKH0dJdJlHKsg8nQhsatU3uKg2pSN6c7lg3eQI2IFlvyPYYzkH6Bi9hk_tPnaU0FtvXiAPyqJjWsNZcGU"/>
 <div>
-<h3 class="text-xl font-semibold text-white">Custom Websites &amp; Web Apps</h3>
+<h3 class="text-xl font-semibold text-white">Custom Websites & Web Apps</h3>
 <p class="mt-1 text-sm text-[var(--brand-purple)] font-medium">Build Digital Experiences</p>
 </div>
 </div>
 <p class="mt-3 text-gray-300 text-sm">From sleek websites to robust web applications, we create responsive, scalable solutions that engage users.</p>
 </div>
-<div class="p-6 rounded-2xl card-gradient-border group">
+</div>
+<div class="card-gradient-border group">
+<div class="card-inner">
 <div class="flex items-center gap-4">
 <img alt="Mobile App Development" class="w-16 h-16 rounded-full object-cover border-2 border-[var(--brand-pink)] group-hover:scale-110 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9SiooszGZ4Xsn7tHuTGW32EGpUn9US5dIsjmYR8v7huyaFJ6x3uPXfuaoxKMc_LpSON92K0mbf_sssbpDR0wmljnCZlDbtob46qhaTdiZGzAi-FYPa3x7CIAgB4I_Rf2zgVfMNI8HrG5DQxRt-tANffIRXguYAlKoUmPuQCEoLPM6qSZsby4JkG6fhzs-HnF7GYGB7dP7mmnpRKdutr826o7jx8-Pxidyc6bOQiTg0DCYvnAuH314CZPCwKsZkSeqIkI4GlT6NFE"/>
 <div>
@@ -76,7 +117,9 @@
 </div>
 <p class="mt-3 text-gray-300 text-sm">We design intuitive, high-performing iOS and Android apps to expand your reach and deepen engagement.</p>
 </div>
-<div class="p-6 rounded-2xl card-gradient-border group">
+</div>
+<div class="card-gradient-border group">
+<div class="card-inner">
 <div class="flex items-center gap-4">
 <img alt="Business Automation" class="w-16 h-16 rounded-full object-cover border-2 border-[var(--brand-teal)] group-hover:scale-110 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClHR3Mekn7IN89-maxz59azvivU1bAGRr-1hP2JXMpIS_KN5yELU3HEBz48j_7FnDOEftQ8McEiZjHFD8yNwUEXutRubk3O101ju9UlXupxEuqyTDRL-_rrhMen-DQU3o0zJZ8-8L3dUGefJge5fYnoLIowlYMTfVtZqi9RxonAG_BSRWkvjQCiWw_TG6yQWBX3Sodb-_NDBkdpwIwWoHsP9fJa8m1sfDSe7VWq-MUkDEiGdBfryc2zx1IUXKZzY9yd-b_hb_XSh8"/>
 <div>
@@ -86,7 +129,9 @@
 </div>
 <p class="mt-3 text-gray-300 text-sm">Automate repetitive tasks and streamline workflows with custom solutions that enhance efficiency.</p>
 </div>
-<div class="p-6 rounded-2xl card-gradient-border group">
+</div>
+<div class="card-gradient-border group">
+<div class="card-inner">
 <div class="flex items-center gap-4">
 <img alt="Technology Consulting" class="w-16 h-16 rounded-full object-cover border-2 border-[var(--brand-yellow)] group-hover:scale-110 transition-transform" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbw_ouHacJ-i8t_aenQfj9-2tYdCkDgV0e1d_ihPFzOO6WvKzQxr4cz4Hq94_V26PZcJ2VrU7Hn-HsKkM4SrmMygd7b1FDH1Hx7ItqS-R6yR0WKptWJZbX0hnLRsLJQEh4gzFT77S70zREUjG7xW1gJRIwKCGJGPkh9zafHNMScHBXi9qTbwWjLgTnSVBGODE0N3VLneUo4v283wLygaVFxlyVq3K9KUyiMU4rrOLApEPGX20rvTGC8RhAdvaWGkUEuOebY7pH5ms"/>
 <div>
@@ -95,6 +140,7 @@
 </div>
 </div>
 <p class="mt-3 text-gray-300 text-sm">Get expert insight to shape your digital strategy, identify opportunities, and build a roadmap for innovation.</p>
+</div>
 </div>
 </div>
 </section>
@@ -138,25 +184,33 @@
 <section class="mt-16" id="why-us">
 <h2 class="text-4xl font-bold playfair-display text-center">Why Choose <span class="gradient-text">LUAR AI?</span></h2>
 <div class="mt-8 grid grid-cols-2 lg:grid-cols-4 gap-4">
-<div class="p-4 bg-gray-800 rounded-xl text-center flex flex-col items-center justify-center border border-gray-700 hover:border-[var(--brand-purple)] transition-all">
+<div class="card-gradient-border">
+<div class="card-inner text-center flex flex-col items-center justify-center">
 <span class="material-icons text-3xl text-[var(--brand-purple)]">design_services</span>
 <h3 class="font-semibold text-white mt-2">Design Excellence</h3>
 </div>
-<div class="p-4 bg-gray-800 rounded-xl text-center flex flex-col items-center justify-center border border-gray-700 hover:border-[var(--brand-pink)] transition-all">
+</div>
+<div class="card-gradient-border">
+<div class="card-inner text-center flex flex-col items-center justify-center">
 <span class="material-icons text-3xl text-[var(--brand-pink)]">groups</span>
 <h3 class="font-semibold text-white mt-2">Client-Centric</h3>
 </div>
-<div class="p-4 bg-gray-800 rounded-xl text-center flex flex-col items-center justify-center border border-gray-700 hover:border-[var(--brand-teal)] transition-all">
+</div>
+<div class="card-gradient-border">
+<div class="card-inner text-center flex flex-col items-center justify-center">
 <span class="material-icons text-3xl text-[var(--brand-teal)]">handshake</span>
 <h3 class="font-semibold text-white mt-2">Strategic Partnership</h3>
 </div>
-<div class="p-4 bg-gray-800 rounded-xl text-center flex flex-col items-center justify-center border border-gray-700 hover:border-[var(--brand-yellow)] transition-all">
+</div>
+<div class="card-gradient-border">
+<div class="card-inner text-center flex flex-col items-center justify-center">
 <span class="material-icons text-3xl text-[var(--brand-yellow)]">engineering</span>
 <h3 class="font-semibold text-white mt-2">Quality Engineering</h3>
 </div>
 </div>
+</div>
 </section>
-<section class="mt-16 text-center p-8 bg-gradient-to-br from-[var(--brand-purple)] via-[var(--brand-pink)] to-[var(--brand-teal)] rounded-3xl" id="cta">
+<section class="mt-16 text-center p-8 rounded-3xl animated-gradient-background" id="cta">
 <h2 class="text-3xl font-bold playfair-display text-white">Let’s Build Something Amazing</h2>
 <p class="mt-2 text-white/90">Whether you have a clear vision or are seeking guidance, we're here to help you succeed.</p>
 <button class="mt-6 bg-white text-[var(--brand-purple)] font-semibold py-3 px-8 rounded-full shadow-2xl hover:bg-gray-100 transition-transform transform hover:scale-105">

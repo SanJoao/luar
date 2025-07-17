@@ -30,10 +30,12 @@
             font-family: 'Playfair Display', serif;
         }
         .gradient-text {
-            background: linear-gradient(to right, var(--brand-purple), var(--brand-pink), var(--brand-teal));
+            background: linear-gradient(to right, var(--brand-purple), var(--brand-pink), var(--brand-teal), var(--brand-purple));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            background-size: 200% auto;
+            animation: animate-gradient 2s linear infinite;
         }
         .tag {
             @apply inline-block text-xs font-medium px-3 py-1 rounded-full transition-transform hover:translate-y-[-2px];
@@ -42,8 +44,40 @@
             -ms-overflow-style: none;scrollbar-width: none;}
         .carousel::-webkit-scrollbar {
             display: none;}
-        .case-module {
-            border: 1px solid #374151;}
+        .card-gradient-border {
+            position: relative;
+            padding: 2px;
+            border-radius: 1rem; /* 16px */
+            background: transparent;
+            z-index: 1;
+        }
+
+        .card-gradient-border::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to right, var(--brand-purple), var(--brand-pink), var(--brand-teal), var(--brand-purple));
+            background-size: 200% auto;
+            animation: animate-gradient 2s linear infinite;
+            border-radius: 1rem;
+            z-index: -1;
+        }
+
+        .card-inner {
+            background-color: #1E293B; /* card-dark from contact page */
+            padding: 1.5rem; /* p-6 */
+            border-radius: 0.875rem; /* slightly smaller than parent */
+            height: 100%;
+        }
+
+        @keyframes animate-gradient {
+            to {
+                background-position: 200% center;
+            }
+        }
     </style>
 <style>
     body {
@@ -69,7 +103,8 @@
     <p class="mt-4 max-w-3xl mx-auto text-gray-300">Take a peek into the universe of things we’ve built — from pixel-perfect interfaces to clever automations and bold experiments. This is where ideas meet execution, and imagination takes center stage. Warning: may cause sudden bursts of inspiration.</p>
 </section>
 <div class="space-y-16">
-<section class="case-module bg-gray-900/50 rounded-2xl p-6">
+<section class="card-gradient-border">
+<div class="card-inner">
 <div class="flex items-center justify-between">
 <h2 class="text-2xl font-bold flex items-center">
                     Project Alpha <span class="material-icons text-xl text-[var(--brand-yellow)] ml-2 animate-[spin_3s_linear_infinite]">sparkles</span>
@@ -119,8 +154,10 @@
                 View Full Case Study
                 <span class="material-icons transition-transform group-hover:rotate-45">arrow_forward</span>
 </button>
+</div>
 </section>
-<section class="case-module bg-gray-900/50 rounded-2xl p-6 border-t-2 border-[var(--brand-teal)] shadow-lg shadow-[var(--brand-teal)]/10">
+<section class="card-gradient-border">
+<div class="card-inner">
 <div class="flex items-center justify-between">
 <h2 class="text-2xl font-bold flex items-center">
                     ClientConnect AI ✨
@@ -170,6 +207,7 @@
                 View Full Case Study
                 <span class="material-icons transition-transform group-hover:rotate-[360deg] duration-500">rocket</span>
 </button>
+</div>
 </section>
 </div>
 </main>

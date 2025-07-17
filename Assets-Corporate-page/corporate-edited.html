@@ -131,6 +131,26 @@
 
 
 
+<style>
+    @keyframes float {
+        0% {
+            transform: var(--base-transform) translateY(0px) rotate(0deg);
+        }
+        50% {
+            transform: var(--base-transform) translateY(-10px) rotate(1deg);
+        }
+        100% {
+            transform: var(--base-transform) translateY(0px) rotate(0deg);
+        }
+    }
+
+    #canvas img {
+        animation: float 6s ease-in-out infinite;
+    }
+</style>
+
+
+
 <script>
             const canvas = document.getElementById("canvas");
             const elements = document.querySelectorAll("#canvas img, .editable-text");
@@ -138,22 +158,23 @@
                 el.style.position = "absolute";
                 el.style.top = `${props.top}%`;
                 el.style.left = `${props.left}%`;
-                let transform = `translateX(-50%) translateY(-50%)`;
+                let baseTransform = `translateX(-50%) translateY(-50%)`;
                 if (props.rotation) {
-                    transform += ` rotate(${props.rotation}deg)`;
+                    baseTransform += ` rotate(${props.rotation}deg)`;
                 }
                 if (props.scale) {
                     const effectiveScaleFactor = Math.max(1, scaleFactor);
                     const newScale = props.scale * (1 + Math.log10(effectiveScaleFactor));
-                    transform += ` scale(${newScale})`;
+                    baseTransform += ` scale(${newScale})`;
                 }
                 if (props.flipHorizontal) {
-                    transform += ` scaleX(-1)`;
+                    baseTransform += ` scaleX(-1)`;
                 }
                 if (props.flipVertical) {
-                    transform += ` scaleY(-1)`;
+                    baseTransform += ` scaleY(-1)`;
                 }
-                el.style.transform = transform;
+                el.style.setProperty('--base-transform', baseTransform);
+                el.style.transform = baseTransform;
                 if (props.fontSize) {
                     const effectiveScaleFactor = Math.max(1, scaleFactor);
                     const newFontSize = props.fontSize * (1 + Math.log10(effectiveScaleFactor));
@@ -179,4 +200,9 @@
             };
             window.addEventListener("resize", updateLayout);
             updateLayout();
+
+            const images = document.querySelectorAll("#canvas img");
+            images.forEach(img => {
+                img.style.animationDelay = `${Math.random() * 5}s`;
+            });
         </script></body></html>

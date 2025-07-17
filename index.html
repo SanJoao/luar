@@ -27,7 +27,8 @@
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header-container').innerHTML = data;
-                updateHeaderStyle(pages[currentIndex]);
+                // The carousel starts at index 1, but the first page is at index 0 of the pages array.
+                updateHeaderStyle(pages[0]);
                 if (typeof initializeHeader === 'function') {
                     initializeHeader();
                 }

@@ -64,9 +64,6 @@ function moveSlide(direction) {
     }
     updateHeaderStyle(pages[headerIndex]);
 
-    if (typeof initializeHeader === 'function') {
-        initializeHeader();
-    }
 }
 
 carouselContainer.addEventListener('transitionend', () => {
@@ -98,9 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
     carousel.addEventListener('mouseleave', startAutoSlide);
 
     // Initialize header for the first real slide
-    if (typeof initializeHeader === 'function') {
-        initializeHeader();
-    }
     // Set the correct initial header style
     if (typeof updateHeaderStyle === 'function') {
         updateHeaderStyle(pages[0]); // pages[0] is the first slide

@@ -63,17 +63,12 @@ function initializeHeader() {
 
     if (hamburgerMenu && mainNav) {
         const toggleMenu = (event) => {
-            event.preventDefault(); // Prevents both touch and click firing on some devices
+            event.stopPropagation();
             mainNav.classList.toggle('active');
         };
 
-        // Remove old listeners to prevent duplicates
         hamburgerMenu.removeEventListener('click', toggleMenu);
-        hamburgerMenu.removeEventListener('touchstart', toggleMenu);
-
-        // Add new listeners
         hamburgerMenu.addEventListener('click', toggleMenu);
-        hamburgerMenu.addEventListener('touchstart', toggleMenu);
     }
 }
 

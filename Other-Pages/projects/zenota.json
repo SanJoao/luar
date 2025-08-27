@@ -1,0 +1,32 @@
+{
+  "title": "Zenota",
+  "date": "2025-08-01",
+  "icon": "auto_awesome",
+  "logo": "Assets/Zenota/ZenotaLogo.png",
+  "tags": [
+    {
+      "name": "#NoteTaking",
+      "style": "bg-[var(--pastel-lavender)] text-indigo-700"
+    },
+    { "name": "#AI", "style": "bg-[var(--pastel-mint)] text-emerald-700" },
+    {
+      "name": "#Productivity",
+      "style": "bg-[var(--pastel-peach)] text-red-700"
+    }
+  ],
+  "description_i18n": "zenota_description",
+  "images": [
+    "Assets/Zenota/Hero image showing the Zenota canvas in action with interconnected notes.png",
+    "Assets/Zenota/A split-screen view or two side-by-side images showing the same set of notes in both the Canvas and Hierarchical View to demonstrate the concept.png",
+    "Assets/Zenota/A close-up of different note types (checklist, toggle, bullet) and notes with different colors and tags applied.png"
+  ],
+  "technologies": "React, TypeScript, Vite, Firebase",
+  "state_i18n_key": "state",
+  "state": "Beta",
+  "link": "https://zenota.luarai.com/",
+  "button": {
+    "text_i18n_key": "visit_zenota",
+    "style": "bg-[var(--coral)]",
+    "icon": "arrow_forward"
+  }
+}

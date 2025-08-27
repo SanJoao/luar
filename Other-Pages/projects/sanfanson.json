@@ -1,0 +1,27 @@
+{
+  "title": "SANFANSON",
+  "date": "2025-08-15",
+  "icon": "sports_esports",
+  "logo": "Assets/SANFANSON/SanfansonLogo.svg",
+  "tags": [
+    { "name": "#Gamification", "style": "bg-[var(--pastel-mint)] text-emerald-700" },
+    { "name": "#AI", "style": "bg-[var(--pastel-peach)] text-red-700" },
+    { "name": "#EdTech", "style": "bg-blue-100 text-blue-700" }
+  ],
+  "description_i18n": "sanfanson_description",
+  "images": [
+    "Assets/SANFANSON/Menu.png",
+    "Assets/SANFANSON/SoloGame.png",
+    "Assets/SANFANSON/Leaderboard.png",
+    "Assets/SANFANSON/Profile.png"
+  ],
+  "technologies": "JavaScript, Vite, Node.js, Firebase, OpenAI",
+  "state_i18n_key": "state",
+  "state": "MVP, Under Construction",
+  "link": "https://sanfanson.luarai.com/",
+  "button": {
+    "text_i18n_key": "play_sanfanson",
+    "style": "bg-[var(--sky-blue)] text-gray-900",
+    "icon": "rocket"
+  }
+}

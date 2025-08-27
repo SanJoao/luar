@@ -61,6 +61,13 @@
       .carousel::-webkit-scrollbar {
         display: none;
       }
+      .modal {
+        transition: opacity 0.25s ease;
+      }
+      .modal-active {
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
       .card-gradient-border {
         position: relative;
         padding: 2px;
@@ -100,6 +107,34 @@
         to {
           background-position: 200% center;
         }
+      }
+      @keyframes scroll {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+      .logo-carousel-container {
+        width: 100%;
+        overflow: hidden;
+        padding: 2rem 0;
+        position: relative;
+      }
+      .logo-carousel-track {
+        display: flex;
+        width: max-content;
+        animation: scroll 40s linear infinite;
+      }
+      .logo-carousel-item {
+        flex-shrink: 0;
+        width: 150px; /* Adjust as needed */
+        margin: 0 2rem;
+        transition: transform 0.3s ease;
+      }
+      .logo-carousel-item:hover {
+        transform: scale(1.1);
       }
     </style>
     <style>
@@ -141,431 +176,19 @@
             stage. Warning: may cause sudden bursts of inspiration.
           </p>
         </section>
-        <div class="space-y-16">
-          <section class="card-gradient-border">
-            <div class="card-inner">
-              <div class="flex items-center justify-between">
-                <h2 class="text-2xl font-bold flex items-center">
-                  Zenota
-                  <span
-                    class="material-icons text-xl text-[var(--brand-yellow)] ml-2 animate-[spin_3s_linear_infinite]"
-                    >_____auto_awesome</span
-                  >
-                </h2>
-              </div>
-              <div class="mt-2 flex flex-wrap gap-2">
-                <span class="tag bg-[var(--pastel-lavender)] text-indigo-700"
-                  >#NoteTaking</span
-                >
-                <span class="tag bg-[var(--pastel-mint)] text-emerald-700"
-                  >#AI</span
-                >
-                <span class="tag bg-[var(--pastel-peach)] text-red-700"
-                  >#Productivity</span
-                >
-              </div>
-              <p
-                class="mt-4 text-gray-300 text-sm"
-                data-i18n="zenota_description"
-              >
-                A visual-first note-taking app that combines a spatial canvas
-                with structured hierarchies. Zenota features an AI assistant,
-                "Structo," to automate note organization, making it ideal for
-                visual thinkers who need clarity and structure.
-              </p>
-              <div class="mt-6">
-                <div
-                  class="carousel flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-6 px-6"
-                >
-                  <div
-                    class="snap-center flex-shrink-0 w-4/5 rounded-2xl overflow-hidden group relative"
-                  >
-                    <img
-                      alt="Zenota Canvas"
-                      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      src="Assets/Zenota/Hero image showing the Zenota canvas in action with interconnected notes.png"
-                    />
-                  </div>
-                  <div
-                    class="snap-center flex-shrink-0 w-4/5 rounded-2xl overflow-hidden group relative"
-                  >
-                    <img
-                      alt="Zenota Views"
-                      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      src="Assets/Zenota/A split-screen view or two side-by-side images showing the same set of notes in both the Canvas and Hierarchical View to demonstrate the concept.png"
-                    />
-                  </div>
-                  <div
-                    class="snap-center flex-shrink-0 w-4/5 rounded-2xl overflow-hidden group relative"
-                  >
-                    <img
-                      alt="Zenota Notes"
-                      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      src="Assets/Zenota/A close-up of different note types (checklist, toggle, bullet) and notes with different colors and tags applied.png"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="mt-6 bg-gray-800/70 p-4 rounded-xl">
-                <ul class="text-xs space-y-3 text-gray-300">
-                  <li class="flex items-center gap-2">
-                    <span
-                      class="material-icons text-[var(--brand-purple)] text-base"
-                      >memory</span
-                    >
-                    <strong data-i18n="technologies">Technologies:</strong>
-                    React, TypeScript, Vite, Firebase
-                  </li>
-                  <li class="flex items-center gap-2">
-                    <span
-                      class="material-icons text-[var(--brand-pink)] text-base"
-                      >build_circle</span
-                    >
-                    <strong data-i18n="state">State:</strong> Beta
-                  </li>
-                </ul>
-              </div>
-              <a
-                href="https://zenota.luarai.com/"
-                target="_blank"
-                class="mt-6 w-full bg-[var(--coral)] text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-opacity-90 transition-transform transform hover:-translate-y-1 flex items-center justify-center gap-2 group"
-                data-i18n="visit_zenota"
-              >
-                Visit Zenota
-                <span
-                  class="material-icons transition-transform group-hover:rotate-45"
-                  >arrow_forward</span
-                >
-              </a>
-            </div>
-          </section>
-          <section class="card-gradient-border">
-            <div class="card-inner">
-              <div class="flex items-center justify-between">
-                <h2 class="text-2xl font-bold flex items-center">
-                  SANFANSON
-                  <span
-                    class="material-icons text-xl text-[var(--brand-yellow)] ml-2 animate-[spin_3s_linear_infinite]"
-                    >_____sports_esports</span
-                  >
-                </h2>
-              </div>
-              <div class="mt-2 flex flex-wrap gap-2">
-                <span class="tag bg-[var(--pastel-mint)] text-emerald-700"
-                  >#Gamification</span
-                >
-                <span class="tag bg-[var(--pastel-peach)] text-red-700"
-                  >#AI</span
-                >
-                <span class="tag bg-blue-100 text-blue-700">#EdTech</span>
-              </div>
-              <p
-                class="mt-4 text-gray-300 text-sm"
-                data-i18n="sanfanson_description"
-              >
-                A language-learning game that uses interactive minigames and an
-                AI-powered feedback system to make learning new languages
-                engaging and effective. Features include leaderboards, progress
-                tracking, and dynamic content generation.
-              </p>
-              <div class="mt-6">
-                <div
-                  class="carousel flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-6 px-6"
-                >
-                  <div
-                    class="snap-center flex-shrink-0 w-4/5 rounded-2xl overflow-hidden group relative"
-                  >
-                    <img
-                      alt="SANFANSON Menu"
-                      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      src="Assets/SANFANSON/Menu.png"
-                    />
-                  </div>
-                  <div
-                    class="snap-center flex-shrink-0 w-4/5 rounded-2xl overflow-hidden group relative"
-                  >
-                    <img
-                      alt="SANFANSON Solo Game"
-                      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      src="Assets/SANFANSON/SoloGame.png"
-                    />
-                  </div>
-                  <div
-                    class="snap-center flex-shrink-0 w-4/5 rounded-2xl overflow-hidden group relative"
-                  >
-                    <img
-                      alt="SANFANSON Leaderboard"
-                      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      src="Assets/SANFANSON/Leaderboard.png"
-                    />
-                  </div>
-                  <div
-                    class="snap-center flex-shrink-0 w-4/5 rounded-2xl overflow-hidden group relative"
-                  >
-                    <img
-                      alt="SANFANSON Profile"
-                      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      src="Assets/SANFANSON/Profile.png"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="mt-6 bg-gray-800/70 p-4 rounded-xl">
-                <ul class="text-xs space-y-3 text-gray-300">
-                  <li class="flex items-center gap-2">
-                    <span
-                      class="material-icons text-[var(--brand-purple)] text-base"
-                      >memory</span
-                    >
-                    <strong data-i18n="technologies">Technologies:</strong>
-                    JavaScript, Vite, Node.js, Firebase, OpenAI
-                  </li>
-                  <li class="flex items-center gap-2">
-                    <span
-                      class="material-icons text-[var(--brand-pink)] text-base"
-                      >build_circle</span
-                    >
-                    <strong data-i18n="state">State:</strong> MVP, Under
-                    Construction
-                  </li>
-                </ul>
-              </div>
-              <a
-                href="https://sanfanson.luarai.com/"
-                target="_blank"
-                class="mt-6 w-full bg-[var(--sky-blue)] text-gray-900 font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-opacity-90 transition-transform transform hover:-translate-y-1 flex items-center justify-center gap-2 group"
-                data-i18n="play_sanfanson"
-              >
-                Play SANFANSON
-                <span
-                  class="material-icons transition-transform group-hover:rotate-[360deg] duration-500"
-                  >rocket</span
-                >
-              </a>
-            </div>
-          </section>
-          <section class="card-gradient-border">
-            <div class="card-inner">
-              <div class="flex items-center justify-between">
-                <h2 class="text-2xl font-bold flex items-center">
-                  Picky
-                  <span
-                    class="material-icons text-xl text-[var(--brand-yellow)] ml-2 animate-[spin_3s_linear_infinite]"
-                    >_____restaurant_menu</span
-                  >
-                </h2>
-              </div>
-              <div class="mt-2 flex flex-wrap gap-2">
-                <span class="tag bg-green-100 text-green-700">#FoodTech</span>
-                <span class="tag bg-[var(--pastel-peach)] text-red-700"
-                  >#AI</span
-                >
-                <span class="tag bg-yellow-100 text-yellow-700">#SaaS</span>
-              </div>
-              <p
-                class="mt-4 text-gray-300 text-sm"
-                data-i18n="picky_description"
-              >
-                An interactive and intelligent digital menu for restaurants.
-                Picky allows users to filter dishes by ingredients, allergens,
-                and dietary needs. It also features an AI-powered admin view
-                ("Pickyto") to help restaurant owners digitalize their menus
-                effortlessly.
-              </p>
-              <div class="mt-6">
-                <div
-                  class="carousel flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-6 px-6"
-                >
-                  <div
-                    class="snap-center flex-shrink-0 w-4/5 rounded-2xl overflow-hidden group relative"
-                  >
-                    <img
-                      alt="Picky Main Page"
-                      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      src="Assets/Picky/MainPage.png"
-                    />
-                  </div>
-                  <div
-                    class="snap-center flex-shrink-0 w-4/5 rounded-2xl overflow-hidden group relative"
-                  >
-                    <img
-                      alt="Picky Filters"
-                      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      src="Assets/Picky/Filters.png"
-                    />
-                  </div>
-                  <div
-                    class="snap-center flex-shrink-0 w-4/5 rounded-2xl overflow-hidden group relative"
-                  >
-                    <img
-                      alt="Picky Detail View"
-                      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      src="Assets/Picky/DetailView.png"
-                    />
-                  </div>
-                  <div
-                    class="snap-center flex-shrink-0 w-4/5 rounded-2xl overflow-hidden group relative"
-                  >
-                    <img
-                      alt="Picky Shopping Cart"
-                      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      src="Assets/Picky/ShoppingCart.png"
-                    />
-                  </div>
-                  <div
-                    class="snap-center flex-shrink-0 w-4/5 rounded-2xl overflow-hidden group relative"
-                  >
-                    <img
-                      alt="Picky Admin View"
-                      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      src="Assets/Picky/AdminViewPickyto.png"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="mt-6 bg-gray-800/70 p-4 rounded-xl">
-                <ul class="text-xs space-y-3 text-gray-300">
-                  <li class="flex items-center gap-2">
-                    <span
-                      class="material-icons text-[var(--brand-purple)] text-base"
-                      >memory</span
-                    >
-                    <strong data-i18n="technologies">Technologies:</strong>
-                    Next.js, TypeScript, Tailwind CSS
-                  </li>
-                  <li class="flex items-center gap-2">
-                    <span
-                      class="material-icons text-[var(--brand-pink)] text-base"
-                      >build_circle</span
-                    >
-                    <strong data-i18n="state">State:</strong> Prototype, Under
-                    Construction
-                  </li>
-                </ul>
-              </div>
-              <button
-                class="mt-6 w-full bg-gray-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg cursor-not-allowed flex items-center justify-center gap-2 group"
-                data-i18n="coming_soon"
-              >
-                Coming Soon
-                <span class="material-icons">hourglass_empty</span>
-              </button>
-            </div>
-          </section>
-          <section class="card-gradient-border">
-            <div class="card-inner">
-              <div class="flex items-center justify-between">
-                <h2 class="text-2xl font-bold flex items-center">
-                  Divo
-                  <span
-                    class="material-icons text-xl text-[var(--brand-yellow)] ml-2 animate-[spin_3s_linear_infinite]"
-                    >_____palette</span
-                  >
-                </h2>
-              </div>
-              <div class="mt-2 flex flex-wrap gap-2">
-                <span class="tag bg-purple-100 text-purple-700"
-                  >#VisualEditor</span
-                >
-                <span class="tag bg-pink-100 text-pink-700">#NoCode</span>
-                <span class="tag bg-teal-100 text-teal-700">#WebDesign</span>
-              </div>
-              <p
-                class="mt-4 text-gray-300 text-sm"
-                data-i18n="divo_description"
-              >
-                A whimsical, visual-first web editor that lets you vibe your
-                site into existence. Drag, drop, and tweak your way to a
-                beautiful, responsive webpage, then export clean HTML with a
-                single click. Built for designers, creators, and anyone who
-                thinks coding should be more like playing.
-              </p>
-              <div class="mt-6">
-                <div
-                  class="carousel flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-6 px-6"
-                >
-                  <div
-                    class="snap-center flex-shrink-0 w-4/5 rounded-2xl overflow-hidden group relative"
-                  >
-                    <img
-                      alt="Divo Screenshot 1"
-                      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      src="Assets/Divo/Screenshot 2025-08-08 135242.png"
-                    />
-                  </div>
-                  <div
-                    class="snap-center flex-shrink-0 w-4/5 rounded-2xl overflow-hidden group relative"
-                  >
-                    <img
-                      alt="Divo Screenshot 2"
-                      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      src="Assets/Divo/Screenshot 2025-08-08 135358.png"
-                    />
-                  </div>
-                  <div
-                    class="snap-center flex-shrink-0 w-4/5 rounded-2xl overflow-hidden group relative"
-                  >
-                    <img
-                      alt="Divo Screenshot 3"
-                      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      src="Assets/Divo/Screenshot 2025-08-08 140630.png"
-                    />
-                  </div>
-                  <div
-                    class="snap-center flex-shrink-0 w-4/5 rounded-2xl overflow-hidden group relative"
-                  >
-                    <img
-                      alt="Divo Screenshot 4"
-                      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      src="Assets/Divo/Screenshot 2025-08-08 142018.png"
-                    />
-                  </div>
-                  <div
-                    class="snap-center flex-shrink-0 w-4/5 rounded-2xl overflow-hidden group relative"
-                  >
-                    <img
-                      alt="Divo Screenshot 5"
-                      class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                      src="Assets/Divo/Screenshot 2025-08-08 164105.png"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="mt-6 bg-gray-800/70 p-4 rounded-xl">
-                <ul class="text-xs space-y-3 text-gray-300">
-                  <li class="flex items-center gap-2">
-                    <span
-                      class="material-icons text-[var(--brand-purple)] text-base"
-                      >memory</span
-                    >
-                    <strong data-i18n="technologies">Technologies:</strong>
-                    HTML, CSS, JavaScript, Tailwind CSS
-                  </li>
-                  <li class="flex items-center gap-2">
-                    <span
-                      class="material-icons text-[var(--brand-pink)] text-base"
-                      >build_circle</span
-                    >
-                    <strong data-i18n="state">State:</strong> Beta
-                  </li>
-                </ul>
-              </div>
-              <a
-                href="https://divo.luarai.com/"
-                target="_blank"
-                class="mt-6 w-full bg-[var(--brand-teal)] text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-opacity-90 transition-transform transform hover:-translate-y-1 flex items-center justify-center gap-2 group"
-                data-i18n="launch_divo"
-              >
-                Launch Divo
-                <span
-                  class="material-icons transition-transform group-hover:rotate-45"
-                  >arrow_forward</span
-                >
-              </a>
-            </div>
-          </section>
+        <div class="logo-carousel-container my-12">
+          <div class="logo-carousel-track" id="logo-carousel-track">
+            <!-- Logos will be dynamically loaded here -->
+          </div>
+        </div>
+        <div class="space-y-16" id="projects-container">
+          <!-- Projects will be dynamically loaded here -->
         </div>
       </main>
+      <div id="image-modal" class="modal fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 z-50 hidden items-center justify-center">
+        <span class="absolute top-4 right-6 text-white text-4xl font-bold cursor-pointer" onclick="closeModal()">&times;</span>
+        <img class="max-w-[90vw] max-h-[90vh] object-contain" id="modal-image" src="" alt="Focused Image">
+      </div>
       <footer class="text-center text-gray-500 text-xs py-8 mt-16">
         <p data-i18n="footer_text_1">© 2025 Luar AI. All Rights Reserved.</p>
         <p class="mt-2" data-i18n="footer_text_2">
@@ -601,6 +224,160 @@
             }
           }
         });
+    </script>
+    <script>
+      function createProjectCard(project) {
+        const tags = project.tags.map(tag =>
+            `<span class="tag ${tag.style}">${tag.name}</span>`
+        ).join('');
+
+        const images = project.images.map(imageSrc => `
+            <div class="snap-center flex-shrink-0 w-4/5 rounded-2xl overflow-hidden group relative">
+                <img alt="${project.title} screenshot" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 max-h-96 cursor-pointer" src="${imageSrc}" onclick="openModal('${imageSrc}')">
+            </div>
+        `).join('');
+
+        let buttonHtml;
+        if (project.button.disabled) {
+            buttonHtml = `
+                <button class="mt-6 w-full bg-gray-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg cursor-not-allowed flex items-center justify-center gap-2 group" data-i18n="${project.button.text_i18n_key}">
+                    Coming Soon
+                    <span class="material-icons">${project.button.icon}</span>
+                </button>
+            `;
+        } else {
+            const iconAnimationClass = project.title === 'SANFANSON'
+                ? 'transition-transform group-hover:rotate-[360deg] duration-500'
+                : 'transition-transform group-hover:rotate-45';
+            
+            const textColorClass = project.button.style.includes('text-gray-900') ? '' : 'text-white';
+
+            buttonHtml = `
+                <a href="${project.link}" target="_blank" class="mt-6 w-full ${project.button.style} ${textColorClass} font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-opacity-90 transition-transform transform hover:-translate-y-1 flex items-center justify-center gap-2 group" data-i18n="${project.button.text_i18n_key}">
+                    Visit ${project.title}
+                    <span class="material-icons ${iconAnimationClass}">${project.button.icon}</span>
+                </a>
+            `;
+        }
+
+        return `
+            <section class="card-gradient-border" id="project-${project.title.toLowerCase()}">
+                <div class="card-inner">
+                    <div class="flex items-center justify-between">
+                        <h2 class="text-2xl font-bold flex items-center">
+                            <img src="${project.logo}" alt="${project.title} logo" class="h-8 w-8 mr-3">
+                            ${project.title}
+                            <span class="material-icons text-xl text-[var(--brand-yellow)] ml-2 animate-[spin_3s_linear_infinite]">
+                                _____${project.icon}
+                            </span>
+                        </h2>
+                    </div>
+                    <div class="mt-2 flex flex-wrap gap-2">
+                        ${tags}
+                    </div>
+                    <p class="mt-4 text-gray-300 text-sm" data-i18n="${project.description_i18n}">
+                        <!-- Description will be loaded by i18n.js -->
+                    </p>
+                    <div class="mt-6">
+                        <div class="carousel flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-6 px-6">
+                            ${images}
+                        </div>
+                    </div>
+                    <div class="mt-6 bg-gray-800/70 p-4 rounded-xl">
+                        <ul class="text-xs space-y-3 text-gray-300">
+                            <li class="flex items-center gap-2">
+                                <span class="material-icons text-[var(--brand-purple)] text-base">memory</span>
+                                <strong data-i18n="technologies">Technologies:</strong>
+                                ${project.technologies}
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="material-icons text-[var(--brand-pink)] text-base">build_circle</span>
+                                <strong data-i18n="state">State:</strong>
+                                ${project.state}
+                            </li>
+                        </ul>
+                    </div>
+                    ${buttonHtml}
+                </div>
+            </section>
+        `;
+      }
+
+      async function loadProjects() {
+        const projectFiles = ['zenota.json', 'sanfanson.json', 'picky.json', 'divo.json', 'koby.json'];
+        const projectsContainer = document.getElementById('projects-container');
+        
+        if (!projectsContainer) return;
+
+        const projects = [];
+        for (const file of projectFiles) {
+            try {
+                const response = await fetch(`projects/${file}`);
+                if (!response.ok) {
+                    console.error(`Failed to fetch ${file}`);
+                    continue;
+                }
+                const projectData = await response.json();
+                projects.push(projectData);
+            } catch (error) {
+                console.error(`Error processing ${file}:`, error);
+            }
+        }
+
+        projects.sort((a, b) => new Date(b.date) - new Date(a.date));
+
+        const logoCarouselTrack = document.getElementById('logo-carousel-track');
+        for (const projectData of projects) {
+            const cardHtml = createProjectCard(projectData);
+            projectsContainer.innerHTML += cardHtml;
+
+            if (logoCarouselTrack) {
+                const logoItem = document.createElement('a');
+                logoItem.href = `#project-${projectData.title.toLowerCase()}`;
+                logoItem.classList.add('logo-carousel-item');
+                logoItem.innerHTML = `<img src="${projectData.logo}" alt="${projectData.title} logo" class="h-16 mx-auto filter grayscale hover:grayscale-0 transition-all duration-300">`;
+                logoItem.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+                logoCarouselTrack.appendChild(logoItem);
+            }
+        }
+
+        if (logoCarouselTrack) {
+            // Duplicate logos multiple times to ensure a seamless loop
+            const originalLogos = logoCarouselTrack.innerHTML;
+            let duplicatedLogos = originalLogos;
+            // Duplicate 4 times, resulting in 5 sets of logos total.
+            for (let i = 0; i < 4; i++) {
+                duplicatedLogos += originalLogos;
+            }
+            logoCarouselTrack.innerHTML = duplicatedLogos;
+        }
+        
+        // After loading all projects, re-initialize the language to apply translations
+        if (typeof getInitialLanguage === "function" && typeof setLanguage === "function") {
+            setLanguage(getInitialLanguage());
+        }
+      }
+
+      // Wait for the DOM to be fully loaded before running the script
+      document.addEventListener('DOMContentLoaded', loadProjects);
+
+      function openModal(imageSrc) {
+        document.getElementById('modal-image').src = imageSrc;
+        document.getElementById('image-modal').classList.remove('hidden');
+        document.getElementById('image-modal').classList.add('flex');
+        document.body.classList.add('modal-active');
+      }
+
+      function closeModal() {
+        document.getElementById('image-modal').classList.add('hidden');
+        document.getElementById('image-modal').classList.remove('flex');
+        document.body.classList.remove('modal-active');
+      }
     </script>
   </body>
 </html>

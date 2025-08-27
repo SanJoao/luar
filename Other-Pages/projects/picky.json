@@ -1,0 +1,28 @@
+{
+  "title": "Picky",
+  "date": "2025-08-20",
+  "icon": "restaurant_menu",
+  "logo": "Assets/Picky/PickyLogo.png",
+  "tags": [
+    { "name": "#FoodTech", "style": "bg-green-100 text-green-700" },
+    { "name": "#AI", "style": "bg-[var(--pastel-peach)] text-red-700" },
+    { "name": "#SaaS", "style": "bg-yellow-100 text-yellow-700" }
+  ],
+  "description_i18n": "picky_description",
+  "images": [
+    "Assets/Picky/MainPage.png",
+    "Assets/Picky/Filters.png",
+    "Assets/Picky/DetailView.png",
+    "Assets/Picky/ShoppingCart.png",
+    "Assets/Picky/AdminViewPickyto.png"
+  ],
+  "technologies": "Next.js, TypeScript, Tailwind CSS",
+  "state_i18n_key": "state",
+  "state": "Prototype, Under Construction",
+  "button": {
+    "text_i18n_key": "coming_soon",
+    "style": "bg-gray-600 cursor-not-allowed",
+    "icon": "hourglass_empty",
+    "disabled": true
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "title": "Severo",
+  "date": "2025-11-12",
+  "icon": "school",
+  "logo": "Assets/Severo/icon.png",
+  "tags": [
+    {
+      "name": "#AI",
+      "style": "bg-[var(--pastel-mint)] text-emerald-700"
+    },
+    {
+      "name": "#LanguageLearning",
+      "style": "bg-[var(--pastel-lavender)] text-indigo-700"
+    },
+    {
+      "name": "#Education",
+      "style": "bg-[var(--pastel-peach)] text-red-700"
+    },
+    {
+      "name": "#MobileApp",
+      "style": "bg-[var(--pastel-lavender)] text-purple-700"
+    }
+  ],
+  "description_i18n": "severo_description",
+  "images": [
+    "Assets/Severo/Main.jpg",
+    "Assets/Severo/Excercise.jpg",
+    "Assets/Severo/Analytics1.jpg",
+    "Assets/Severo/Analytics2.jpg",
+    "Assets/Severo/Leaderboard.jpg",
+    "Assets/Severo/Achievements.jpg"
+  ],
+  "technologies": "Firebase, Google Gemini AI, React Native, Cloud TTS, FFmpeg",
+  "state": "Beta",
+  "link": "",
+  "button": {
+    "text_i18n_key": "coming_soon",
+    "style": "bg-gray-600",
+    "icon": "schedule",
+    "disabled": true
+  }
+}

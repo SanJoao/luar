@@ -1,0 +1,44 @@
+{
+  "title": "Aeolian Harmonies",
+  "date": "2025-06-16",
+  "icon": "palette",
+  "logo": "Assets/ExperimentLogo.png",
+  "tags": [
+    {
+      "name": "#Design",
+      "style": "bg-[var(--pastel-lavender)] text-indigo-700"
+    },
+    {
+      "name": "#Sustainability",
+      "style": "bg-[var(--pastel-mint)] text-emerald-700"
+    },
+    {
+      "name": "#Art",
+      "style": "bg-[var(--pastel-peach)] text-red-700"
+    },
+    {
+      "name": "#Visualization",
+      "style": "bg-[var(--pastel-lavender)] text-purple-700"
+    }
+  ],
+  "description_i18n": "aeolianarmonies_description",
+  "images": [
+    "Assets/AeolianArmonies/Enel view 1.png",
+    "Assets/AeolianArmonies/Enel view 2.png",
+    "Assets/AeolianArmonies/Enel view 3.png",
+    "Assets/AeolianArmonies/ChatGPT Image Jun 15, 2025, 11_10_34 AM.png",
+    "Assets/AeolianArmonies/ChatGPT Image Jun 15, 2025, 06_58_32 PM.png",
+    "Assets/AeolianArmonies/ChatGPT Image Jun 16, 2025, 10_39_38 AM.png",
+    "Assets/AeolianArmonies/Sicilian Pattern.png",
+    "Assets/AeolianArmonies/Diseño sin título (19).png"
+  ],
+  "technologies": "Blender, Google Colab (Python), Canva",
+  "state": "Competition Entry",
+  "link": "",
+  "button": {
+    "text_i18n_key": "not_available",
+    "style": "bg-gray-600",
+    "icon": "block",
+    "disabled": true
+  }
+}

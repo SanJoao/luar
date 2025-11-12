@@ -1,0 +1,46 @@
+{
+  "title": "Language Learning Game",
+  "date": "2025-05-11",
+  "icon": "videogame_asset",
+  "logo": "Assets/ExperimentLogo.png",
+  "tags": [
+    {
+      "name": "#Gaming",
+      "style": "bg-[var(--pastel-lavender)] text-indigo-700"
+    },
+    {
+      "name": "#Education",
+      "style": "bg-[var(--pastel-mint)] text-emerald-700"
+    },
+    {
+      "name": "#LanguageLearning",
+      "style": "bg-[var(--pastel-peach)] text-red-700"
+    },
+    {
+      "name": "#AI",
+      "style": "bg-[var(--pastel-lavender)] text-purple-700"
+    }
+  ],
+  "description_i18n": "languagelearninggame_description",
+  "images": [
+    "Assets/LanguageLearningGame/LLG.png",
+    "Assets/LanguageLearningGame/LLG2.png",
+    "Assets/LanguageLearningGame/ChatGPT Image May 6, 2025, 08_15_27 PM.png",
+    "Assets/LanguageLearningGame/ChatGPT Image May 7, 2025, 12_29_11 PM.png",
+    "Assets/LanguageLearningGame/ChatGPT Image May 7, 2025, 12_48_40 PM.png",
+    "Assets/LanguageLearningGame/ChatGPT Image May 7, 2025, 02_44_50 PM.png",
+    "Assets/LanguageLearningGame/ChatGPT Image May 7, 2025, 03_05_35 PM.png",
+    "Assets/LanguageLearningGame/ChatGPT Image May 7, 2025, 04_57_17 PM.png",
+    "Assets/LanguageLearningGame/ChatGPT Image May 7, 2025, 05_04_04 PM.png",
+    "Assets/LanguageLearningGame/ChatGPT Image May 8, 2025, 05_48_55 PM.png"
+  ],
+  "technologies": "Flutter, ChatGPT Image Generation, Dart",
+  "state": "Prototype",
+  "link": "",
+  "button": {
+    "text_i18n_key": "not_available",
+    "style": "bg-gray-600",
+    "icon": "block",
+    "disabled": true
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "title": "LorenaMor",
+  "date": "2025-09-04",
+  "icon": "account_tree",
+  "logo": "Assets/ExperimentLogo.png",
+  "tags": [
+    {
+      "name": "#Education",
+      "style": "bg-[var(--pastel-lavender)] text-indigo-700"
+    },
+    {
+      "name": "#Visualization",
+      "style": "bg-[var(--pastel-mint)] text-emerald-700"
+    },
+    {
+      "name": "#NodeBased",
+      "style": "bg-[var(--pastel-peach)] text-red-700"
+    },
+    {
+      "name": "#Learning",
+      "style": "bg-[var(--pastel-lavender)] text-purple-700"
+    }
+  ],
+  "description_i18n": "lorenamor_description",
+  "images": [
+    "Assets/LorenaMor/Menu Lorena.png",
+    "Assets/LorenaMor/Canvas1.png",
+    "Assets/LorenaMor/Canvas2.png",
+    "Assets/LorenaMor/Chat1.png",
+    "Assets/LorenaMor/Screen1.png",
+    "Assets/LorenaMor/Screen2.png"
+  ],
+  "technologies": "React, TypeScript, Vite",
+  "state": "Prototype",
+  "link": "",
+  "button": {
+    "text_i18n_key": "coming_soon",
+    "style": "bg-gray-600",
+    "icon": "schedule",
+    "disabled": true
+  }
+}

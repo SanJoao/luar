@@ -1,0 +1,37 @@
+{"title": "VibeCell",
+  "date": "2025-06-04",
+  "icon": "grid_on",
+  "logo": "Assets/ExperimentLogo.png",
+  "tags": [
+    {
+      "name": "#AI",
+      "style": "bg-[var(--pastel-mint)] text-emerald-700"
+    },
+    {
+      "name": "#DataAnalysis",
+      "style": "bg-[var(--pastel-lavender)] text-indigo-700"
+    },
+    {
+      "name": "#Spreadsheet",
+      "style": "bg-[var(--pastel-peach)] text-red-700"
+    },
+    {
+      "name": "#VibeCoding",
+      "style": "bg-[var(--pastel-lavender)] text-purple-700"
+    }
+  ],
+  "description_i18n": "vibecell_description",
+  "images": [
+    "Assets/VibeCell/VibeCell1.png",
+    "Assets/VibeCell/VibeCell2.png"
+  ],
+  "technologies": "JavaScript, TypeScript, AI Integration",
+  "state": "Proof of Concept",
+  "link": "",
+  "button": {
+    "text_i18n_key": "not_available",
+    "style": "bg-gray-600",
+    "icon": "block",
+    "disabled": true
+  }
+}

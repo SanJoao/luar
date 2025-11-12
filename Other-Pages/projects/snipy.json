@@ -1,0 +1,42 @@
+{
+  "title": "Snipy",
+  "date": "2025-11-03",
+  "icon": "movie_edit",
+  "logo": "Assets/ExperimentLogo.png",
+  "tags": [
+    {
+      "name": "#AI",
+      "style": "bg-[var(--pastel-mint)] text-emerald-700"
+    },
+    {
+      "name": "#VideoEditing",
+      "style": "bg-[var(--pastel-lavender)] text-indigo-700"
+    },
+    {
+      "name": "#ComputerVision",
+      "style": "bg-[var(--pastel-peach)] text-red-700"
+    },
+    {
+      "name": "#ContentCreation",
+      "style": "bg-[var(--pastel-lavender)] text-purple-700"
+    }
+  ],
+  "description_i18n": "snipy_description",
+  "images": [
+    "Assets/Snipy/speaker_timeline1.png",
+    "Assets/Snipy/stereo_position_timeline3.png",
+    "Assets/Snipy/Generated Image October 30, 2025 - 6_49PM.png",
+    "Assets/Snipy/SnipyMenu.png",
+    "Assets/Snipy/SnipyTest.png",
+    "Assets/Snipy/SnipyTestImproved.png"
+  ],
+  "technologies": "Python, Pyannote, AVA-AVD, Computer Vision, LLM, FFmpeg",
+  "state": "Prototype",
+  "link": "",
+  "button": {
+    "text_i18n_key": "not_available",
+    "style": "bg-gray-600",
+    "icon": "block",
+    "disabled": true
+  }
+}

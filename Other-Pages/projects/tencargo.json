@@ -1,0 +1,46 @@
+{
+  "title": "Tencargo",
+  "date": "2025-10-20",
+  "icon": "local_shipping",
+  "logo": "Assets/Tencargo/Logo.png",
+  "tags": [
+    {
+      "name": "#Logistics",
+      "style": "bg-[var(--pastel-lavender)] text-indigo-700"
+    },
+    {
+      "name": "#WebApp",
+      "style": "bg-[var(--pastel-mint)] text-emerald-700"
+    },
+    {
+      "name": "#Delivery",
+      "style": "bg-[var(--pastel-peach)] text-red-700"
+    },
+    {
+      "name": "#Platform",
+      "style": "bg-[var(--pastel-lavender)] text-purple-700"
+    }
+  ],
+  "description_i18n": "tencargo_description",
+  "images": [
+    "Assets/Tencargo/Tencargo1.png",
+    "Assets/Tencargo/Tencargo2.png",
+    "Assets/Tencargo/Tencargo3.png",
+    "Assets/Tencargo/Tencargo4.png",
+    "Assets/Tencargo/Tencargo5.png",
+    "Assets/Tencargo/Tencargo6.png",
+    "Assets/Tencargo/Tencargo.co.png",
+    "Assets/Tencargo/Tencargo.co (1).png",
+    "Assets/Tencargo/Generated Image October 20, 2025 - 11_29AM.png",
+    "Assets/Tencargo/Generated Image October 20, 2025 - 11_38AM.png"
+  ],
+  "technologies": "HTML, CSS, JavaScript",
+  "state": "Prototype (Discontinued)",
+  "link": "",
+  "button": {
+    "text_i18n_key": "not_available",
+    "style": "bg-gray-600",
+    "icon": "block",
+    "disabled": true
+  }
+}

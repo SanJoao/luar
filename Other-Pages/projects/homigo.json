@@ -1,0 +1,44 @@
+{
+  "title": "Homigo",
+  "date": "2025-04-03",
+  "icon": "handyman",
+  "logo": "Assets/Homigo/Logo.png",
+  "tags": [
+    {
+      "name": "#MobileApp",
+      "style": "bg-[var(--pastel-lavender)] text-indigo-700"
+    },
+    {
+      "name": "#UX/UI",
+      "style": "bg-[var(--pastel-mint)] text-emerald-700"
+    },
+    {
+      "name": "#Platform",
+      "style": "bg-[var(--pastel-peach)] text-red-700"
+    },
+    {
+      "name": "#Services",
+      "style": "bg-[var(--pastel-lavender)] text-purple-700"
+    }
+  ],
+  "description_i18n": "homigo_description",
+  "images": [
+    "Assets/Homigo/Android Compact - 22.png",
+    "Assets/Homigo/homigoWhatDoYOuNeed.png",
+    "Assets/Homigo/AqueteDedicas.png",
+    "Assets/Homigo/Sing Up.png",
+    "Assets/Homigo/Android Compact - 23.png",
+    "Assets/Homigo/POPUP- FORGET PASSWORD 1 - CELL.png",
+    "Assets/Homigo/POPUP- ERROR 3 - CELL.png",
+    "Assets/Homigo/homigoFigmaScreenshot.png"
+  ],
+  "technologies": "Figma, UX/UI Design",
+  "state": "Prototype",
+  "link": "",
+  "button": {
+    "text_i18n_key": "coming_soon",
+    "style": "bg-gray-600",
+    "icon": "schedule",
+    "disabled": true
+  }
+}

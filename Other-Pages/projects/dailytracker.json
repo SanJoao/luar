@@ -1,0 +1,45 @@
+{
+  "title": "DailyTracker",
+  "date": "2025-05-04",
+  "icon": "analytics",
+  "logo": "Assets/ExperimentLogo.png",
+  "tags": [
+    {
+      "name": "#AI",
+      "style": "bg-[var(--pastel-mint)] text-emerald-700"
+    },
+    {
+      "name": "#Lifelogging",
+      "style": "bg-[var(--pastel-lavender)] text-indigo-700"
+    },
+    {
+      "name": "#DataVisualization",
+      "style": "bg-[var(--pastel-peach)] text-red-700"
+    },
+    {
+      "name": "#ComputerVision",
+      "style": "bg-[var(--pastel-lavender)] text-purple-700"
+    }
+  ],
+  "description_i18n": "dailytracker_description",
+  "images": [
+    "Assets/DailyTracker/DailyTracker.png",
+    "Assets/DailyTracker/DailyTracker2.png",
+    "Assets/DailyTracker/DailyTracker3.png",
+    "Assets/DailyTracker/activity_timeline.png",
+    "Assets/DailyTracker/activity_distribution.png",
+    "Assets/DailyTracker/domain_distribution.png",
+    "Assets/DailyTracker/location_distribution.png",
+    "Assets/DailyTracker/elements_wordcloud.png",
+    "Assets/DailyTracker/uncertainty_histogram.png"
+  ],
+  "technologies": "Python, AI/Computer Vision, Data Visualization, Video Processing",
+  "state": "Prototype",
+  "link": "",
+  "button": {
+    "text_i18n_key": "not_available",
+    "style": "bg-gray-600",
+    "icon": "block",
+    "disabled": true
+  }
+}

@@ -99,6 +99,16 @@
   "coming_soon": "Coming Soon",
   "launch_divo": "Launch Divo",
   "visit_koby": "Visit Koby",
+  "not_available": "Not Available",
   "technologies": "Technologies:",
-  "state": "State:"
+  "state": "State:",
+  "homigo_description": "The Swiss Army Knife for Domestic Services — a trust-based platform connecting homeowners with domestic service providers in Colombia. Features smart matching, transparent negotiation, escrow payments, and bidirectional reviews to solve security and informality issues in the domestic services market.",
+  "severo_description": "An adaptive AI language learning tutor powered by Gemini AI. Severus uses spaced repetition (SM-2 algorithm), real-time speech recognition, and natural conversation to teach languages. Features include personalized exercises, pronunciation feedback, error tracking, gamification with achievements and leaderboards, and dynamic difficulty adjustment.",
+  "tencargo_description": "A simple and accessible delivery platform designed to enable entrepreneurs and small businesses to send items with flat-rate pricing based on distance. Features include shipment creation, tracking, profile management, and delivery history. Project discontinued after market research revealed strong competition.",
+  "aeolianarmonies_description": "A Sicilian mosaic-inspired aesthetic design for wind turbine towers submitted to Enel's WinDesign Challenge. The design features a contemporary geometric pattern with Mediterranean blues and golden-ochre tones that fade from dense at the base to sparse at the top, creating visual harmony with the landscape.",
+  "dailytracker_description": "An experimental lifelogging system that uses AI to analyze minute-by-minute photos to automatically generate end-of-day summaries of activities, locations, and time distribution. The prototype features activity classification and data visualization to create meaningful insights from passive image capture.",
+  "languagelearninggame_description": "An immersive fairy-tale inspired language learning game prototype built with Flutter. The concept combines gamification with language education through an enchanting visual experience, with AI-generated artwork creating a magical learning environment.",
+  "lorenamor_description": "An experimental learning platform featuring a canvas-style node-based interface for organizing and connecting study materials. Built as a prototype to explore new ways of visualizing and interacting with educational content through an interconnected node system.",
+  "snipy_description": "An AI-powered video editing prototype that transforms long-form content into viral-ready short clips. Built in 4 days, Snipy uses an 'AI Producer' agent that analyzes dialogue dynamics and speaker tracking to automatically identify and package the most compelling moments from hours of raw footage.",
+  "vibecell_description": "An experimental AI-friendly spreadsheet application inspired by 'vibe coding' principles. VibeCell reimagines Excel with a WYSIWYG interface where data is organized in a structured, AI-parseable format. Users can analyze and manipulate data through natural language text instructions or voice commands."
 }

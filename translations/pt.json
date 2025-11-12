@@ -99,6 +99,16 @@
   "coming_soon": "Em Breve",
   "launch_divo": "Lançar Divo",
   "visit_koby": "Visitar Koby",
+  "not_available": "Não Disponível",
   "technologies": "Tecnologias:",
-  "state": "Estado:"
+  "state": "Estado:",
+  "homigo_description": "O Canivete Suíço para Serviços Domésticos — uma plataforma baseada em confiança que conecta proprietários a provedores de serviços domésticos na Colômbia. Possui correspondência inteligente, negociação transparente, pagamentos em custódia e avaliações bidirecionais para resolver problemas de segurança e informalidade no mercado de serviços domésticos.",
+  "severo_description": "Um tutor adaptativo de aprendizado de idiomas alimentado por IA Gemini. Severus usa repetição espaçada (algoritmo SM-2), reconhecimento de fala em tempo real e conversação natural para ensinar idiomas. Inclui exercícios personalizados, feedback de pronúncia, rastreamento de erros, gamificação com conquistas e placares, e ajuste dinâmico de dificuldade.",
+  "tencargo_description": "Uma plataforma de entregas simples e acessível projetada para permitir que empreendedores e pequenas empresas enviem itens com preços fixos baseados na distância. Inclui criação de remessa, rastreamento, gerenciamento de perfil e histórico de entregas. Projeto descontinuado após pesquisa de mercado revelar forte concorrência.",
+  "aeolianarmonies_description": "Um design estético inspirado em mosaicos sicilianos para torres de turbinas eólicas submetido ao Desafio WinDesign da Enel. O design apresenta um padrão geométrico contemporâneo com azuis mediterrâneos e tons dourado-ocre que desbotam de denso na base para esparso no topo, criando harmonia visual com a paisagem.",
+  "dailytracker_description": "Um sistema experimental de registro de vida que usa IA para analisar fotos minuto a minuto para gerar automaticamente resumos de fim de dia de atividades, locais e distribuição de tempo. O protótipo apresenta classificação de atividades e visualização de dados para criar insights significativos a partir da captura passiva de imagens.",
+  "languagelearninggame_description": "Um protótipo de jogo de aprendizado de idiomas inspirado em contos de fadas construído com Flutter. O conceito combina gamificação com educação de idiomas através de uma experiência visual encantadora, com arte gerada por IA criando um ambiente de aprendizado mágico.",
+  "lorenamor_description": "Uma plataforma experimental de aprendizado com uma interface baseada em nós estilo tela para organizar e conectar materiais de estudo. Construída como protótipo para explorar novas formas de visualizar e interagir com conteúdo educacional através de um sistema de nós interconectados.",
+  "snipy_description": "Um protótipo de edição de vídeo alimentado por IA que transforma conteúdo de formato longo em clipes curtos prontos para viralizar. Construído em 4 dias, Snipy usa um agente 'Produtor de IA' que analisa a dinâmica do diálogo e o rastreamento de falantes para identificar e empacotar automaticamente os momentos mais convincentes de horas de filmagem bruta.",
+  "vibecell_description": "Uma aplicação experimental de planilha amigável à IA inspirada em princípios de 'vibe coding'. VibeCell reimagina o Excel com uma interface WYSIWYG onde os dados são organizados em um formato estruturado e analisável por IA. Os usuários podem analisar e manipular dados através de instruções de texto em linguagem natural ou comandos de voz."
 }

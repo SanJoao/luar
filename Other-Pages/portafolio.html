@@ -171,6 +171,94 @@
       .logo-carousel-item:hover {
         transform: scale(1.1);
       }
+      .carousel-wrapper {
+        position: relative;
+      }
+      .carousel-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+        transition: all 0.3s ease;
+        opacity: 0;
+      }
+      .carousel-wrapper:hover .carousel-arrow {
+        opacity: 1;
+      }
+      .carousel-arrow:hover {
+        background: rgba(0, 0, 0, 0.9);
+        transform: translateY(-50%) scale(1.1);
+      }
+      .carousel-arrow.left {
+        left: 10px;
+      }
+      .carousel-arrow.right {
+        right: 10px;
+      }
+      .carousel-arrow:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+      }
+      @media (max-width: 768px) {
+        .carousel-arrow {
+          opacity: 0.8;
+          width: 40px;
+          height: 40px;
+        }
+      }
+      .modal-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 56px;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 51;
+        transition: all 0.3s ease;
+      }
+      .modal-arrow:hover {
+        background: rgba(0, 0, 0, 0.9);
+        transform: translateY(-50%) scale(1.1);
+      }
+      .modal-arrow.left {
+        left: 20px;
+      }
+      .modal-arrow.right {
+        right: 20px;
+      }
+      .modal-arrow:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+      }
+      .image-counter {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(0, 0, 0, 0.7);
+        color: white;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 14px;
+        z-index: 51;
+      }
     </style>
     <style>
       body {
@@ -220,9 +308,16 @@
           <!-- Projects will be dynamically loaded here -->
         </div>
       </main>
-      <div id="image-modal" class="modal fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 z-50 hidden items-center justify-center">
-        <span class="absolute top-4 right-6 text-white text-4xl font-bold cursor-pointer" onclick="closeModal()">&times;</span>
+      <div id="image-modal" class="modal fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 z-50 hidden items-center justify-center" onclick="handleModalClick(event)">
+        <span class="absolute top-4 right-6 text-white text-4xl font-bold cursor-pointer z-52" onclick="closeModal()">&times;</span>
+        <button class="modal-arrow left" id="modal-prev" onclick="navigateModal(-1)">
+          <span class="material-icons text-3xl">chevron_left</span>
+        </button>
+        <button class="modal-arrow right" id="modal-next" onclick="navigateModal(1)">
+          <span class="material-icons text-3xl">chevron_right</span>
+        </button>
         <img class="max-w-[90vw] max-h-[90vh] object-contain" id="modal-image" src="" alt="Focused Image">
+        <div class="image-counter" id="image-counter"></div>
       </div>
       <footer class="text-center text-gray-500 text-xs py-8 mt-16">
         <p data-i18n="footer_text_1">© 2025 Luar AI. All Rights Reserved.</p>
@@ -274,7 +369,7 @@
                      data-project="${project.title}" 
                      data-index="${index}"
                      onload="handleImageLoad(this)">
-                <div class="image-overlay" onclick="openModal('${imageSrc}')">
+                <div class="image-overlay" onclick="openModal('${imageSrc}', '${project.title}', ${index})">
                     <span class="material-icons text-white text-6xl">zoom_in</span>
                 </div>
             </div>
@@ -321,8 +416,14 @@
                     <p class="mt-4 text-gray-300 text-sm" data-i18n="${project.description_i18n}">
                         <!-- Description will be loaded by i18n.js -->
                     </p>
-                    <div class="mt-6">
-                        <div class="carousel flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-6 px-6">
+                    <div class="mt-6 carousel-wrapper">
+                        <button class="carousel-arrow left" onclick="scrollCarousel('${project.title}', -1)">
+                            <span class="material-icons text-2xl">chevron_left</span>
+                        </button>
+                        <button class="carousel-arrow right" onclick="scrollCarousel('${project.title}', 1)">
+                            <span class="material-icons text-2xl">chevron_right</span>
+                        </button>
+                        <div class="carousel flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-6 px-6" id="carousel-${project.title}">
                             ${images}
                         </div>
                     </div>
@@ -373,6 +474,9 @@
         for (const projectData of projects) {
             const cardHtml = createProjectCard(projectData);
             projectsContainer.innerHTML += cardHtml;
+
+            // Store project images for modal navigation
+            projectsData[projectData.title] = projectData.images;
 
             // Only add to carousel if it's NOT an experiment (experiments use ExperimentLogo.png)
             if (logoCarouselTrack && !projectData.logo.includes('ExperimentLogo.png')) {
@@ -435,8 +539,42 @@
         }
       }
 
-      function openModal(imageSrc) {
-        document.getElementById('modal-image').src = imageSrc;
+      // Global state for modal navigation
+      let currentModalState = {
+        project: null,
+        imageIndex: 0,
+        images: []
+      };
+
+      // Store project data for modal navigation
+      let projectsData = {};
+
+      function scrollCarousel(projectTitle, direction) {
+        const carousel = document.getElementById(`carousel-${projectTitle}`);
+        if (!carousel) return;
+
+        const scrollAmount = carousel.offsetWidth * 0.8; // Scroll by 80% of visible width
+        carousel.scrollBy({
+          left: direction * scrollAmount,
+          behavior: 'smooth'
+        });
+      }
+
+      function openModal(imageSrc, projectTitle, imageIndex) {
+        // Get all images for this project
+        const projectImages = projectsData[projectTitle] || [];
+        
+        // Update modal state
+        currentModalState = {
+          project: projectTitle,
+          imageIndex: imageIndex,
+          images: projectImages
+        };
+
+        // Update modal display
+        updateModalDisplay();
+
+        // Show modal
         document.getElementById('image-modal').classList.remove('hidden');
         document.getElementById('image-modal').classList.add('flex');
         document.body.classList.add('modal-active');
@@ -446,7 +584,77 @@
         document.getElementById('image-modal').classList.add('hidden');
         document.getElementById('image-modal').classList.remove('flex');
         document.body.classList.remove('modal-active');
+        
+        // Reset modal state
+        currentModalState = {
+          project: null,
+          imageIndex: 0,
+          images: []
+        };
       }
+
+      function navigateModal(direction) {
+        if (!currentModalState.project || currentModalState.images.length === 0) return;
+
+        // Calculate new index with wrapping
+        let newIndex = currentModalState.imageIndex + direction;
+        
+        if (newIndex < 0) {
+          newIndex = currentModalState.images.length - 1;
+        } else if (newIndex >= currentModalState.images.length) {
+          newIndex = 0;
+        }
+
+        currentModalState.imageIndex = newIndex;
+        updateModalDisplay();
+      }
+
+      function updateModalDisplay() {
+        const modalImage = document.getElementById('modal-image');
+        const imageCounter = document.getElementById('image-counter');
+        const prevButton = document.getElementById('modal-prev');
+        const nextButton = document.getElementById('modal-next');
+
+        if (currentModalState.images.length > 0) {
+          modalImage.src = currentModalState.images[currentModalState.imageIndex];
+          imageCounter.textContent = `${currentModalState.imageIndex + 1} / ${currentModalState.images.length}`;
+          
+          // Disable buttons at boundaries (optional - or allow wrapping)
+          // For wrapping behavior, keep buttons always enabled
+          prevButton.disabled = false;
+          nextButton.disabled = false;
+        }
+      }
+
+      function handleModalClick(event) {
+        // Close modal if clicking on the background (not on image or buttons)
+        if (event.target.id === 'image-modal') {
+          closeModal();
+        }
+      }
+
+      // Keyboard navigation for modal
+      document.addEventListener('keydown', function(event) {
+        const modal = document.getElementById('image-modal');
+        const isModalOpen = !modal.classList.contains('hidden');
+        
+        if (!isModalOpen) return;
+
+        switch(event.key) {
+          case 'ArrowLeft':
+            event.preventDefault();
+            navigateModal(-1);
+            break;
+          case 'ArrowRight':
+            event.preventDefault();
+            navigateModal(1);
+            break;
+          case 'Escape':
+            event.preventDefault();
+            closeModal();
+            break;
+        }
+      });
     </script>
   </body>
 </html>

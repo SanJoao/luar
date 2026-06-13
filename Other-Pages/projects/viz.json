@@ -1,0 +1,25 @@
+{
+  "title": "Viz",
+  "date": "2026-06-12",
+  "icon": "insights",
+  "logo": "Assets/Viz/VizLogo.svg",
+  "tags": [
+    { "name": "#DataViz", "style": "bg-green-100 text-green-700" },
+    { "name": "#D3js", "style": "bg-orange-100 text-orange-700" },
+    { "name": "#Interactive", "style": "bg-blue-100 text-blue-700" }
+  ],
+  "description_i18n": "viz_description",
+  "images": [
+    "Assets/Viz/viz-home.png",
+    "Assets/Viz/viz-worldcup.png"
+  ],
+  "technologies": "HTML, CSS, JavaScript, D3.js, Firebase",
+  "state_i18n_key": "state",
+  "state": "Live",
+  "link": "https://viz.luarai.com/",
+  "button": {
+    "text_i18n_key": "visit_viz",
+    "style": "bg-[var(--brand-teal)]",
+    "icon": "arrow_forward"
+  }
+}

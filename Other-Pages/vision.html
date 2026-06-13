@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4R38277HMH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-4R38277HMH');
+    </script>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Luar AI - Vision</title>
+    <link rel="icon" href="/logo_luar.svg" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Playfair+Display:wght@700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="about.css" />
+    <link rel="stylesheet" href="../header.css" />
+    <style type="text/tailwindcss">
+      :root {
+        --brand-purple: #7c3aed;
+        --brand-pink: #ec4899;
+        --brand-teal: #14b8a6;
+        --brand-yellow: #fbbf24;
+        --background-dark: #111827;
+        --background-light: #f9fafb;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--background-dark);
+      }
+      .playfair-display {
+        font-family: "Playfair Display", serif;
+      }
+      .gradient-text {
+        background: linear-gradient(
+          to right,
+          var(--brand-purple),
+          var(--brand-pink),
+          var(--brand-teal),
+          var(--brand-purple)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        background-size: 200% auto;
+        animation: animate-gradient 2s linear infinite;
+      }
+      .card-gradient-border {
+        position: relative;
+        padding: 2px;
+        border-radius: 1rem; /* 16px */
+        background: transparent;
+        z-index: 1;
+      }
+
+      .card-gradient-border::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          to right,
+          var(--brand-purple),
+          var(--brand-pink),
+          var(--brand-teal),
+          var(--brand-purple)
+        );
+        background-size: 200% auto;
+        animation: animate-gradient 2s linear infinite;
+        border-radius: 1rem;
+        z-index: -1;
+      }
+
+      .card-inner {
+        background-color: #1f2937;
+        padding: 1.5rem; /* p-6 */
+        border-radius: 0.875rem; /* slightly smaller than parent */
+        height: 100%;
+      }
+
+      @keyframes animate-gradient {
+        to {
+          background-position: 200% center;
+        }
+      }
+      .animated-gradient-background {
+        background: linear-gradient(
+          to right,
+          var(--brand-purple),
+          var(--brand-pink),
+          var(--brand-teal),
+          var(--brand-purple)
+        );
+        background-size: 200% auto;
+        animation: animate-gradient 2s linear infinite;
+      }
+    </style>
+    <style>
+      body {
+        min-height: max(884px, 100dvh);
+      }
+    </style>
+  </head>
+  <body class="text-white">
+    <div class="container mx-auto p-4 max-w-6xl">
+      <div id="header-container"></div>
+      <main class="mt-8">
+        <section class="text-center mt-16" id="vision">
+          <h1
+            class="text-4xl md:text-5xl font-bold playfair-display"
+            data-i18n="vision_title"
+          >
+            A Place Where <span class="gradient-text">Ideas Are Born</span>
+          </h1>
+          <p
+            class="mt-4 max-w-3xl mx-auto text-gray-300"
+            data-i18n="vision_subtitle"
+          >
+            This is the long game: Luarai as a live-in incubator. A real,
+            physical home where builders live for free — food, tools, and
+            services covered — and pour everything into their ideas. In
+            exchange? A small slice of what they build (think ~10%). Everybody
+            wins. Especially the ideas.
+          </p>
+        </section>
+
+        <section class="mt-16" id="today">
+          <div class="card-gradient-border max-w-3xl mx-auto">
+            <div class="card-inner text-center">
+              <span class="material-icons text-5xl text-[var(--brand-yellow)]"
+                >wb_twilight</span
+              >
+              <h2
+                class="text-3xl font-bold playfair-display mt-2"
+                data-i18n="vision_today_title"
+              >
+                Where We Are <span class="gradient-text">Today</span>
+              </h2>
+              <p class="mt-4 text-gray-300" data-i18n="vision_today_text">
+                Full honesty: we can't pay for anyone's groceries yet. Today,
+                Luarai is a tiny product studio building its own things —
+                everything we've shipped and experimented with lives in
+                <a href="portafolio.html" class="underline hover:text-white"
+                  >our portfolio</a
+                >
+                — with the occasional consulting gig on the side. The incubator
+                isn't open. There's no application form. This page exists
+                because we'd rather say the dream out loud than keep it in a
+                drawer.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="mt-16" id="the-deal">
+          <h2
+            class="text-4xl font-bold playfair-display text-center"
+            data-i18n="vision_deal_title"
+          >
+            The <span class="gradient-text">Deal</span> (Someday)
+          </h2>
+          <p
+            class="text-center text-gray-400 mt-2"
+            data-i18n="vision_deal_subtitle"
+          >
+            When the doors open, here's what living at Luarai will look like.
+          </p>
+          <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="card-gradient-border">
+              <div class="card-inner text-center">
+                <span class="material-icons text-5xl text-[var(--brand-purple)]"
+                  >home</span
+                >
+                <h3
+                  class="text-xl font-semibold mt-4"
+                  data-i18n="vision_deal_1_title"
+                >
+                  A Free Place to Live
+                </h3>
+                <p class="mt-2 text-gray-400" data-i18n="vision_deal_1_text">
+                  A room, a desk, and good wifi. Rent is not a thing here.
+                </p>
+              </div>
+            </div>
+            <div class="card-gradient-border">
+              <div class="card-inner text-center">
+                <span class="material-icons text-5xl text-[var(--brand-pink)]"
+                  >restaurant</span
+                >
+                <h3
+                  class="text-xl font-semibold mt-4"
+                  data-i18n="vision_deal_2_title"
+                >
+                  Food on the Table
+                </h3>
+                <p class="mt-2 text-gray-400" data-i18n="vision_deal_2_text">
+                  Fed builders build better. Groceries and meals, covered.
+                </p>
+              </div>
+            </div>
+            <div class="card-gradient-border">
+              <div class="card-inner text-center">
+                <span class="material-icons text-5xl text-[var(--brand-teal)]"
+                  >construction</span
+                >
+                <h3
+                  class="text-xl font-semibold mt-4"
+                  data-i18n="vision_deal_3_title"
+                >
+                  Tools & Services
+                </h3>
+                <p class="mt-2 text-gray-400" data-i18n="vision_deal_3_text">
+                  Hardware, software, cloud credits, legal and admin help — the
+                  boring-but-vital stuff, handled.
+                </p>
+              </div>
+            </div>
+            <div class="card-gradient-border">
+              <div class="card-inner text-center">
+                <span class="material-icons text-5xl text-[var(--brand-yellow)]"
+                  >diversity_3</span
+                >
+                <h3
+                  class="text-xl font-semibold mt-4"
+                  data-i18n="vision_deal_4_title"
+                >
+                  A Tribe of Builders
+                </h3>
+                <p class="mt-2 text-gray-400" data-i18n="vision_deal_4_text">
+                  Live alongside people building their own crazy things. The
+                  best accelerant ever discovered.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mt-16" id="the-road">
+          <h2
+            class="text-4xl font-bold playfair-display text-center"
+            data-i18n="vision_road_title"
+          >
+            The Road <span class="gradient-text">There</span>
+          </h2>
+          <p
+            class="text-center text-gray-400 mt-2"
+            data-i18n="vision_road_subtitle"
+          >
+            No dates. No promises. Just direction.
+          </p>
+          <div class="mt-10 relative">
+            <div
+              class="absolute left-6 top-0 h-full w-0.5 bg-gray-600 border border-dashed border-gray-500"
+            ></div>
+            <div class="space-y-12">
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[var(--brand-purple)] to-[var(--brand-pink)] rounded-full flex items-center justify-center font-bold text-lg z-10 shadow-lg shadow-[var(--brand-purple)]/30"
+                >
+                  1
+                </div>
+                <div class="ml-6">
+                  <h3
+                    class="font-semibold text-white text-lg"
+                    data-i18n="vision_road_1_title"
+                  >
+                    Build Our Own Products
+                  </h3>
+                  <p class="text-gray-400 text-sm" data-i18n="vision_road_1_text">
+                    Now. The products in our portfolio, and whatever idea wakes
+                    us up at 3am next.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[var(--brand-pink)] to-[var(--brand-teal)] rounded-full flex items-center justify-center font-bold text-lg z-10 shadow-lg shadow-[var(--brand-pink)]/30"
+                >
+                  2
+                </div>
+                <div class="ml-6">
+                  <h3
+                    class="font-semibold text-white text-lg"
+                    data-i18n="vision_road_2_title"
+                  >
+                    Make Them Sustainable
+                  </h3>
+                  <p class="text-gray-400 text-sm" data-i18n="vision_road_2_text">
+                    Our products (plus a little consulting) fund the dream. No
+                    shortcuts, no magic money.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[var(--brand-teal)] to-[var(--brand-yellow)] rounded-full flex items-center justify-center font-bold text-lg z-10 shadow-lg shadow-[var(--brand-teal)]/30"
+                >
+                  3
+                </div>
+                <div class="ml-6">
+                  <h3
+                    class="font-semibold text-white text-lg"
+                    data-i18n="vision_road_3_title"
+                  >
+                    Open the First Home
+                  </h3>
+                  <p class="text-gray-400 text-sm" data-i18n="vision_road_3_text">
+                    A house, a kitchen, ridiculous wifi, and the first builders
+                    in residence.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-[var(--brand-yellow)] to-[var(--brand-purple)] rounded-full flex items-center justify-center font-bold text-lg z-10 shadow-lg shadow-[var(--brand-yellow)]/30"
+                >
+                  4
+                </div>
+                <div class="ml-6">
+                  <h3
+                    class="font-semibold text-white text-lg"
+                    data-i18n="vision_road_4_title"
+                  >
+                    A Constellation of Ideas
+                  </h3>
+                  <p class="text-gray-400 text-sm" data-i18n="vision_road_4_text">
+                    Companies born under our roof — each one proof that the
+                    model works.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="mt-16 text-center p-8 rounded-3xl animated-gradient-background"
+          id="cta"
+        >
+          <h2
+            class="text-3xl font-bold playfair-display text-white"
+            data-i18n="vision_cta_title"
+          >
+            No Applications. No Waitlist. Just a Promise.
+          </h2>
+          <p class="mt-2 text-white/90" data-i18n="vision_cta_subtitle">
+            When the doors open, you'll hear it here first. Until then, we'll
+            be building.
+          </p>
+          <a
+            href="contact.html"
+            class="mt-6 inline-block bg-white text-[var(--brand-purple)] font-semibold py-3 px-8 rounded-full shadow-2xl hover:bg-gray-100 transition-transform transform hover:scale-105"
+            data-i18n="vision_cta_button"
+          >
+            Say Hi Anyway
+          </a>
+        </section>
+      </main>
+      <footer class="text-center text-gray-500 text-xs py-8 mt-8">
+        <p data-i18n="footer_text_1">© 2026 Luar AI. All Rights Reserved.</p>
+        <p class="mt-2" data-i18n="footer_text_2">
+          Made with ♥ and a sprinkle of stardust.
+        </p>
+      </footer>
+    </div>
+    <script src="../i18n.js"></script>
+    <script src="../header.js"></script>
+    <script>
+      fetch("/header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header-container").innerHTML = data;
+          updateHeaderStyle("about");
+          if (typeof initializeHeader === "function") {
+            initializeHeader();
+          }
+          // Set the language after the header is loaded
+          if (
+            typeof getInitialLanguage === "function" &&
+            typeof setLanguage === "function"
+          ) {
+            const initialLang = getInitialLanguage();
+            setLanguage(initialLang);
+            const languageSelect = document.getElementById("language-select");
+            if (languageSelect) {
+              languageSelect.value = initialLang;
+              languageSelect.addEventListener("change", (event) => {
+                const selectedLang = event.target.value;
+                localStorage.setItem("language", selectedLang);
+                setLanguage(selectedLang);
+              });
+            }
+          }
+        });
+    </script>
+  </body>
+</html>

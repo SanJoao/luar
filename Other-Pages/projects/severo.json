@@ -1,5 +1,6 @@
 {
   "title": "Severo",
+  "featured": true,
   "date": "2025-11-12",
   "icon": "school",
   "logo": "Assets/Severo/icon.png",
@@ -32,11 +33,10 @@
   ],
   "technologies": "Firebase, Google Gemini AI, React Native, Cloud TTS, FFmpeg",
   "state": "Beta",
-  "link": "",
+  "link": "https://severo.luarai.com/",
   "button": {
-    "text_i18n_key": "coming_soon",
-    "style": "bg-gray-600",
-    "icon": "schedule",
-    "disabled": true
+    "text_i18n_key": "visit_severo",
+    "style": "bg-[var(--brand-pink)]",
+    "icon": "arrow_forward"
   }
 }

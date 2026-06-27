@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4R38277HMH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-4R38277HMH');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luar AI - Divo Showcase</title>
+    <link rel="icon" href="/logo_luar.svg" />
+    <meta property="og:title" content="Luar AI - Divo Showcase" />
+    <meta
+      property="og:description"
+      content="An archive of the landing pages Divo could generate, one design in every art style. Divo is no longer active; this is here so the work can still be seen."
+    />
+    <meta property="og:image" content="https://luarai.com/logo_luar.svg" />
+    <meta property="og:url" content="https://luarai.com/divo-showcase.html" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="header.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Roboto&family=Libre+Baskerville&family=Nunito&family=Poppins&family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+      <div class="loading-content">
+        <img src="/logo_luar.svg" alt="Luar AI Logo" class="loading-logo" />
+        <div class="loading-bar-container">
+          <div class="loading-bar">
+            <div class="loading-bar-fill" id="loading-bar-fill"></div>
+          </div>
+          <div class="loading-percentage" id="loading-percentage">0%</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="header-container"></div>
+    <div class="carousel">
+      <div class="carousel-container">
+        <!-- Slides will be injected here -->
+      </div>
+      <button class="carousel-button prev" onclick="moveSlide(-1)">
+        &#10094;
+      </button>
+      <button class="carousel-button next" onclick="moveSlide(1)">
+        &#10095;
+      </button>
+    </div>
+    <script src="header.js"></script>
+    <script src="script.js"></script>
+    <script src="i18n.js"></script>
+    <script>
+      fetch("/header.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("header-container").innerHTML = data;
+          // The carousel starts at index 1, but the first page is at index 0 of the pages array.
+          updateHeaderStyle(pages[0]);
+          if (typeof initializeHeader === "function") {
+            initializeHeader();
+          }
+          // Set the language after the header is loaded
+          const initialLang = getInitialLanguage();
+          setLanguage(initialLang);
+          const languageSelect = document.getElementById("language-select");
+          if (languageSelect) {
+            languageSelect.value = initialLang;
+            languageSelect.addEventListener("change", (event) => {
+              const selectedLang = event.target.value;
+              localStorage.setItem("language", selectedLang);
+              setLanguage(selectedLang);
+            });
+          }
+        });
+    </script>
+  </body>
+</html>

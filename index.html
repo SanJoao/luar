@@ -16,70 +16,476 @@
     <meta property="og:title" content="Luar AI" />
     <meta
       property="og:description"
-      content="Luarai is an independent two-person product studio where ideas are born. We build our own products and share the journey — on the way to becoming a home where builders can live, eat, and create for free."
+      content="Luarai is a two-person product studio building tools that remove the fake limits on how fast people can learn, understand, and create. Mastery is a system, not a gift."
     />
     <meta property="og:image" content="https://luarai.com/logo_luar.svg" />
     <meta property="og:url" content="https://luarai.com" />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="header.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@700&family=Roboto&family=Libre+Baskerville&family=Nunito&family=Poppins&family=Montserrat&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="header.css" />
+    <style type="text/tailwindcss">
+      :root {
+        --brand-purple: #7c3aed;
+        --brand-pink: #ec4899;
+        --brand-teal: #14b8a6;
+        --brand-yellow: #fbbf24;
+        --background-dark: #111827;
+        --background-light: #f9fafb;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background-color: var(--background-dark);
+      }
+      .playfair-display {
+        font-family: "Playfair Display", serif;
+      }
+      .gradient-text {
+        background: linear-gradient(
+          to right,
+          var(--brand-purple),
+          var(--brand-pink),
+          var(--brand-teal),
+          var(--brand-purple)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        background-size: 200% auto;
+        animation: animate-gradient 4s linear infinite;
+      }
+      .card-gradient-border {
+        position: relative;
+        padding: 2px;
+        border-radius: 1rem;
+        background: transparent;
+        z-index: 1;
+      }
+      .card-gradient-border::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          to right,
+          var(--brand-purple),
+          var(--brand-pink),
+          var(--brand-teal),
+          var(--brand-purple)
+        );
+        background-size: 200% auto;
+        animation: animate-gradient 4s linear infinite;
+        border-radius: 1rem;
+        z-index: -1;
+      }
+      .card-inner {
+        background-color: #1f2937;
+        padding: 1.75rem;
+        border-radius: 0.875rem;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      @keyframes animate-gradient {
+        to {
+          background-position: 200% center;
+        }
+      }
+      .animated-gradient-background {
+        background: linear-gradient(
+          to right,
+          var(--brand-purple),
+          var(--brand-pink),
+          var(--brand-teal),
+          var(--brand-purple)
+        );
+        background-size: 200% auto;
+        animation: animate-gradient 4s linear infinite;
+      }
+      .hero-glow {
+        position: absolute;
+        left: 50%;
+        top: 42%;
+        width: min(1100px, 135%);
+        height: 720px;
+        transform: translate(-50%, -50%);
+        background: radial-gradient(
+          closest-side,
+          rgba(124, 58, 237, 0.3),
+          rgba(236, 72, 153, 0.14) 55%,
+          transparent 80%
+        );
+        filter: blur(24px);
+        pointer-events: none;
+      }
+    </style>
   </head>
-  <body>
-    <!-- Loading Screen -->
-    <div id="loading-screen">
-      <div class="loading-content">
-        <img src="/logo_luar.svg" alt="Luar AI Logo" class="loading-logo" />
-        <div class="loading-bar-container">
-          <div class="loading-bar">
-            <div class="loading-bar-fill" id="loading-bar-fill"></div>
+  <body class="text-white">
+    <div class="container mx-auto p-4 max-w-6xl">
+      <div id="header-container"></div>
+      <main class="mt-8">
+        <!-- HERO -->
+        <section class="relative text-center pt-20 pb-16 md:pt-28 md:pb-24">
+          <div class="hero-glow -z-10" aria-hidden="true"></div>
+          <p
+            class="uppercase tracking-[0.2em] text-xs md:text-sm text-gray-400 font-medium"
+            data-i18n="home_hero_eyebrow"
+          >
+            A two-person product studio
+          </p>
+          <h1
+            class="mt-6 text-4xl md:text-6xl font-bold playfair-display leading-tight"
+            data-i18n="home_hero_title"
+          >
+            Mastery is a system,
+            <span class="gradient-text">not a gift.</span>
+          </h1>
+          <p
+            class="mt-6 max-w-2xl mx-auto text-gray-300 text-lg"
+            data-i18n="home_hero_subtitle"
+          >
+            We build small tools that remove the fake limits on how fast people
+            can learn, understand, and create. We do it in public, from
+            scratch, on a simple belief: where you start does not decide where
+            you finish.
+          </p>
+          <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="#products"
+              class="inline-block bg-[var(--brand-pink)] text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-opacity-90 transition-transform transform hover:scale-105"
+              data-i18n="home_hero_cta_primary"
+            >
+              See what we're building
+            </a>
+            <a
+              href="#why"
+              class="inline-block border border-gray-600 text-gray-200 font-semibold py-3 px-8 rounded-full hover:border-white hover:text-white transition-colors"
+              data-i18n="home_hero_cta_secondary"
+            >
+              Why we exist
+            </a>
           </div>
-          <div class="loading-percentage" id="loading-percentage">0%</div>
-        </div>
-      </div>
+        </section>
+
+        <!-- PRODUCTS -->
+        <section id="products" class="mt-12 scroll-mt-24">
+          <h2
+            class="text-3xl md:text-4xl font-bold playfair-display text-center"
+            data-i18n="home_products_title"
+          >
+            What we're building <span class="gradient-text">right now</span>
+          </h2>
+          <p
+            class="text-center text-gray-400 mt-3 max-w-2xl mx-auto"
+            data-i18n="home_products_subtitle"
+          >
+            Small, focused tools you can try in about a minute. Each one chips
+            away at a constraint that should not be there.
+          </p>
+          <div class="mt-12 grid md:grid-cols-3 gap-8">
+            <!-- Koby -->
+            <div class="card-gradient-border">
+              <div class="card-inner">
+                <div class="flex items-center gap-3">
+                  <img
+                    src="Other-Pages/Assets/Koby/KobyLogo.svg"
+                    alt="Koby logo"
+                    class="h-9 w-9"
+                  />
+                  <h3 class="text-xl font-semibold">Koby</h3>
+                </div>
+                <p
+                  class="mt-2 text-sm font-medium text-[var(--brand-pink)]"
+                  data-i18n="home_koby_tag"
+                >
+                  Reading, unlocked
+                </p>
+                <p class="mt-3 text-gray-400 text-sm flex-grow" data-i18n="home_koby_text">
+                  Drop in any book and turn it into an audiobook that plays
+                  right on your device, free and private, with word-level
+                  read-along. Plus beautiful charts from your Kobo highlights.
+                </p>
+                <a
+                  href="https://koby.luarai.com/"
+                  target="_blank"
+                  rel="noopener"
+                  class="mt-6 inline-flex items-center justify-center gap-2 bg-[var(--brand-purple)] text-white font-semibold py-2.5 px-5 rounded-full hover:bg-opacity-90 transition-transform transform hover:-translate-y-1 group"
+                  data-i18n="home_koby_cta"
+                >
+                  Try Koby
+                  <span class="material-icons text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+            <!-- Viz -->
+            <div class="card-gradient-border">
+              <div class="card-inner">
+                <div class="flex items-center gap-3">
+                  <img
+                    src="Other-Pages/Assets/Viz/VizLogo.svg"
+                    alt="Viz logo"
+                    class="h-9 w-9"
+                  />
+                  <h3 class="text-xl font-semibold">Viz</h3>
+                </div>
+                <p
+                  class="mt-2 text-sm font-medium text-[var(--brand-teal)]"
+                  data-i18n="home_viz_tag"
+                >
+                  Understanding, instant
+                </p>
+                <p class="mt-3 text-gray-400 text-sm flex-grow" data-i18n="home_viz_text">
+                  A field notebook of interactive data stories. Each one turns a
+                  real dataset into something you grasp in a single glance.
+                </p>
+                <a
+                  href="https://viz.luarai.com/"
+                  target="_blank"
+                  rel="noopener"
+                  class="mt-6 inline-flex items-center justify-center gap-2 bg-[var(--brand-teal)] text-white font-semibold py-2.5 px-5 rounded-full hover:bg-opacity-90 transition-transform transform hover:-translate-y-1 group"
+                  data-i18n="home_viz_cta"
+                >
+                  Explore Viz
+                  <span class="material-icons text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+            <!-- Severo -->
+            <div class="card-gradient-border">
+              <div class="card-inner">
+                <div class="flex items-center gap-3">
+                  <img
+                    src="Other-Pages/Assets/Severo/icon.png"
+                    alt="Severo logo"
+                    class="h-9 w-9 rounded-md"
+                  />
+                  <h3 class="text-xl font-semibold">Severo</h3>
+                </div>
+                <p
+                  class="mt-2 text-sm font-medium text-[var(--brand-yellow)]"
+                  data-i18n="home_severo_tag"
+                >
+                  Mastery, engineered
+                </p>
+                <p class="mt-3 text-gray-400 text-sm flex-grow" data-i18n="home_severo_text">
+                  An adaptive language tutor built on spaced repetition and real
+                  conversation, designed to make you fluent faster. Currently in
+                  beta.
+                </p>
+                <a
+                  href="https://severo.luarai.com/"
+                  target="_blank"
+                  rel="noopener"
+                  class="mt-6 inline-flex items-center justify-center gap-2 bg-[var(--brand-pink)] text-white font-semibold py-2.5 px-5 rounded-full hover:bg-opacity-90 transition-transform transform hover:-translate-y-1 group"
+                  data-i18n="home_severo_cta"
+                >
+                  Try Severo
+                  <span class="material-icons text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="mt-10 text-center">
+            <a
+              href="/Other-Pages/portafolio.html"
+              class="inline-flex items-center gap-2 text-gray-300 hover:text-white transition-colors font-medium"
+              data-i18n="home_products_all"
+            >
+              See everything we've built
+              <span class="material-icons text-lg">arrow_forward</span>
+            </a>
+          </div>
+        </section>
+
+        <!-- WHY -->
+        <section id="why" class="mt-24 scroll-mt-24">
+          <div class="card-gradient-border max-w-4xl mx-auto">
+            <div class="card-inner text-center !p-8 md:!p-12">
+              <span class="material-icons text-5xl text-[var(--brand-yellow)]"
+                >lock_open</span
+              >
+              <h2
+                class="mt-3 text-3xl md:text-4xl font-bold playfair-display"
+                data-i18n="home_why_title"
+              >
+                Why we <span class="gradient-text">do this</span>
+              </h2>
+              <p
+                class="mt-5 text-gray-300 max-w-2xl mx-auto"
+                data-i18n="home_why_text"
+              >
+                Most people never find out what they are capable of. Not for
+                lack of talent, but because of constraints that look permanent
+                and are not: credentials, track records, the need to work just
+                to survive. We build to remove them, one tool at a time. The
+                long game is a home where builders live with their needs
+                covered, free to create.
+              </p>
+              <a
+                href="/Other-Pages/vision.html"
+                class="mt-8 inline-block bg-[var(--brand-purple)] text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-opacity-90 transition-transform transform hover:scale-105"
+                data-i18n="home_why_cta"
+              >
+                Read the vision
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- BUILD IN PUBLIC -->
+        <section class="mt-24 flex flex-col md:flex-row items-center gap-12">
+          <div class="md:w-1/2">
+            <h2
+              class="text-3xl md:text-4xl font-bold playfair-display"
+              data-i18n="home_public_title"
+            >
+              Built in <span class="gradient-text">public</span>
+            </h2>
+            <p class="mt-5 text-gray-300" data-i18n="home_public_text">
+              Wins, numbers, and faceplants, all out in the open. We film the
+              road from zero to one million, almost daily, with no magic
+              formulas.
+            </p>
+            <a
+              href="https://www.youtube.com/@LuarAI25"
+              target="_blank"
+              rel="noopener"
+              class="mt-6 inline-flex items-center gap-2 bg-[var(--brand-pink)] text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-opacity-90 transition-transform transform hover:scale-105"
+              data-i18n="home_public_cta"
+            >
+              <span class="material-icons">smart_display</span>
+              Watch the journey
+            </a>
+          </div>
+          <div class="md:w-1/2 w-full">
+            <div class="card-gradient-border">
+              <div class="card-inner">
+                <div class="grid grid-cols-3 gap-4 text-center">
+                  <div>
+                    <span class="material-icons text-4xl text-[var(--brand-purple)]">public</span>
+                    <p class="mt-2 text-xs text-gray-400" data-i18n="home_public_1">Open by default</p>
+                  </div>
+                  <div>
+                    <span class="material-icons text-4xl text-[var(--brand-pink)]">bolt</span>
+                    <p class="mt-2 text-xs text-gray-400" data-i18n="home_public_2">Ship fast, learn faster</p>
+                  </div>
+                  <div>
+                    <span class="material-icons text-4xl text-[var(--brand-teal)]">favorite</span>
+                    <p class="mt-2 text-xs text-gray-400" data-i18n="home_public_3">No magic formulas</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- NEWSLETTER -->
+        <section id="moonletter" class="mt-24 scroll-mt-24">
+          <div
+            class="text-center p-8 md:p-12 rounded-3xl animated-gradient-background"
+          >
+            <h2
+              class="text-3xl font-bold playfair-display text-white"
+              data-i18n="home_news_title"
+            >
+              The moonletter
+            </h2>
+            <p
+              class="mt-3 text-white/90 max-w-xl mx-auto"
+              data-i18n="home_news_text"
+            >
+              Now and then, a note on what we shipped, what broke, and what we
+              learned. No spam, no noise.
+            </p>
+            <form
+              id="newsletterForm"
+              class="mt-8 flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+            >
+              <input
+                type="email"
+                id="newsletter-email"
+                required
+                class="flex-grow rounded-full px-5 py-3 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-white"
+                placeholder="you@email.com"
+              />
+              <button
+                type="submit"
+                class="bg-white text-[var(--brand-purple)] font-semibold py-3 px-6 rounded-full shadow-lg hover:bg-gray-100 transition-transform transform hover:scale-105 whitespace-nowrap"
+                data-i18n="home_news_button"
+              >
+                Keep me posted
+              </button>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <footer class="text-center text-gray-500 text-xs py-10 mt-16">
+        <a
+          href="#moonletter"
+          class="text-gray-400 hover:text-white transition-colors font-medium"
+          data-i18n="footer_news_link"
+        >
+          Get the moonletter
+        </a>
+        <p class="mt-4" data-i18n="footer_text_1">© 2026 Luar AI. All Rights Reserved.</p>
+        <p class="mt-2" data-i18n="footer_text_2">
+          Made with ♥ and a sprinkle of stardust.
+        </p>
+      </footer>
     </div>
-    
-    <div id="header-container"></div>
-    <div class="carousel">
-      <div class="carousel-container">
-        <!-- Slides will be injected here -->
-      </div>
-      <button class="carousel-button prev" onclick="moveSlide(-1)">
-        &#10094;
-      </button>
-      <button class="carousel-button next" onclick="moveSlide(1)">
-        &#10095;
-      </button>
-    </div>
-    <script src="header.js"></script>
-    <script src="script.js"></script>
+
     <script src="i18n.js"></script>
+    <script src="header.js"></script>
     <script>
       fetch("/header.html")
         .then((response) => response.text())
         .then((data) => {
           document.getElementById("header-container").innerHTML = data;
-          // The carousel starts at index 1, but the first page is at index 0 of the pages array.
-          updateHeaderStyle(pages[0]);
+          updateHeaderStyle("about");
           if (typeof initializeHeader === "function") {
             initializeHeader();
           }
-          // Set the language after the header is loaded
-          const initialLang = getInitialLanguage();
-          setLanguage(initialLang);
-          const languageSelect = document.getElementById("language-select");
-          if (languageSelect) {
-            languageSelect.value = initialLang;
-            languageSelect.addEventListener("change", (event) => {
-              const selectedLang = event.target.value;
-              localStorage.setItem("language", selectedLang);
-              setLanguage(selectedLang);
-            });
+          if (
+            typeof getInitialLanguage === "function" &&
+            typeof setLanguage === "function"
+          ) {
+            const initialLang = getInitialLanguage();
+            setLanguage(initialLang);
+            const languageSelect = document.getElementById("language-select");
+            if (languageSelect) {
+              languageSelect.value = initialLang;
+              languageSelect.addEventListener("change", (event) => {
+                const selectedLang = event.target.value;
+                localStorage.setItem("language", selectedLang);
+                setLanguage(selectedLang);
+              });
+            }
           }
+        });
+
+      // Newsletter capture.
+      // NOTE: this currently opens the visitor's email client to send us their
+      // address. When ready, swap this for a real provider (Buttondown,
+      // Mailchimp, Formspree, etc.) by pointing the form at their endpoint.
+      document
+        .getElementById("newsletterForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const email = document.getElementById("newsletter-email").value;
+          const subject = encodeURIComponent("Subscribe me to the moonletter");
+          const body = encodeURIComponent(
+            `Please add this address to the moonletter: ${email}`
+          );
+          window.location.href = `mailto:luaraiteam@gmail.com?subject=${subject}&body=${body}`;
         });
     </script>
   </body>

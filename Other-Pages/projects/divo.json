@@ -20,6 +20,8 @@
   "state_i18n_key": "state",
   "state": "Beta",
   "link": "https://divo.luarai.com/",
+  "previewLink": "/divo-showcase.html",
+  "previewText_i18n_key": "preview_divo",
   "button": {
     "text_i18n_key": "launch_divo",
     "style": "bg-[var(--brand-teal)]",

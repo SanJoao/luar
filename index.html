@@ -30,6 +30,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="atmosphere.css" />
     <style type="text/tailwindcss">
       :root {
         --brand-purple: #7c3aed;
@@ -126,15 +127,65 @@
         filter: blur(24px);
         pointer-events: none;
       }
+      /* Hand-drawn underline on the hero accent word. It lives inside the
+         accent <span>, so it tracks the word in every language and draws on. */
+      .accent-ink {
+        position: relative;
+        white-space: nowrap;
+      }
+      .accent-ink svg {
+        position: absolute;
+        left: 0;
+        bottom: -0.24em;
+        width: 100%;
+        height: 0.42em;
+        overflow: visible;
+      }
+      .accent-ink svg path {
+        fill: none;
+        stroke-width: 3.5;
+        stroke-linecap: round;
+        vector-effect: non-scaling-stroke;
+        stroke-dasharray: 240;
+        stroke-dashoffset: 240;
+        animation: draw-ink 1.1s ease forwards 0.35s;
+      }
+      @keyframes draw-ink {
+        to { stroke-dashoffset: 0; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .accent-ink svg path {
+          animation: none;
+          stroke-dashoffset: 0;
+        }
+      }
     </style>
   </head>
   <body class="text-white">
+    <div class="stars" aria-hidden="true"></div>
+    <div class="warm-pool" aria-hidden="true"></div>
+    <div class="rain" aria-hidden="true"></div>
     <div class="container mx-auto p-4 max-w-6xl">
       <div id="header-container"></div>
       <main class="mt-8">
         <!-- HERO -->
-        <section class="relative text-center pt-20 pb-16 md:pt-28 md:pb-24">
+        <section class="relative text-center pt-24 pb-10 md:pt-36 md:pb-14">
           <div class="hero-glow -z-10" aria-hidden="true"></div>
+          <div class="doodle absolute hidden xl:block" style="left: 0; top: 46%" aria-hidden="true">
+            <svg width="84" viewBox="0 0 96 104">
+              <circle cx="48" cy="34" r="8" />
+              <path d="M48 42 V66 M32 52 H64 M48 66 L36 90 M48 66 L60 90" />
+              <path d="M20 14 V96 M48 10 V96 M76 14 V96" />
+            </svg>
+          </div>
+          <div class="doodle absolute hidden xl:block" style="right: 0; top: 24%" aria-hidden="true">
+            <svg width="90" viewBox="0 0 100 104">
+              <circle cx="42" cy="40" r="8" />
+              <path d="M42 48 V74 M42 74 L31 96 M42 74 L53 96 M42 56 L24 50 M42 56 L66 38" />
+              <path d="M70 30 l3 -9 l3 9 l9 1 l-9 3 l-3 9 l-3 -9 l-9 -1 z" />
+            </svg>
+          </div>
           <p
             class="uppercase tracking-[0.2em] text-xs md:text-sm text-gray-400 font-medium"
             data-i18n="home_hero_eyebrow"
@@ -142,14 +193,23 @@
             A two-person product studio
           </p>
           <h1
-            class="mt-6 text-4xl md:text-6xl font-bold playfair-display leading-tight"
+            class="mt-7 text-5xl md:text-7xl font-bold playfair-display leading-[1.05]"
             data-i18n="home_hero_title"
           >
             Mastery is a system,
-            <span class="gradient-text">not a gift.</span>
+            <span class="gradient-text accent-ink"
+              >not a gift.<svg viewBox="0 0 200 14" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="heroInk" x1="0" y1="0" x2="1" y2="0">
+                    <stop stop-color="#ec4899" />
+                    <stop offset="1" stop-color="#14b8a6" />
+                  </linearGradient>
+                </defs>
+                <path d="M4 9 C 52 3, 150 12, 196 6" stroke="url(#heroInk)" /></svg
+            ></span>
           </h1>
           <p
-            class="mt-6 max-w-2xl mx-auto text-gray-300 text-lg"
+            class="mt-8 max-w-2xl mx-auto text-gray-300 text-lg"
             data-i18n="home_hero_subtitle"
           >
             We build small tools that remove the fake limits on how fast people
@@ -173,10 +233,29 @@
               Why we exist
             </a>
           </div>
+          <div class="mt-16 flex justify-center">
+            <a
+              href="#products"
+              aria-label="Scroll to what we're building"
+              class="scroll-cue text-gray-500 hover:text-white transition-colors"
+            >
+              <span class="material-icons text-3xl">expand_more</span>
+            </a>
+          </div>
         </section>
 
+        <div class="mark-divider my-20" aria-hidden="true">
+          <span class="line"></span>
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+            <path d="M23 8 H8 V22 H19 V12 H13 V17" stroke="#ec4899" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.9" />
+            <circle cx="23" cy="8" r="1.8" fill="#fbbf24" />
+            <circle cx="13" cy="17" r="1.6" fill="#14b8a6" />
+          </svg>
+          <span class="line right"></span>
+        </div>
+
         <!-- PRODUCTS -->
-        <section id="products" class="mt-12 scroll-mt-24">
+        <section id="products" class="scroll-mt-24 reveal">
           <h2
             class="text-3xl md:text-4xl font-bold playfair-display text-center"
             data-i18n="home_products_title"
@@ -305,8 +384,28 @@
           </div>
         </section>
 
-        <!-- WHY -->
-        <section id="why" class="mt-24 scroll-mt-24">
+        <!-- WHY (the hearth) — the moon rises over home, bridging the sections -->
+        <section id="why" class="relative scroll-mt-24 reveal mt-24">
+          <div class="hearth-glow" aria-hidden="true"></div>
+          <div class="doodle absolute hidden xl:block" style="left: 0; top: 36%" aria-hidden="true">
+            <svg width="108" viewBox="0 0 130 80">
+              <path d="M8 64 Q 42 30, 72 52 T 124 30" stroke-dasharray="2 8" />
+              <circle cx="104" cy="20" r="6" />
+              <path d="M104 26 V44 M104 44 L96 62 M104 44 L112 60 M104 33 L95 38 M104 33 L114 30" />
+            </svg>
+          </div>
+          <div class="moon-center" aria-hidden="true">
+            <svg width="66" height="66" viewBox="0 0 66 66">
+              <defs>
+                <mask id="crescentBridge">
+                  <rect width="66" height="66" fill="black" />
+                  <circle cx="31" cy="33" r="21" fill="white" />
+                  <circle cx="42" cy="28" r="18" fill="black" />
+                </mask>
+              </defs>
+              <circle cx="31" cy="33" r="21" fill="#fdf0d0" mask="url(#crescentBridge)" />
+            </svg>
+          </div>
           <div class="card-gradient-border max-w-4xl mx-auto">
             <div class="card-inner text-center !p-8 md:!p-12">
               <span class="material-icons text-5xl text-[var(--brand-yellow)]"
@@ -341,7 +440,7 @@
         </section>
 
         <!-- BUILD IN PUBLIC -->
-        <section class="mt-24 flex flex-col md:flex-row items-center gap-12">
+        <section class="mt-24 flex flex-col md:flex-row items-center gap-12 reveal">
           <div class="md:w-1/2">
             <h2
               class="text-3xl md:text-4xl font-bold playfair-display"
@@ -387,8 +486,28 @@
           </div>
         </section>
 
+        <div class="mark-divider my-20" aria-hidden="true">
+          <span class="line"></span>
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+            <path d="M23 8 H8 V22 H19 V12 H13 V17" stroke="#ec4899" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.9" />
+            <circle cx="23" cy="8" r="1.8" fill="#fbbf24" />
+            <circle cx="13" cy="17" r="1.6" fill="#14b8a6" />
+          </svg>
+          <span class="line right"></span>
+        </div>
+
         <!-- NEWSLETTER -->
-        <section id="moonletter" class="mt-24 scroll-mt-24">
+        <section id="moonletter" class="relative scroll-mt-24 reveal">
+          <div class="doodle absolute hidden xl:block" style="right: -8px; top: -56px" aria-hidden="true">
+            <svg width="132" viewBox="0 0 150 100">
+              <circle cx="75" cy="28" r="12" />
+              <path d="M75 6 V0 M75 56 V50 M53 28 H45 M105 28 H97 M59 12 L53 6 M91 12 L97 6 M59 44 L53 50 M91 44 L97 50" />
+              <circle cx="36" cy="70" r="6" />
+              <path d="M36 76 V92 M36 92 L28 100 M36 92 L44 100 M36 82 L26 72 M36 82 L46 72" />
+              <circle cx="114" cy="70" r="6" />
+              <path d="M114 76 V92 M114 92 L106 100 M114 92 L122 100 M114 82 L104 72 M114 82 L124 72" />
+            </svg>
+          </div>
           <div
             class="text-center p-8 md:p-12 rounded-3xl animated-gradient-background"
           >
@@ -488,5 +607,6 @@
           window.location.href = `mailto:luaraiteam@gmail.com?subject=${subject}&body=${body}`;
         });
     </script>
+    <script src="atmosphere.js"></script>
   </body>
 </html>

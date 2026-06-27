@@ -4,7 +4,7 @@
   "nav_contact": "Contacto",
   "nav_portfolio": "Portafolio",
   "home_hero_eyebrow": "Un estudio de producto de dos personas",
-  "home_hero_title": "La maestría es un sistema, <span class='gradient-text'>no un don.</span>",
+  "home_hero_title": "La maestría es un sistema, <span class='gradient-text accent-ink'>no un don.<svg viewBox='0 0 200 14' preserveAspectRatio='none'><defs><linearGradient id='heroInk' x1='0' y1='0' x2='1' y2='0'><stop stop-color='#ec4899'/><stop offset='1' stop-color='#14b8a6'/></linearGradient></defs><path d='M4 9 C 52 3, 150 12, 196 6' stroke='url(#heroInk)'/></svg></span>",
   "home_hero_subtitle": "Construimos pequeñas herramientas que eliminan los límites falsos sobre qué tan rápido las personas pueden aprender, entender y crear. Lo hacemos en público, desde cero, con una idea simple: de dónde partes no decide a dónde llegas.",
   "home_hero_cta_primary": "Mira lo que construimos",
   "home_hero_cta_secondary": "Por qué existimos",

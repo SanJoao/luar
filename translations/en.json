@@ -4,7 +4,7 @@
   "nav_contact": "Contact",
   "nav_portfolio": "Portfolio",
   "home_hero_eyebrow": "A two-person product studio",
-  "home_hero_title": "Mastery is a system, <span class='gradient-text'>not a gift.</span>",
+  "home_hero_title": "Mastery is a system, <span class='gradient-text accent-ink'>not a gift.<svg viewBox='0 0 200 14' preserveAspectRatio='none'><defs><linearGradient id='heroInk' x1='0' y1='0' x2='1' y2='0'><stop stop-color='#ec4899'/><stop offset='1' stop-color='#14b8a6'/></linearGradient></defs><path d='M4 9 C 52 3, 150 12, 196 6' stroke='url(#heroInk)'/></svg></span>",
   "home_hero_subtitle": "We build small tools that remove the fake limits on how fast people can learn, understand, and create. We do it in public, from scratch, on a simple belief: where you start does not decide where you finish.",
   "home_hero_cta_primary": "See what we're building",
   "home_hero_cta_secondary": "Why we exist",

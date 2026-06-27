@@ -4,7 +4,7 @@
   "nav_contact": "Contato",
   "nav_portfolio": "Portfólio",
   "home_hero_eyebrow": "Um estúdio de produto de duas pessoas",
-  "home_hero_title": "Maestria é um sistema, <span class='gradient-text'>não um dom.</span>",
+  "home_hero_title": "Maestria é um sistema, <span class='gradient-text accent-ink'>não um dom.<svg viewBox='0 0 200 14' preserveAspectRatio='none'><defs><linearGradient id='heroInk' x1='0' y1='0' x2='1' y2='0'><stop stop-color='#ec4899'/><stop offset='1' stop-color='#14b8a6'/></linearGradient></defs><path d='M4 9 C 52 3, 150 12, 196 6' stroke='url(#heroInk)'/></svg></span>",
   "home_hero_subtitle": "Construímos pequenas ferramentas que removem os limites falsos sobre a rapidez com que as pessoas aprendem, entendem e criam. Fazemos isso em público, do zero, com uma ideia simples: de onde você parte não decide aonde você chega.",
   "home_hero_cta_primary": "Veja o que construímos",
   "home_hero_cta_secondary": "Por que existimos",

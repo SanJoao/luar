@@ -23,6 +23,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/header.css" />
+    <link rel="stylesheet" href="/atmosphere.css" />
     <style type="text/tailwindcss">
       :root {
         --brand-purple: #7c3aed;
@@ -275,6 +276,9 @@
     </style>
   </head>
   <body class="text-white">
+    <div class="stars" aria-hidden="true"></div>
+    <div class="warm-pool" aria-hidden="true"></div>
+    <div class="rain" aria-hidden="true"></div>
     <div id="header-container"></div>
     <script src="/header.js"></script>
     <script>
@@ -290,7 +294,7 @@
     </script>
     <div class="container mx-auto p-4 max-w-6xl">
       <main class="mt-8">
-        <section class="text-center mt-16 mb-16">
+        <section class="text-center mt-20 md:mt-24 mb-16 reveal">
           <h1
             class="text-4xl md:text-5xl font-bold playfair-display"
             data-i18n="portfolio_title"
@@ -307,6 +311,17 @@
             stage. Warning: may cause sudden bursts of inspiration.
           </p>
         </section>
+
+        <div class="mark-divider my-20" aria-hidden="true">
+          <span class="line"></span>
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+            <path d="M23 8 H8 V22 H19 V12 H13 V17" stroke="#ec4899" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.9" />
+            <circle cx="23" cy="8" r="1.8" fill="#fbbf24" />
+            <circle cx="13" cy="17" r="1.6" fill="#14b8a6" />
+          </svg>
+          <span class="line right"></span>
+        </div>
+
         <div class="logo-carousel-container my-12">
           <div class="logo-carousel-track" id="logo-carousel-track">
             <!-- Logos will be dynamically loaded here -->
@@ -680,5 +695,6 @@
         }
       });
     </script>
+    <script src="/atmosphere.js"></script>
   </body>
 </html>

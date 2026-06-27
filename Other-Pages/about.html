@@ -24,6 +24,7 @@
     />
     <link rel="stylesheet" href="about.css" />
     <link rel="stylesheet" href="../header.css" />
+    <link rel="stylesheet" href="/atmosphere.css" />
     <style type="text/tailwindcss">
       :root {
         --brand-purple: #7c3aed;
@@ -108,10 +109,13 @@
     </style>
   </head>
   <body class="text-white">
+    <div class="stars" aria-hidden="true"></div>
+    <div class="warm-pool" aria-hidden="true"></div>
+    <div class="rain" aria-hidden="true"></div>
     <div class="container mx-auto p-4 max-w-6xl">
       <div id="header-container"></div>
       <main class="mt-8">
-        <section class="text-center mt-16">
+        <section class="text-center mt-20 md:mt-24 reveal">
           <h1
             class="text-4xl md:text-5xl font-bold playfair-display"
             data-i18n="about_title"
@@ -129,7 +133,17 @@
           </p>
         </section>
 
-        <section class="mt-20 flex flex-col md:flex-row items-center gap-12">
+        <div class="mark-divider my-24" aria-hidden="true">
+          <span class="line"></span>
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+            <path d="M23 8 H8 V22 H19 V12 H13 V17" stroke="#ec4899" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.9" />
+            <circle cx="23" cy="8" r="1.8" fill="#fbbf24" />
+            <circle cx="13" cy="17" r="1.6" fill="#14b8a6" />
+          </svg>
+          <span class="line right"></span>
+        </div>
+
+        <section class="mt-28 flex flex-col md:flex-row items-center gap-12 reveal">
           <div class="md:w-1/2">
             <img
               src="Assets/Vission.png"
@@ -158,7 +172,7 @@
         </section>
 
         <section
-          class="mt-20 flex flex-col md:flex-row-reverse items-center gap-12"
+          class="mt-28 flex flex-col md:flex-row-reverse items-center gap-12 reveal"
         >
           <div class="md:w-1/2">
             <img
@@ -194,7 +208,7 @@
           </div>
         </section>
 
-        <section class="mt-20">
+        <section class="mt-28 reveal">
           <h2
             class="text-4xl font-bold playfair-display text-center"
             data-i18n="about_advantage_title"
@@ -273,8 +287,18 @@
           </div>
         </section>
 
+        <div class="mark-divider my-24" aria-hidden="true">
+          <span class="line"></span>
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+            <path d="M23 8 H8 V22 H19 V12 H13 V17" stroke="#ec4899" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="0.9" />
+            <circle cx="23" cy="8" r="1.8" fill="#fbbf24" />
+            <circle cx="13" cy="17" r="1.6" fill="#14b8a6" />
+          </svg>
+          <span class="line right"></span>
+        </div>
+
         <section
-          class="mt-20 text-center p-8 rounded-3xl animated-gradient-background"
+          class="mt-28 text-center p-8 md:p-12 rounded-3xl animated-gradient-background reveal"
         >
           <h2
             class="text-3xl font-bold playfair-display text-white"
@@ -328,5 +352,6 @@
           }
         });
     </script>
+    <script src="/atmosphere.js"></script>
   </body>
 </html>

@@ -1,0 +1,172 @@
+/* ===========================================================================
+   Luar — shared atmosphere & identity layer
+   "Chía at night": rain that clears as you descend, a warm hearth, stars that
+   emerge, the Muisca-circuit glyph echo, and faded rupestrian story doodles.
+   Used on every page. Page-specific tokens (brand colors, gradient-text,
+   cards) live in each page's own <style>.
+   =========================================================================== */
+
+/* Soft rain — the gentle gradient drift.
+   Its opacity is eased toward 0 by atmosphere.js as the storm clears. */
+.rain {
+  position: fixed;
+  inset: -20% 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    104deg,
+    transparent 0px,
+    transparent 22px,
+    rgba(169, 228, 240, 0.06) 22px,
+    rgba(169, 228, 240, 0.06) 23px
+  );
+  background-size: 100% 200%;
+  will-change: background-position;
+  animation: rainfall 1.1s linear infinite;
+}
+@keyframes rainfall {
+  to {
+    background-position: -60px 200%;
+  }
+}
+
+/* Stars — emerge as the sky clears toward the bottom */
+.stars {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  background-image:
+    radial-gradient(1.4px 1.4px at 18% 22%, rgba(234, 247, 250, 0.9), transparent),
+    radial-gradient(1.1px 1.1px at 72% 16%, rgba(234, 247, 250, 0.7), transparent),
+    radial-gradient(1.5px 1.5px at 38% 62%, rgba(234, 247, 250, 0.8), transparent),
+    radial-gradient(1.1px 1.1px at 85% 48%, rgba(234, 247, 250, 0.6), transparent),
+    radial-gradient(1.2px 1.2px at 12% 78%, rgba(234, 247, 250, 0.6), transparent),
+    radial-gradient(1.3px 1.3px at 62% 82%, rgba(234, 247, 250, 0.7), transparent),
+    radial-gradient(1px 1px at 50% 35%, rgba(234, 247, 250, 0.5), transparent);
+}
+
+/* Warm light pooling low on the page — it warms as you descend */
+.warm-pool {
+  position: fixed;
+  left: 50%;
+  bottom: -240px;
+  width: min(1200px, 130%);
+  height: 620px;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    closest-side,
+    rgba(251, 191, 36, 0.1),
+    rgba(236, 72, 153, 0.05) 55%,
+    transparent 80%
+  );
+  filter: blur(30px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* The hearth glow — warmth behind a section (e.g. the home / vision) */
+.hearth-glow {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(820px, 120%);
+  height: 520px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    closest-side,
+    rgba(251, 191, 36, 0.14),
+    rgba(236, 72, 153, 0.06) 55%,
+    transparent 80%
+  );
+  filter: blur(30px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* The crescent — a primary center, rising over a section and overlapping
+   its boundary so regions interlock */
+.moon-center {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: none;
+  filter: drop-shadow(0 0 16px rgba(251, 191, 36, 0.5));
+}
+
+/* Recurring Muisca-circuit glyph divider (the echo) */
+.mark-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 340px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mark-divider .line {
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(to right, transparent, rgba(236, 72, 153, 0.5));
+}
+.mark-divider .line.right {
+  background: linear-gradient(to left, transparent, rgba(236, 72, 153, 0.5));
+}
+
+/* Gentle scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Quiet scroll cue */
+.scroll-cue {
+  animation: cue 2.4s ease-in-out infinite;
+}
+@keyframes cue {
+  0%, 100% { transform: translateY(0); opacity: 0.45; }
+  50% { transform: translateY(6px); opacity: 1; }
+}
+
+/* Rupestrian story doodles — faded ochre rock art that reveals as you descend */
+.doodle {
+  color: #d6a05c;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 1.1s ease, transform 1.1s ease;
+}
+.doodle.in {
+  opacity: 0.5;
+  transform: none;
+}
+.doodle svg {
+  display: block;
+}
+.doodle svg path,
+.doodle svg circle {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rain,
+  .scroll-cue {
+    animation: none;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

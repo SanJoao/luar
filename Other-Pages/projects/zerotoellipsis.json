@@ -1,0 +1,25 @@
+{
+  "title": "Zero to Ellipsis",
+  "date": "2026-07-07",
+  "icon": "auto_stories",
+  "logo": "Assets/ZeroToEllipsis/ZeroToEllipsisLogo.svg",
+  "tags": [
+    { "name": "#BuildInPublic", "style": "bg-purple-100 text-purple-700" },
+    { "name": "#Astro", "style": "bg-orange-100 text-orange-700" },
+    { "name": "#Blog", "style": "bg-teal-100 text-teal-700" }
+  ],
+  "description_i18n": "zerotoellipsis_description",
+  "images": [
+    "Assets/ZeroToEllipsis/home.png",
+    "Assets/ZeroToEllipsis/entry.png"
+  ],
+  "technologies": "Astro, Firebase Hosting, Pagefind search, YouTube transcript pipeline",
+  "state_i18n_key": "state",
+  "state": "Live",
+  "link": "https://zerotoellipsis.luarai.com/",
+  "button": {
+    "text_i18n_key": "visit_zerotoellipsis",
+    "style": "bg-[var(--brand-purple)]",
+    "icon": "arrow_forward"
+  }
+}

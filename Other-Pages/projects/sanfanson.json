@@ -17,7 +17,9 @@
   ],
   "technologies": "JavaScript, Vite, Node.js, Firebase, OpenAI",
   "state_i18n_key": "state",
-  "state": "MVP, Under Construction",
+  "state": "Archived, kept as a memory",
+  "note_i18n_key": "sanfanson_note",
+  "note": "The exercise generator is no longer connected. Kept here as a memory of what it was.",
   "link": "https://sanfanson.luarai.com/",
   "button": {
     "text_i18n_key": "play_sanfanson",

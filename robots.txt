@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://luarai.com/sitemap.xml

@@ -330,6 +330,26 @@
         <div class="space-y-16" id="projects-container">
           <!-- Projects will be dynamically loaded here -->
         </div>
+
+        <!--
+          Static, crawlable links to every LIVE project. The cards above are
+          built client-side (JS fetches projects/*.json), which search engines
+          don't index reliably, so we also list the live project URLs here as
+          plain <a href> anchors Google can follow. Keep in sync with any
+          project JSON whose button.disabled is false (i.e. has a real link).
+        -->
+        <nav class="mt-20 pt-10 border-t border-gray-700" aria-label="All projects">
+          <h2 class="text-lg font-semibold text-gray-300 mb-4" data-i18n="portfolio_explore">
+            Explore our projects
+          </h2>
+          <ul class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-gray-400">
+            <li><a class="hover:text-white transition-colors" href="https://viz.luarai.com/">Viz, a data field notebook</a></li>
+            <li><a class="hover:text-white transition-colors" href="https://severo.luarai.com/">Severo, language mastery training</a></li>
+            <li><a class="hover:text-white transition-colors" href="https://koby.luarai.com/">Koby, turn your books into audiobooks</a></li>
+            <li><a class="hover:text-white transition-colors" href="https://zerotoellipsis.luarai.com/">Zero to Ellipsis, the build diary</a></li>
+            <li><a class="hover:text-white transition-colors" href="https://zenota.luarai.com/">Zenota, a hierarchical bento planner</a></li>
+          </ul>
+        </nav>
       </main>
       <div id="image-modal" class="modal fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 z-50 hidden items-center justify-center" onclick="handleModalClick(event)">
         <span class="absolute top-4 right-6 text-white text-4xl font-bold cursor-pointer z-52" onclick="closeModal()">&times;</span>
@@ -400,9 +420,13 @@
 
         let buttonHtml;
         if (project.button.disabled) {
+            // Disabled buttons default to "Coming Soon", but a project can override
+            // the label (e.g. archived / local-only projects) via button.disabledLabel.
+            const disabledLabel = project.button.disabledLabel || 'Coming Soon';
+            const disabledI18n = project.button.disabledLabel_i18n_key || project.button.text_i18n_key;
             buttonHtml = `
-                <button class="mt-6 w-full bg-gray-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg cursor-not-allowed flex items-center justify-center gap-2 group" data-i18n="${project.button.text_i18n_key}">
-                    Coming Soon
+                <button class="mt-6 w-full bg-gray-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg cursor-not-allowed flex items-center justify-center gap-2 group" data-i18n="${disabledI18n}">
+                    ${disabledLabel}
                     <span class="material-icons">${project.button.icon}</span>
                 </button>
             `;
@@ -418,6 +442,16 @@
                     Visit ${project.title}
                     <span class="material-icons ${iconAnimationClass}">${project.button.icon}</span>
                 </a>
+            `;
+        }
+
+        let noteHtml = '';
+        if (project.note) {
+            noteHtml = `
+                <div class="mt-4 flex items-start gap-2 text-xs text-gray-400 bg-gray-800/40 border border-gray-700 rounded-xl p-3" data-i18n="${project.note_i18n_key || ''}">
+                    <span class="material-icons text-base text-[var(--brand-yellow)]">bookmark</span>
+                    <span>${project.note}</span>
+                </div>
             `;
         }
 
@@ -473,6 +507,7 @@
                             </li>
                         </ul>
                     </div>
+                    ${noteHtml}
                     ${buttonHtml}
                     ${previewHtml}
                 </div>

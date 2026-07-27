@@ -1,0 +1,27 @@
+{
+  "title": "Roughly",
+  "date": "2026-07-14",
+  "icon": "calculate",
+  "logo": "Assets/Roughly/RoughlyLogo.svg",
+  "tags": [
+    { "name": "#MentalMath", "style": "bg-purple-100 text-purple-700" },
+    { "name": "#Flutter", "style": "bg-blue-100 text-blue-700" },
+    { "name": "#Game", "style": "bg-teal-100 text-teal-700" }
+  ],
+  "description_i18n": "roughly_description",
+  "images": [
+    "Assets/Roughly/main.png",
+    "Assets/Roughly/exercise.png",
+    "Assets/Roughly/reveal.png",
+    "Assets/Roughly/results.png"
+  ],
+  "technologies": "Flutter, Firebase Hosting, Firestore",
+  "state_i18n_key": "state",
+  "state": "Live",
+  "link": "https://roughly.luarai.com/",
+  "button": {
+    "text_i18n_key": "visit_roughly",
+    "style": "bg-[var(--brand-teal)]",
+    "icon": "arrow_forward"
+  }
+}

@@ -40,5 +40,10 @@
     "style": "bg-gray-600",
     "icon": "schedule",
     "disabled": true
-  }
+  },
+  "slug": "homigo",
+  "lastUpdated": "2025-04-03",
+  "status": "prototype",
+  "tagline_i18n": "tag_homigo",
+  "blurb_i18n": "blurb_homigo"
 }

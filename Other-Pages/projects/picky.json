@@ -4,9 +4,18 @@
   "icon": "restaurant_menu",
   "logo": "Assets/Picky/PickyLogo.png",
   "tags": [
-    { "name": "#FoodTech", "style": "bg-green-100 text-green-700" },
-    { "name": "#AI", "style": "bg-[var(--pastel-peach)] text-red-700" },
-    { "name": "#SaaS", "style": "bg-yellow-100 text-yellow-700" }
+    {
+      "name": "#FoodTech",
+      "style": "bg-green-100 text-green-700"
+    },
+    {
+      "name": "#AI",
+      "style": "bg-[var(--pastel-peach)] text-red-700"
+    },
+    {
+      "name": "#SaaS",
+      "style": "bg-yellow-100 text-yellow-700"
+    }
   ],
   "description_i18n": "picky_description",
   "images": [
@@ -24,5 +33,10 @@
     "style": "bg-gray-600 cursor-not-allowed",
     "icon": "hourglass_empty",
     "disabled": true
-  }
+  },
+  "slug": "picky",
+  "lastUpdated": "2025-08-20",
+  "status": "prototype",
+  "tagline_i18n": "tag_picky",
+  "blurb_i18n": "blurb_picky"
 }

@@ -1,0 +1,40 @@
+{
+  "title": "6D",
+  "date": "2026-08-25",
+  "lastUpdated": "2026-08-26",
+  "status": "building",
+  "icon": "view_in_ar",
+  "logo": "Assets/6D/6DLogo.svg",
+  "tags": [
+    {
+      "name": "#Games",
+      "style": "bg-purple-100 text-purple-700"
+    },
+    {
+      "name": "#Dimensions",
+      "style": "bg-blue-100 text-blue-700"
+    },
+    {
+      "name": "#TypeScript",
+      "style": "bg-teal-100 text-teal-700"
+    }
+  ],
+  "description_i18n": "6d_description",
+  "images": [
+    "Assets/6D/tictactoe-3d.png",
+    "Assets/6D/minesweeper-4d.png",
+    "Assets/6D/2048-4d.png"
+  ],
+  "technologies": "TypeScript, Vite, Firebase Hosting, Firestore rooms",
+  "state_i18n_key": "state",
+  "state": "Live, under construction",
+  "link": "https://6d.luarai.com/",
+  "button": {
+    "text_i18n_key": "visit_6d",
+    "style": "bg-[var(--brand-purple)]",
+    "icon": "arrow_forward"
+  },
+  "slug": "6d",
+  "tagline_i18n": "tag_6d",
+  "blurb_i18n": "blurb_6d"
+}

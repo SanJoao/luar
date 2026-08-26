@@ -38,5 +38,10 @@
     "style": "bg-gray-600",
     "icon": "block",
     "disabled": true
-  }
+  },
+  "slug": "snipy",
+  "lastUpdated": "2025-11-03",
+  "status": "prototype",
+  "tagline_i18n": "tag_snipy",
+  "blurb_i18n": "blurb_snipy"
 }

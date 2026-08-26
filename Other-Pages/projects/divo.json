@@ -4,9 +4,18 @@
   "icon": "palette",
   "logo": "Assets/Divo/DivoLogo.svg",
   "tags": [
-    { "name": "#VisualEditor", "style": "bg-purple-100 text-purple-700" },
-    { "name": "#NoCode", "style": "bg-pink-100 text-pink-700" },
-    { "name": "#WebDesign", "style": "bg-teal-100 text-teal-700" }
+    {
+      "name": "#VisualEditor",
+      "style": "bg-purple-100 text-purple-700"
+    },
+    {
+      "name": "#NoCode",
+      "style": "bg-pink-100 text-pink-700"
+    },
+    {
+      "name": "#WebDesign",
+      "style": "bg-teal-100 text-teal-700"
+    }
   ],
   "description_i18n": "divo_description",
   "images": [
@@ -28,5 +37,10 @@
     "text_i18n_key": "launch_divo",
     "style": "bg-[var(--brand-teal)]",
     "icon": "arrow_forward"
-  }
+  },
+  "slug": "divo",
+  "lastUpdated": "2026-05-07",
+  "status": "archived",
+  "tagline_i18n": "tag_divo",
+  "blurb_i18n": "blurb_divo"
 }

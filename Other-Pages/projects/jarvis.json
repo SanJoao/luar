@@ -1,0 +1,38 @@
+{
+  "title": "Jarvis",
+  "date": "2026-08-13",
+  "lastUpdated": "2026-08-19",
+  "status": "building",
+  "icon": "smart_toy",
+  "logo": "Assets/Jarvis/JarvisLogo.png",
+  "tags": [
+    {
+      "name": "#Agent",
+      "style": "bg-blue-100 text-blue-700"
+    },
+    {
+      "name": "#Windows",
+      "style": "bg-purple-100 text-purple-700"
+    },
+    {
+      "name": "#OpenSource",
+      "style": "bg-teal-100 text-teal-700"
+    }
+  ],
+  "description_i18n": "jarvis_description",
+  "images": [
+    "Assets/Jarvis/blueprint.png"
+  ],
+  "technologies": "Python, Claude Agent SDK, Chrome extension (MV3), faster-whisper",
+  "state_i18n_key": "state",
+  "state": "Phase 3 of 6, usable today (Windows)",
+  "link": "https://github.com/LuarAI/jarvis",
+  "button": {
+    "text_i18n_key": "visit_jarvis",
+    "style": "bg-[var(--brand-teal)]",
+    "icon": "code"
+  },
+  "slug": "jarvis",
+  "tagline_i18n": "tag_jarvis",
+  "blurb_i18n": "blurb_jarvis"
+}

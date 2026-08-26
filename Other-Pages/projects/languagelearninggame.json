@@ -42,5 +42,10 @@
     "style": "bg-gray-600",
     "icon": "block",
     "disabled": true
-  }
+  },
+  "slug": "languagelearninggame",
+  "lastUpdated": "2025-05-11",
+  "status": "prototype",
+  "tagline_i18n": "tag_languagelearninggame",
+  "blurb_i18n": "blurb_languagelearninggame"
 }

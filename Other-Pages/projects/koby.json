@@ -5,10 +5,22 @@
   "icon": "menu_book",
   "logo": "Assets/Koby/KobyLogo.svg",
   "tags": [
-    { "name": "#E-Reader", "style": "bg-blue-100 text-blue-700" },
-    { "name": "#Audiobooks", "style": "bg-purple-100 text-purple-700" },
-    { "name": "#DataViz", "style": "bg-green-100 text-green-700" },
-    { "name": "#Firebase", "style": "bg-yellow-100 text-yellow-700" }
+    {
+      "name": "#E-Reader",
+      "style": "bg-blue-100 text-blue-700"
+    },
+    {
+      "name": "#Audiobooks",
+      "style": "bg-purple-100 text-purple-700"
+    },
+    {
+      "name": "#DataViz",
+      "style": "bg-green-100 text-green-700"
+    },
+    {
+      "name": "#Firebase",
+      "style": "bg-yellow-100 text-yellow-700"
+    }
   ],
   "description_i18n": "koby_description",
   "images": [
@@ -27,5 +39,10 @@
     "text_i18n_key": "visit_koby",
     "style": "bg-[var(--brand-purple)]",
     "icon": "arrow_forward"
-  }
+  },
+  "slug": "koby",
+  "lastUpdated": "2026-08-09",
+  "status": "live",
+  "tagline_i18n": "tag_koby",
+  "blurb_i18n": "blurb_koby"
 }

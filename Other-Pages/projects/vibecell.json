@@ -1,4 +1,5 @@
-{"title": "VibeCell",
+{
+  "title": "VibeCell",
   "date": "2025-06-04",
   "icon": "grid_on",
   "logo": "Assets/ExperimentLogo.png",
@@ -33,5 +34,10 @@
     "style": "bg-gray-600",
     "icon": "block",
     "disabled": true
-  }
+  },
+  "slug": "vibecell",
+  "lastUpdated": "2025-06-04",
+  "status": "prototype",
+  "tagline_i18n": "tag_vibecell",
+  "blurb_i18n": "blurb_vibecell"
 }

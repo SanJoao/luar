@@ -15,7 +15,7 @@
     <link rel="icon" href="/logo_luar.svg" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Playfair+Display:wght@700&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Macondo+Swash+Caps&amp;display=swap"
       rel="stylesheet"
     />
     <link
@@ -23,7 +23,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="about.css" />
-    <link rel="stylesheet" href="../header.css" />
+    <link rel="stylesheet" href="../header.css?v=macondo" />
     <link rel="stylesheet" href="/atmosphere.css" />
     <style type="text/tailwindcss">
       :root {
@@ -39,8 +39,10 @@
         background-color: var(--background-dark);
       }
       .playfair-display {
-        font-family: "Playfair Display", serif;
+        font-family: "Macondo Swash Caps", "Playfair Display", serif;
       }
+      h1, h2, h3, h4, .main-nav a, .logo-luar { font-family: "Macondo Swash Caps", "Playfair Display", serif; }
+      h3, h4, .main-nav a { letter-spacing: 0.02em; }
       .gradient-text {
         background: linear-gradient(
           to right,
@@ -415,7 +417,7 @@
       </footer>
     </div>
     <script src="../i18n.js"></script>
-    <script src="../header.js"></script>
+    <script src="../header.js?v=macondo"></script>
     <script>
       fetch("/header.html")
         .then((response) => response.text())

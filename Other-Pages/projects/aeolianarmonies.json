@@ -40,5 +40,10 @@
     "style": "bg-gray-600",
     "icon": "block",
     "disabled": true
-  }
+  },
+  "slug": "aeolianarmonies",
+  "lastUpdated": "2025-06-16",
+  "status": "archived",
+  "tagline_i18n": "tag_aeolianarmonies",
+  "blurb_i18n": "blurb_aeolianarmonies"
 }

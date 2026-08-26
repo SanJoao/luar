@@ -8,7 +8,10 @@
       "name": "#NoteTaking",
       "style": "bg-[var(--pastel-lavender)] text-indigo-700"
     },
-    { "name": "#VisualThinking", "style": "bg-[var(--pastel-mint)] text-emerald-700" },
+    {
+      "name": "#VisualThinking",
+      "style": "bg-[var(--pastel-mint)] text-emerald-700"
+    },
     {
       "name": "#Productivity",
       "style": "bg-[var(--pastel-peach)] text-red-700"
@@ -30,5 +33,10 @@
     "text_i18n_key": "visit_zenota",
     "style": "bg-[var(--coral)]",
     "icon": "arrow_forward"
-  }
+  },
+  "slug": "zenota",
+  "lastUpdated": "2026-08-06",
+  "status": "beta",
+  "tagline_i18n": "tag_zenota",
+  "blurb_i18n": "blurb_zenota"
 }

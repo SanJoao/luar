@@ -41,5 +41,10 @@
     "style": "bg-gray-600",
     "icon": "block",
     "disabled": true
-  }
+  },
+  "slug": "dailytracker",
+  "lastUpdated": "2025-05-04",
+  "status": "prototype",
+  "tagline_i18n": "tag_dailytracker",
+  "blurb_i18n": "blurb_dailytracker"
 }

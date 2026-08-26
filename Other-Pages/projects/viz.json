@@ -5,9 +5,18 @@
   "icon": "insights",
   "logo": "Assets/Viz/VizLogo.svg",
   "tags": [
-    { "name": "#DataViz", "style": "bg-green-100 text-green-700" },
-    { "name": "#D3js", "style": "bg-orange-100 text-orange-700" },
-    { "name": "#Interactive", "style": "bg-blue-100 text-blue-700" }
+    {
+      "name": "#DataViz",
+      "style": "bg-green-100 text-green-700"
+    },
+    {
+      "name": "#D3js",
+      "style": "bg-orange-100 text-orange-700"
+    },
+    {
+      "name": "#Interactive",
+      "style": "bg-blue-100 text-blue-700"
+    }
   ],
   "description_i18n": "viz_description",
   "images": [
@@ -22,5 +31,10 @@
     "text_i18n_key": "visit_viz",
     "style": "bg-[var(--brand-teal)]",
     "icon": "arrow_forward"
-  }
+  },
+  "slug": "viz",
+  "lastUpdated": "2026-08-24",
+  "status": "live",
+  "tagline_i18n": "tag_viz",
+  "blurb_i18n": "blurb_viz"
 }

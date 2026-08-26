@@ -1,12 +1,21 @@
 {
-  "title": "SANFANSON",
+  "title": "Sanfanson",
   "date": "2025-08-15",
   "icon": "sports_esports",
   "logo": "Assets/SANFANSON/SanfansonLogo.svg",
   "tags": [
-    { "name": "#Gamification", "style": "bg-[var(--pastel-mint)] text-emerald-700" },
-    { "name": "#AI", "style": "bg-[var(--pastel-peach)] text-red-700" },
-    { "name": "#EdTech", "style": "bg-blue-100 text-blue-700" }
+    {
+      "name": "#Gamification",
+      "style": "bg-[var(--pastel-mint)] text-emerald-700"
+    },
+    {
+      "name": "#AI",
+      "style": "bg-[var(--pastel-peach)] text-red-700"
+    },
+    {
+      "name": "#EdTech",
+      "style": "bg-blue-100 text-blue-700"
+    }
   ],
   "description_i18n": "sanfanson_description",
   "images": [
@@ -25,5 +34,10 @@
     "text_i18n_key": "play_sanfanson",
     "style": "bg-[var(--sky-blue)] text-gray-900",
     "icon": "rocket"
-  }
+  },
+  "slug": "sanfanson",
+  "lastUpdated": "2026-03-13",
+  "status": "archived",
+  "tagline_i18n": "tag_sanfanson",
+  "blurb_i18n": "blurb_sanfanson"
 }

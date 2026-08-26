@@ -48,12 +48,9 @@ function updateHeaderStyle(page) {
     luarElement.style.color = config.luarColor;
     aiElement.style.color = config.aiColor;
     
-    luarElement.style.fontFamily = 'Quicksand, sans-serif';
-    aiElement.style.fontFamily = 'Orbit, sans-serif';
 
     navElements.forEach(nav => {
         nav.style.color = config.navColor;
-        nav.style.fontFamily = `${config.font}, sans-serif`;
     });
 }
 

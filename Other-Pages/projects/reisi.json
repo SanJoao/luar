@@ -1,0 +1,31 @@
+{
+  "title": "Reisi",
+  "date": "2025-12-08",
+  "lastUpdated": "2026-01-03",
+  "status": "prototype",
+  "icon": "account_balance_wallet",
+  "logo": "Assets/Reisi/ReisiLogo.png",
+  "tags": [
+    { "name": "#Fintech", "style": "bg-teal-100 text-teal-700" },
+    { "name": "#Flutter", "style": "bg-blue-100 text-blue-700" },
+    { "name": "#NestJS", "style": "bg-pink-100 text-pink-700" }
+  ],
+  "description_i18n": "reisi_description",
+  "images": [
+    "Assets/Reisi/ReisiLogo.png"
+  ],
+  "technologies": "Flutter, NestJS, Prisma, PostgreSQL, Gemini (Reisito agent)",
+  "state_i18n_key": "state",
+  "state": "Prototype (on hold)",
+  "button": {
+    "text_i18n_key": "coming_soon",
+    "style": "bg-gray-600",
+    "icon": "hourglass_empty",
+    "disabled": true,
+    "disabledLabel": "Not Available",
+    "disabledLabel_i18n_key": "not_available"
+  },
+  "slug": "reisi",
+  "tagline_i18n": "tag_reisi",
+  "blurb_i18n": "blurb_reisi"
+}

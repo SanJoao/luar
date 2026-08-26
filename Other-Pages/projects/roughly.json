@@ -4,9 +4,18 @@
   "icon": "calculate",
   "logo": "Assets/Roughly/RoughlyLogo.svg",
   "tags": [
-    { "name": "#MentalMath", "style": "bg-purple-100 text-purple-700" },
-    { "name": "#Flutter", "style": "bg-blue-100 text-blue-700" },
-    { "name": "#Game", "style": "bg-teal-100 text-teal-700" }
+    {
+      "name": "#MentalMath",
+      "style": "bg-purple-100 text-purple-700"
+    },
+    {
+      "name": "#Flutter",
+      "style": "bg-blue-100 text-blue-700"
+    },
+    {
+      "name": "#Game",
+      "style": "bg-teal-100 text-teal-700"
+    }
   ],
   "description_i18n": "roughly_description",
   "images": [
@@ -23,5 +32,10 @@
     "text_i18n_key": "visit_roughly",
     "style": "bg-[var(--brand-teal)]",
     "icon": "arrow_forward"
-  }
+  },
+  "slug": "roughly",
+  "lastUpdated": "2026-08-06",
+  "status": "live",
+  "tagline_i18n": "tag_roughly",
+  "blurb_i18n": "blurb_roughly"
 }

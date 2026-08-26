@@ -38,5 +38,10 @@
     "text_i18n_key": "visit_severo",
     "style": "bg-[var(--brand-pink)]",
     "icon": "arrow_forward"
-  }
+  },
+  "slug": "severo",
+  "lastUpdated": "2026-08-22",
+  "status": "beta",
+  "tagline_i18n": "tag_severo",
+  "blurb_i18n": "blurb_severo"
 }

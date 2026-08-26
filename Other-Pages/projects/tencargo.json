@@ -42,5 +42,10 @@
     "style": "bg-gray-600",
     "icon": "block",
     "disabled": true
-  }
+  },
+  "slug": "tencargo",
+  "lastUpdated": "2025-10-20",
+  "status": "archived",
+  "tagline_i18n": "tag_tencargo",
+  "blurb_i18n": "blurb_tencargo"
 }

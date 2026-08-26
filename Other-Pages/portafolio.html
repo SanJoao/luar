@@ -15,14 +15,14 @@
     <link rel="icon" href="/logo_luar.svg" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Macondo+Swash+Caps&display=swap"
       rel="stylesheet"
     />
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/header.css" />
+    <link rel="stylesheet" href="/header.css?v=macondo" />
     <link rel="stylesheet" href="/atmosphere.css" />
     <style type="text/tailwindcss">
       :root {
@@ -44,8 +44,10 @@
         color: var(--background-light);
       }
       .playfair-display {
-        font-family: "Playfair Display", serif;
+        font-family: "Macondo Swash Caps", "Playfair Display", serif;
       }
+      h1, h2, h3, h4, .main-nav a, .logo-luar { font-family: "Macondo Swash Caps", "Playfair Display", serif; }
+      h3, h4, .main-nav a { letter-spacing: 0.02em; }
       .gradient-text {
         background: linear-gradient(
           to right,
@@ -161,7 +163,8 @@
         }
       }
       .logo-carousel-container {
-        width: 100%;
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
         overflow: hidden;
         padding: 2rem 0;
         position: relative;
@@ -280,7 +283,7 @@
     <div class="warm-pool" aria-hidden="true"></div>
     <div class="rain" aria-hidden="true"></div>
     <div id="header-container"></div>
-    <script src="/header.js"></script>
+    <script src="/header.js?v=macondo"></script>
     <script>
       fetch("/header.html")
         .then((response) => response.text())
@@ -348,6 +351,7 @@
             <li><a class="hover:text-white transition-colors" href="https://koby.luarai.com/">Koby, turn your books into audiobooks</a></li>
             <li><a class="hover:text-white transition-colors" href="https://zerotoellipsis.luarai.com/">Zero to Ellipsis, the build diary</a></li>
             <li><a class="hover:text-white transition-colors" href="https://zenota.luarai.com/">Zenota, a hierarchical bento planner</a></li>
+            <li><a class="hover:text-white transition-colors" href="https://roughly.luarai.com/">Roughly, the daily mental math game</a></li>
           </ul>
         </nav>
       </main>
@@ -431,7 +435,7 @@
                 </button>
             `;
         } else {
-            const iconAnimationClass = project.title === 'SANFANSON'
+            const iconAnimationClass = project.title === 'Sanfanson'
                 ? 'transition-transform group-hover:rotate-[360deg] duration-500'
                 : 'transition-transform group-hover:rotate-45';
             
@@ -516,7 +520,7 @@
       }
 
       async function loadProjects() {
-        const projectFiles = ['roughly.json', 'zerotoellipsis.json', 'viz.json', 'severo.json', 'tencargo.json', 'zenota.json', 'snipy.json', 'lorenamor.json', 'sanfanson.json', 'aeolianarmonies.json', 'picky.json', 'divo.json', 'vibecell.json', 'koby.json', 'dailytracker.json', 'languagelearninggame.json', 'homigo.json'];
+        const projectFiles = ['6d.json', 'jarvis.json', 'reisi.json', 'roughly.json', 'zerotoellipsis.json', 'viz.json', 'severo.json', 'tencargo.json', 'zenota.json', 'snipy.json', 'lorenamor.json', 'sanfanson.json', 'aeolianarmonies.json', 'picky.json', 'divo.json', 'vibecell.json', 'koby.json', 'dailytracker.json', 'languagelearninggame.json', 'homigo.json'];
         const projectsContainer = document.getElementById('projects-container');
         
         if (!projectsContainer) return;

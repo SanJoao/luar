@@ -38,5 +38,10 @@
     "style": "bg-gray-600",
     "icon": "schedule",
     "disabled": true
-  }
+  },
+  "slug": "lorenamor",
+  "lastUpdated": "2025-09-04",
+  "status": "prototype",
+  "tagline_i18n": "tag_lorenamor",
+  "blurb_i18n": "blurb_lorenamor"
 }

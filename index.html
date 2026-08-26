@@ -26,14 +26,14 @@
     <meta property="og:url" content="https://luarai.com" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Macondo+Swash+Caps&display=swap"
       rel="stylesheet"
     />
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="header.css?v=macondo" />
     <link rel="stylesheet" href="atmosphere.css" />
     <style type="text/tailwindcss">
       :root {
@@ -49,8 +49,10 @@
         background-color: var(--background-dark);
       }
       .playfair-display {
-        font-family: "Playfair Display", serif;
+        font-family: "Macondo Swash Caps", "Playfair Display", serif;
       }
+      h1, h2, h3, h4, .main-nav a, .logo-luar { font-family: "Macondo Swash Caps", "Playfair Display", serif; }
+      h3, h4, .main-nav a { letter-spacing: 0.02em; }
       .gradient-text {
         background: linear-gradient(
           to right,
@@ -164,6 +166,56 @@
           stroke-dashoffset: 0;
         }
       }
+
+      /* ---- The lab bench: flip cards ---- */
+      .flip { perspective: 1200px; display: block; color: inherit; text-decoration: none; }
+      .flip-inner {
+        position: relative; width: 100%; height: 100%;
+        transform-style: preserve-3d;
+        transition: transform 0.65s cubic-bezier(0.2, 0.7, 0.2, 1);
+      }
+      .flip-face {
+        position: absolute; inset: 0;
+        backface-visibility: hidden; -webkit-backface-visibility: hidden;
+        display: flex; flex-direction: column;
+      }
+      .flip-back { transform: rotateY(180deg); }
+      .flip.is-flipped .flip-inner { transform: rotateY(180deg); }
+      @media (hover: hover) {
+        .flip:hover .flip-inner, .flip:focus-visible .flip-inner { transform: rotateY(180deg); }
+        .flip-tap { display: none; }
+      }
+      .flip .card-inner { padding: 1.25rem; }
+      .flip-lg { height: 280px; }
+      .flip-scroll { overflow-y: auto; min-height: 0; scrollbar-width: thin; scrollbar-color: rgba(169,228,240,0.35) transparent; padding-right: 2px; }
+      @media (max-width: 767px) { .flip-lg { height: 230px; } }
+      .flip-sm { height: 210px; }
+      .flip-front-content, .flip-back-content { flex: 1; display: flex; flex-direction: column; min-height: 0; }
+      .lab-logo { height: 2.75rem; width: auto; max-width: 4.5rem; object-fit: contain; flex: 0 1 auto; min-width: 0; }
+      .status-pill { flex-shrink: 0; }
+      .flip-lg .lab-logo { height: 3.25rem; max-width: 7rem; }
+      .status-pill {
+        display: inline-flex; align-items: center; gap: 0.35rem; white-space: nowrap;
+        font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 600;
+        padding: 0.2rem 0.6rem; border-radius: 9999px;
+        border: 1px solid rgba(169, 228, 240, 0.25); background: rgba(255, 255, 255, 0.04);
+      }
+      .status-pill::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+      .status-live { color: #5eead4; }
+      .status-beta { color: #fbbf24; }
+      .status-building { color: #f0abfc; }
+      .status-prototype { color: #a5b4fc; }
+      .status-archived { color: #9ca3af; }
+      .lab-updated { font-size: 0.7rem; color: #8aa0ad; }
+      .lab-bench.collapsed .flip:nth-child(n + 7) { display: none; }
+      @media (max-width: 639px) { .lab-bench.collapsed .flip:nth-child(n + 5) { display: none; } }
+      .lab-bench .flip { animation: benchIn 0.5s ease both; }
+      @keyframes benchIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+      #lab-toggle[aria-expanded="true"] .lab-toggle-icon { transform: rotate(180deg); }
+      @media (prefers-reduced-motion: reduce) {
+        .flip-inner { transition: none; }
+        .lab-bench .flip { animation: none; }
+      }
     </style>
   </head>
   <body class="text-white">
@@ -270,120 +322,34 @@
             class="text-center text-gray-400 mt-3 max-w-2xl mx-auto"
             data-i18n="home_products_subtitle"
           >
-            Small, focused tools you can try in about a minute. Each one chips
-            away at a constraint that should not be there.
+            A lab, not a catalogue. Everything we're building, sorted by whatever
+            we touched last. Hover a card to peek, click to open.
           </p>
-          <div class="mt-12 grid md:grid-cols-3 gap-8">
-            <!-- Koby -->
-            <div class="card-gradient-border">
-              <div class="card-inner">
-                <div class="flex items-center gap-3">
-                  <img
-                    src="Other-Pages/Assets/Koby/KobyLogo.svg"
-                    alt="Koby logo"
-                    class="h-9 w-9"
-                  />
-                  <h3 class="text-xl font-semibold">Koby</h3>
-                </div>
-                <p
-                  class="mt-2 text-sm font-medium text-[var(--brand-pink)]"
-                  data-i18n="home_koby_tag"
-                >
-                  Reading, unlocked
-                </p>
-                <p class="mt-3 text-gray-400 text-sm flex-grow" data-i18n="home_koby_text">
-                  Drop in any book and turn it into an audiobook that plays
-                  right on your device, free and private, with word-level
-                  read-along. Plus beautiful charts from your Kobo highlights.
-                </p>
-                <a
-                  href="https://koby.luarai.com/"
-                  target="_blank"
-                  rel="noopener"
-                  class="mt-6 inline-flex items-center justify-center gap-2 bg-[var(--brand-purple)] text-white font-semibold py-2.5 px-5 rounded-full hover:bg-opacity-90 transition-transform transform hover:-translate-y-1 group"
-                  data-i18n="home_koby_cta"
-                >
-                  Try Koby
-                  <span class="material-icons text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
-                </a>
-              </div>
-            </div>
-            <!-- Viz -->
-            <div class="card-gradient-border">
-              <div class="card-inner">
-                <div class="flex items-center gap-3">
-                  <img
-                    src="Other-Pages/Assets/Viz/VizLogo.svg"
-                    alt="Viz logo"
-                    class="h-9 w-9"
-                  />
-                  <h3 class="text-xl font-semibold">Viz</h3>
-                </div>
-                <p
-                  class="mt-2 text-sm font-medium text-[var(--brand-teal)]"
-                  data-i18n="home_viz_tag"
-                >
-                  Understanding, instant
-                </p>
-                <p class="mt-3 text-gray-400 text-sm flex-grow" data-i18n="home_viz_text">
-                  A field notebook of interactive data stories. Each one turns a
-                  real dataset into something you grasp in a single glance.
-                </p>
-                <a
-                  href="https://viz.luarai.com/"
-                  target="_blank"
-                  rel="noopener"
-                  class="mt-6 inline-flex items-center justify-center gap-2 bg-[var(--brand-teal)] text-white font-semibold py-2.5 px-5 rounded-full hover:bg-opacity-90 transition-transform transform hover:-translate-y-1 group"
-                  data-i18n="home_viz_cta"
-                >
-                  Explore Viz
-                  <span class="material-icons text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
-                </a>
-              </div>
-            </div>
-            <!-- Severo -->
-            <div class="card-gradient-border">
-              <div class="card-inner">
-                <div class="flex items-center gap-3">
-                  <img
-                    src="Other-Pages/Assets/Severo/icon.png"
-                    alt="Severo logo"
-                    class="h-9 w-9 rounded-md"
-                  />
-                  <h3 class="text-xl font-semibold">Severo</h3>
-                </div>
-                <p
-                  class="mt-2 text-sm font-medium text-[var(--brand-yellow)]"
-                  data-i18n="home_severo_tag"
-                >
-                  Mastery, engineered
-                </p>
-                <p class="mt-3 text-gray-400 text-sm flex-grow" data-i18n="home_severo_text">
-                  An adaptive language tutor built on spaced repetition and real
-                  conversation, designed to make you fluent faster. Currently in
-                  beta.
-                </p>
-                <a
-                  href="https://severo.luarai.com/"
-                  target="_blank"
-                  rel="noopener"
-                  class="mt-6 inline-flex items-center justify-center gap-2 bg-[var(--brand-pink)] text-white font-semibold py-2.5 px-5 rounded-full hover:bg-opacity-90 transition-transform transform hover:-translate-y-1 group"
-                  data-i18n="home_severo_cta"
-                >
-                  Try Severo
-                  <span class="material-icons text-lg transition-transform group-hover:translate-x-1">arrow_forward</span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="mt-10 text-center">
+
+          <!-- Featured: the lens-defining products -->
+          <div id="lab-featured" class="mt-12 grid md:grid-cols-3 gap-8"></div>
+
+          <!-- The bench: everything else, by last touched. Collapsed to one row until asked. -->
+          <div id="lab-bench" class="lab-bench mt-8 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 collapsed"></div>
+
+          <div class="mt-8 flex flex-col items-center gap-4">
+            <button
+              id="lab-toggle"
+              type="button"
+              class="inline-flex items-center gap-2 border border-gray-500 text-gray-300 font-medium py-2.5 px-6 rounded-full hover:border-white hover:text-white transition-colors"
+              aria-expanded="false"
+              aria-controls="lab-bench"
+            >
+              <span data-i18n="home_products_more">Show all experiments</span>
+              <span class="material-icons text-lg lab-toggle-icon transition-transform">expand_more</span>
+            </button>
             <a
               href="/Other-Pages/portafolio.html"
-              class="inline-flex items-center gap-2 text-gray-300 hover:text-white transition-colors font-medium"
-              data-i18n="home_products_all"
+              class="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm"
+              data-i18n="home_products_archive"
             >
-              See everything we've built
-              <span class="material-icons text-lg">arrow_forward</span>
+              See the full archive, with screenshots
+              <span class="material-icons text-base">arrow_forward</span>
             </a>
           </div>
         </section>
@@ -566,8 +532,98 @@
       </footer>
     </div>
 
+    <script>
+      // The lab bench: one source of truth with the portfolio (Other-Pages/projects/*.json).
+      (function () {
+        const FILES = ['koby','severo','viz','6d','jarvis','zerotoellipsis','roughly','zenota','reisi','divo','picky','snipy','sanfanson','tencargo','lorenamor','homigo','vibecell','dailytracker','languagelearninggame','aeolianarmonies'];
+        const BASE = 'Other-Pages/';
+        const featuredEl = document.getElementById('lab-featured');
+        const benchEl = document.getElementById('lab-bench');
+        const toggle = document.getElementById('lab-toggle');
+        if (!featuredEl || !benchEl) return;
+
+        const applyI18n = () => {
+          if (typeof setLanguage === 'function' && typeof getInitialLanguage === 'function') setLanguage(getInitialLanguage());
+        };
+        const fmtDate = (iso) => {
+          const d = new Date(iso + 'T00:00:00');
+          const lang = (localStorage.getItem('language') || navigator.language || 'en').slice(0, 2);
+          return d.toLocaleDateString(lang, { month: 'short', year: 'numeric' });
+        };
+
+        const card = (p, size) => {
+          const href = p.link || ('/Other-Pages/portafolio.html#project-' + p.title.toLowerCase());
+          const ext = p.link ? ' target="_blank" rel="noopener"' : '';
+          const lg = size === 'lg';
+          return `
+            <a class="flip flip-${size} card-gradient-border" href="${href}"${ext} data-slug="${p.slug}" aria-label="${p.title}">
+              <div class="flip-inner">
+                <div class="flip-face card-inner">
+                  <div class="flip-front-content">
+                    <div class="flex items-start justify-between gap-2">
+                      <img src="${BASE}${p.logo}" alt="" class="lab-logo" loading="lazy" />
+                      <span class="status-pill status-${p.status}" data-i18n="status_${p.status}"></span>
+                    </div>
+                    <h3 class="${lg ? 'text-xl mt-4' : 'text-base mt-3'} font-semibold">${p.title}</h3>
+                    <p class="${lg ? 'mt-2 text-sm font-medium gradient-text' : 'mt-1 text-xs text-gray-400'}" data-i18n="${p.tagline_i18n}"></p>
+                    ${lg ? `<p class="mt-3 text-sm text-gray-300 leading-relaxed" data-i18n="${p.blurb_i18n}"></p>` : ''}
+                    <div class="mt-auto pt-3 flex items-center justify-between">
+                      <span class="lab-updated"><span data-i18n="home_products_updated">updated</span> ${fmtDate(p.lastUpdated || p.date)}</span>
+                      <span class="flip-tap lab-updated material-icons text-sm">flip</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flip-face flip-back card-inner">
+                  <div class="flip-back-content">
+                    <div class="flex items-center gap-2">
+                      <img src="${BASE}${p.logo}" alt="" class="h-6 w-auto max-w-[3rem] object-contain" loading="lazy" />
+                      <h3 class="font-semibold ${lg ? 'text-lg' : 'text-sm'}">${p.title}</h3>
+                    </div>
+                    ${lg ? `<p class="mt-3 text-sm text-gray-300 leading-relaxed flip-scroll">${p.technologies || ''}</p>` : `<p class="mt-3 text-gray-300 text-xs leading-relaxed flip-scroll" data-i18n="${p.blurb_i18n}"></p>`}
+                    <span class="mt-auto pt-3 inline-flex items-center gap-1 text-sm font-semibold text-[var(--brand-teal)]">
+                      <span data-i18n="home_products_open">Open</span>
+                      <span class="material-icons text-base">${p.link ? 'arrow_outward' : 'arrow_forward'}</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </a>`;
+        };
+
+        Promise.all(FILES.map((f) => fetch(BASE + 'projects/' + f + '.json').then((r) => (r.ok ? r.json() : null)).catch(() => null)))
+          .then((list) => {
+            const projects = list.filter(Boolean);
+            const byTouched = (a, b) => new Date(b.lastUpdated || b.date) - new Date(a.lastUpdated || a.date);
+            featuredEl.innerHTML = projects.filter((p) => p.featured).sort(byTouched).map((p) => card(p, 'lg')).join('');
+            benchEl.innerHTML = projects.filter((p) => !p.featured).sort(byTouched).map((p) => card(p, 'sm')).join('');
+            applyI18n();
+          });
+
+        // Touch: first tap flips, second tap follows the link. Hover devices flip on hover and open on click.
+        const canHover = window.matchMedia('(hover: hover)').matches;
+        document.addEventListener('click', (e) => {
+          const a = e.target.closest('.flip');
+          if (!a || canHover) return;
+          if (!a.classList.contains('is-flipped')) {
+            e.preventDefault();
+            document.querySelectorAll('.flip.is-flipped').forEach((o) => o !== a && o.classList.remove('is-flipped'));
+            a.classList.add('is-flipped');
+          }
+        });
+
+        if (toggle) {
+          toggle.addEventListener('click', () => {
+            const open = !benchEl.classList.toggle('collapsed');
+            toggle.setAttribute('aria-expanded', String(open));
+            toggle.querySelector('span[data-i18n]').setAttribute('data-i18n', open ? 'home_products_less' : 'home_products_more');
+            applyI18n();
+            if (!open) document.getElementById('products').scrollIntoView({ behavior: 'smooth', block: 'start' });
+          });
+        }
+      })();
+    </script>
     <script src="i18n.js"></script>
-    <script src="header.js"></script>
+    <script src="header.js?v=macondo"></script>
     <script>
       fetch("/header.html")
         .then((response) => response.text())

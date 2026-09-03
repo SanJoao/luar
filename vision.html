@@ -12,7 +12,14 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Luar AI - Vision</title>
-    <link rel="icon" href="/logo_luar.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/favicon-192.png" />
+    <link rel="canonical" href="https://luarai.com/vision" />
+    <meta property="og:image" content="https://luarai.com/og-card.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://luarai.com/og-card.png" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;family=Macondo+Swash+Caps&amp;display=swap"
@@ -22,8 +29,8 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="about.css" />
-    <link rel="stylesheet" href="../header.css?v=macondo" />
+    <link rel="stylesheet" href="/about.css" />
+    <link rel="stylesheet" href="/header.css?v=macondo" />
     <link rel="stylesheet" href="/atmosphere.css" />
     <style type="text/tailwindcss">
       :root {
@@ -184,7 +191,7 @@
                 Full honesty: we can't pay for anyone's groceries yet. Today,
                 Luarai is a tiny product studio building its own things.
                 Everything we've shipped and experimented with lives in
-                <a href="portafolio.html" class="underline hover:text-white"
+                <a href="/portafolio" class="underline hover:text-white"
                   >our portfolio</a
                 >. The incubator
                 isn't open. There's no application form. This page exists
@@ -401,7 +408,7 @@
             be building.
           </p>
           <a
-            href="contact.html"
+            href="/contact"
             class="mt-6 inline-block bg-white text-[var(--brand-purple)] font-semibold py-3 px-8 rounded-full shadow-2xl hover:bg-gray-100 transition-transform transform hover:scale-105"
             data-i18n="vision_cta_button"
           >
@@ -416,8 +423,8 @@
         </p>
       </footer>
     </div>
-    <script src="../i18n.js"></script>
-    <script src="../header.js?v=macondo"></script>
+    <script src="/i18n.js"></script>
+    <script src="/header.js?v=macondo"></script>
     <script>
       fetch("/header.html")
         .then((response) => response.text())

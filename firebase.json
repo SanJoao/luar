@@ -1,12 +1,22 @@
 {
   "hosting": {
     "public": ".",
+    "cleanUrls": true,
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**",
       "package.json",
       "package-lock.json"
+    ],
+    "redirects": [
+      { "source": "/Other-Pages/about.html", "destination": "/about", "type": 301 },
+      { "source": "/Other-Pages/contact.html", "destination": "/contact", "type": 301 },
+      { "source": "/Other-Pages/vision.html", "destination": "/vision", "type": 301 },
+      { "source": "/Other-Pages/portafolio.html", "destination": "/portafolio", "type": 301 },
+      { "source": "/Other-Pages/services.html", "destination": "/vision", "type": 301 },
+      { "source": "/services", "destination": "/vision", "type": 301 },
+      { "source": "/Other-Pages/:path*", "destination": "/:path", "type": 301 }
     ]
   }
 }

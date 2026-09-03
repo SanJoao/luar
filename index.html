@@ -16,14 +16,23 @@
       name="description"
       content="A product studio removing the fake limits on how fast people learn, understand, and create. Home to Koby, Severo, and Viz."
     />
-    <link rel="icon" href="/logo_luar.svg" />
-    <meta property="og:title" content="Luar AI" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/favicon-192.png" />
+    <link rel="canonical" href="https://luarai.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Luarai" />
     <meta
       property="og:description"
       content="Luarai is a two-person product studio building tools that remove the fake limits on how fast people can learn, understand, and create. Mastery is a system, not a gift."
     />
-    <meta property="og:image" content="https://luarai.com/logo_luar.svg" />
-    <meta property="og:url" content="https://luarai.com" />
+    <meta property="og:image" content="https://luarai.com/og-card.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://luarai.com/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://luarai.com/og-card.png" />
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Macondo+Swash+Caps&display=swap"
@@ -344,7 +353,7 @@
               <span class="material-icons text-lg lab-toggle-icon transition-transform">expand_more</span>
             </button>
             <a
-              href="/Other-Pages/portafolio.html"
+              href="/portafolio"
               class="inline-flex items-center gap-2 text-gray-400 hover:text-white transition-colors text-sm"
               data-i18n="home_products_archive"
             >
@@ -399,7 +408,7 @@
                 covered, free to create.
               </p>
               <a
-                href="/Other-Pages/vision.html"
+                href="/vision"
                 class="mt-8 inline-block bg-[var(--brand-purple)] text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-opacity-90 transition-transform transform hover:scale-105"
                 data-i18n="home_why_cta"
               >
@@ -533,10 +542,10 @@
     </div>
 
     <script>
-      // The lab bench: one source of truth with the portfolio (Other-Pages/projects/*.json).
+      // The lab bench: one source of truth with the portfolio (projects/*.json).
       (function () {
         const FILES = ['koby','severo','viz','6d','jarvis','zerotoellipsis','roughly','zenota','reisi','divo','picky','snipy','sanfanson','tencargo','lorenamor','homigo','vibecell','dailytracker','languagelearninggame','aeolianarmonies'];
-        const BASE = 'Other-Pages/';
+        const BASE = '/';
         const featuredEl = document.getElementById('lab-featured');
         const benchEl = document.getElementById('lab-bench');
         const toggle = document.getElementById('lab-toggle');
@@ -552,7 +561,7 @@
         };
 
         const card = (p, size) => {
-          const href = p.link || ('/Other-Pages/portafolio.html#project-' + p.title.toLowerCase());
+          const href = p.link || ('/portafolio#project-' + p.title.toLowerCase());
           const ext = p.link ? ' target="_blank" rel="noopener"' : '';
           const lg = size === 'lg';
           return `

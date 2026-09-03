@@ -1,9 +1,5 @@
 async function setLanguage(lang) {
-  // Get the base path based on current location
-  const basePath = window.location.pathname.includes("/Other-Pages/")
-    ? "../"
-    : "./";
-  const response = await fetch(`${basePath}translations/${lang}.json`);
+  const response = await fetch(`/translations/${lang}.json`);
   const translations = await response.json();
 
   document.querySelectorAll("[data-i18n]").forEach((element) => {

@@ -1,0 +1,23 @@
+[debug] [2026-09-03T04:43:26.995Z] ----------------------------------------------------------------------
+[debug] [2026-09-03T04:43:26.998Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\juanp\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js emulators:start --only hosting --project luarai
+[debug] [2026-09-03T04:43:26.998Z] CLI Version:   14.17.0
+[debug] [2026-09-03T04:43:26.999Z] Platform:      win32
+[debug] [2026-09-03T04:43:26.999Z] Node Version:  v22.14.0
+[debug] [2026-09-03T04:43:26.999Z] Time:          Wed Sep 02 2026 23:43:26 GMT-0500 (Colombia Standard Time)
+[debug] [2026-09-03T04:43:26.999Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-09-03T04:43:27.304Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-09-03T04:43:27.304Z] > authorizing via signed-in user (homigoteam@gmail.com)
+[info] i  emulators: Starting emulators: hosting {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: hosting"}}
+[warn] !  hub: emulator hub unable to start on port 4400, starting on 4401 instead. {"metadata":{"emulator":{"name":"hub"},"message":"emulator hub unable to start on port 4400, starting on 4401 instead."}}
+[warn] !  logging: Logging Emulator unable to start on port 4500, starting on 4501 instead. {"metadata":{"emulator":{"name":"logging"},"message":"Logging Emulator unable to start on port 4500, starting on 4501 instead."}}
+[debug] [2026-09-03T04:43:27.318Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[warn] !  hosting: Hosting Emulator unable to start on port 5000, starting on 5002 instead. {"metadata":{"emulator":{"name":"hosting"},"message":"Hosting Emulator unable to start on port 5000, starting on 5002 instead."}}
+[debug] [2026-09-03T04:43:27.319Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2026-09-03T04:43:27.319Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4401},{"address":"::1","family":"IPv6","port":4401}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4501}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5002}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2026-09-03T04:43:27.325Z] Emulator locator file path: C:\Users\juanp\AppData\Local\Temp\hub-luarai.json
+[warn] !  emulators: It seems that you are running multiple instances of the emulator suite for project luarai. This may result in unexpected behavior. 
+[debug] [2026-09-03T04:43:27.326Z] [hub] writing locator at C:\Users\juanp\AppData\Local\Temp\hub-luarai.json
+[debug] [2026-09-03T04:43:27.348Z] Checked if tokens are valid: true, expires at: 1788413873207
+[debug] [2026-09-03T04:43:27.348Z] Checked if tokens are valid: true, expires at: 1788413873207
+[debug] [2026-09-03T04:43:27.349Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/luarai/sites 

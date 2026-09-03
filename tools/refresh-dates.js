@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Refreshes `lastUpdated` in Other-Pages/projects/*.json from the real world:
+// Refreshes `lastUpdated` in projects/*.json from the real world:
 //   - Firebase Hosting answers HEAD requests with a Last-Modified header equal to
 //     the time of the latest deploy, so any project with a `link` on a hosted
 //     site gets its deploy date.
@@ -13,7 +13,7 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 
-const DIR = path.join(__dirname, '..', 'Other-Pages', 'projects');
+const DIR = path.join(__dirname, '..', 'projects');
 const dry = process.argv.includes('--dry');
 
 function head(url) {
